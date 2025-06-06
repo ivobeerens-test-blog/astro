@@ -27,25 +27,25 @@ In Windows Server 2008 R2 you cannot switch between Server core and Server with 
 
 In Windows Server 2012 there are three GUI options to configure:
 
-[![Windows Server 2012 GUI options](images/Windows-Server-2012-GUI-options_thumb.jpg "Windows Server 2012 GUI options")](images/Windows-Server-2012-GUI-options.jpg)
+![Windows Server 2012 GUI options](images/Windows-Server-2012-GUI-options_thumb.jpg "Windows Server 2012 GUI options")
 
 - **Server Core.**  Includes the sconfig menu and PowerShell. It can be managed by RDP and Server Manager and MMC remotely.
 
-[![image_thumb[2]](images/image_thumb2_thumb.png "image_thumb[2]")](images/image_thumb21.png)
+![image_thumb[2]](images/image_thumb2_thumb.png "image_thumb[2]")
 
 - **Graphical Management Tools and Infrastructure**. Provides a minimal server interface and server management tools such as Server Manager and the Microsoft Management Console (MMC).
 
-[![image_thumb[3]](images/image_thumb3_thumb.png "image_thumb[3]")](images/image_thumb31.png)
+![image_thumb[3]](images/image_thumb3_thumb.png "image_thumb[3]")
 
 - **Server Graphical Shell**. This is the full installation including Server Manager, MMC, Internet Explorer and Windows Explorer.
 
-[![image_thumb[4]](images/image_thumb4_thumb.png "image_thumb[4]")](images/image_thumb41.png)
+![image_thumb[4]](images/image_thumb4_thumb.png "image_thumb[4]")
 
 #### Use case  switching between Server Core and Server with a GUI (full) and vise-versa
 
 When configuring the Hyper-V role with multiple NICs it can be difficult to optimize (for example NIC and binding order)  the NIC configuration in Server Core.
 
-[![image_thumb[5]](images/image_thumb5_thumb.png "image_thumb[5]")](images/image_thumb51.png)
+![image_thumb[5]](images/image_thumb5_thumb.png "image_thumb[5]")
 
 To make it easier to do the configuration you can begin the installing and configuring of the Windows Server 2012 in full GUI mode. After the configuration is completed you can switch to Server Core back. Another case to switch to the Server Full GUI is during troubleshooting.
 
@@ -57,7 +57,7 @@ Switching between the GUI modes can be via Server Manager and PowerShell. Micros
 
 In Server Manager you can add or remove the Graphical Management Tools and Infrastructure or the Server Graphical Shell (full) feature.
 
-[![image_thumb[1]](images/image_thumb1_thumb.png "image_thumb[1]")](images/image_thumb11.png)
+![image_thumb[1]](images/image_thumb1_thumb.png "image_thumb[1]")
 
 **PowerShell**
 

@@ -19,7 +19,7 @@ The most information available on how-to perform a unattended scripted installat
 
 Here is an overview of the boot process:
 
-[![image](images/image_thumb11.png "image")](images/image12.png)
+[![image](images/image_thumb11.png)]
 
 #### What do we need
 
@@ -84,7 +84,7 @@ The Tftpd32 utility gets the function DHCP and TFTP server.
 
 - Add a shared folder c:\PXEboot\Kickstart folder with the default rights
 
-[![2011-09-19 18h32_16](images/2011-09-19-18h32_16_thumb.jpg "2011-09-19 18h32_16")](images/2011-09-19-18h32_16.jpg)
+[![2011-09-19 18h32_16](images/2011-09-19-18h32_16_thumb.jpg)]
 
 #### Step 7 Create default file
 
@@ -147,4 +147,4 @@ vim-cmd hostsvc/start\_esx\_shell
 
 Boot the server and select _ESXi5-01 Scripted Install_ option to test the scripted installation.
 
-[![image](images/image_thumb17.png "image")](images/image18.png)
+[![image](images/image_thumb17.png)]

@@ -24,6 +24,6 @@ Here are the steps:
 2. Download the driver (created by Chilly)
 3. Start the ESXi-Customizer and follow the 3 steps:
 
-[![2011-12-04 17h03_20](images/2011-12-04-17h03_20_thumb.jpg "2011-12-04 17h03_20")](images/2011-12-04-17h03_201.jpg)
+[![2011-12-04 17h03_20](images/2011-12-04-17h03_20_thumb.jpg)]
 
 And you're ready to create the customized VMware ESXi 5 ISO. The ISO supports the Intel 82579V and 82579LM NIC(s) found on many whitebox motherboards today. Possible future updated version(s) of the driver can be found in the following [post](http://hardforum.com/showthread.php?t=1607992).

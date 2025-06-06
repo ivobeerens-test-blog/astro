@@ -25,4 +25,4 @@ The exam is all lab based so you need to do stuff as configuring and troubleshoo
 
 When I know my VCAP-DCA number I updated the post and if you have  preparation resources please let me know. Good luck with the preparation for the VCAP-DCA exam!
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+[![image](images/image_thumb5.png)]

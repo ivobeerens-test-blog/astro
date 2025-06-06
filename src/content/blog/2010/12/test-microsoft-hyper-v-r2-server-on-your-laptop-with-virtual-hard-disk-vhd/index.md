@@ -24,11 +24,11 @@ Here’s how to create, install and boot the VHD equipped with Microsoft WIndows
 - From the Action menu choose ‘Create VHD’
 - Select the location to store the VHD disk file and choose a VHD size. For the best performance use a fixed size.
 
-[![2010-12-02 11h14_54](images/2010-12-02-11h14_54_thumb.jpg "2010-12-02 11h14_54")](images/2010-12-02-11h14_54.jpg)
+[![2010-12-02 11h14_54](images/2010-12-02-11h14_54_thumb.jpg)]
 
 - Initialize the VHD disk and assign a drive letter, a name and format the disk. In this example the VHD has drive letter G.
 
-[![2010-12-02 11h13_30](images/2010-12-02-11h13_30_thumb.jpg "2010-12-02 11h13_30")](images/2010-12-02-11h13_30.jpg)
+[![2010-12-02 11h13_30](images/2010-12-02-11h13_30_thumb.jpg)]
 
 **Step 2 Transfer the image to the VHD**
 
@@ -61,11 +61,11 @@ g:\Windows\\System32\bcdboot g:\Windows
 
 - Using the command bcdedit command you can see the new boot entry pointing to the VHD image
 
-[![2010-12-02 12h50_02](images/2010-12-02-12h50_02_thumb.jpg "2010-12-02 12h50_02")](images/2010-12-02-12h50_02.jpg)
+[![2010-12-02 12h50_02](images/2010-12-02-12h50_02_thumb.jpg)]
 
 - To change the default boot options use the **bcdedit –v** command to list the associated GUID numbers. Use the **bcdedit  / default  {GUID}** command to set the default boot config. A easier option is to use the **MSCONFIG** command to set the default boot entry and the timeout.
 
-[![image](images/image_thumb.png "image")](images/image.png) 
+[![image](images/image_thumb.png)]
 
 When restarting Microsoft Windows 7, there is an extra option for booting the  Windows 2008 R2 server OS and your able to install the Microsoft Hyper-V R2 role.
 

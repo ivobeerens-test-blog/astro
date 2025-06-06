@@ -77,7 +77,6 @@ hypervisor.cpuid.v0 = FALSE
 
 If you need to install more Windows Server 2012 Hyper-V VMs, create a template so that you only need to do the settings once.
 
-[![image](images/image_thumb8.png "image")](images/image8.png)
-
+[![image](images/image_thumb8.png)]
 
 

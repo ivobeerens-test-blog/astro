@@ -13,13 +13,13 @@ This week I visited Copenhagen for VMworld Europe 2010. With over 6000 attendees
 
 The labs were hosted by the cloud providers Terremark (Miami) and Verizon (Ashburn). Via the Colt provider in England the access to the  both datacenters was possible. In Copenhagen VMware announced that Colt is the first European VMware vCloud datacenter service provider.
 
-[![Colt](images/Colt_thumb.jpg "Colt")](images/Colt.jpg)
+[![Colt](images/Colt_thumb.jpg)]
 
 In total there were 30 labs with 23,5 hours of lab time and 240 seats with PCoIP enabled zero clients with dual monitor. All the 240 seats are able to deliver the every lab. This is  great improvements with earlier years of VMworld Europe.  I did around 10 labs. The best labs I found the two labs about VMware vCloud Director and vShield lab. The overall performance was good. The total amount of labs completed during VMworld is **5948!**
 
 On Tuesday VMworld officially begins with the keynote (general session).  It was almost the same keynote as in San Francisco. So the ‘new’ announcements were limited! The keynote can be found by clicking the following [link](http://www.vmworld.com/community/conferences/europe2010/generalsessions).
 
-This picture summarizes the keynote:[![image](images/image_thumb.png "image")](images/image.png)
+This picture summarizes the keynote:[![image](images/image_thumb.png)]
 
 The keynote makes the direction of VMware for the coming years very clear.
 

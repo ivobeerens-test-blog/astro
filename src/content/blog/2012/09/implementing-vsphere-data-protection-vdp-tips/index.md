@@ -36,10 +36,10 @@ Here are some VDP implementing tips:
 - The default username is _**root**_ and the password is **_changeme_**
 - For the VDP vCenter registration use formats as in the screenshot:
 
-[![image](images/image_thumb10.png "image")](images/image11.png)
+![](images/image_thumb10.png)
 
 - After the VDP is configured the following URL can be used to do some configuration and maintenance:  **_https://<ip_** **_address of VDP appliance>:8543/vdp-configure/_**
 
-[![image](images/image_thumb11.png "image")](images/image12.png)
+![](images/image_thumb11.png)
 
 - VDP supports up to 8 simultaneously backups of 8 VMs

@@ -17,15 +17,15 @@ When installing VMware vCenter 5 with the default database engine (Microsoft SQL
 
 2. Select “**New Installation or add features to an existing installation**”.
 
-[![2011-12-06 13h12_40](images/2011-12-06-13h12_40_thumb.jpg "2011-12-06 13h12_40")](images/2011-12-06-13h12_40.jpg)
+[![2011-12-06 13h12_40](images/2011-12-06-13h12_40_thumb.jpg)]
 
 3. Select “**New installation or add shared features”.**
 
-[![2011-12-06 13h14_41](images/2011-12-06-13h14_41_thumb.jpg "2011-12-06 13h14_41")](images/2011-12-06-13h14_41.jpg)
+[![2011-12-06 13h14_41](images/2011-12-06-13h14_41_thumb.jpg)]
 
 - Only select “**Management Tools – Basic**”.
 
-[![2011-12-06 13h15_07](images/2011-12-06-13h15_07_thumb.jpg "2011-12-06 13h15_07")](images/2011-12-06-13h15_07.jpg)
+[![2011-12-06 13h15_07](images/2011-12-06-13h15_07_thumb.jpg)]
 
 When the installation is completed you see the “SQL Server Management Studio” listed under the start menu.
 

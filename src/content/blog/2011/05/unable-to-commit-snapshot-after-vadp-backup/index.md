@@ -17,7 +17,7 @@ hen doing a health check I found the following error during the remove if a snap
 
 > **Unable to access file <unspecified filename> since it is locked**
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]
 
 There is a problem when committing the snapshot after the vStorage APIs for Data Protection (VADP) backup of the VM.
 
@@ -29,7 +29,7 @@ By enabling remote Tech Support Mode (TSM)  on the VMware ESXi server I needed 
 find /vmfs/volumes/ -iname "\*delta.vmdk"
 ```
 
-[![2011-05-02 15h16_20](images/2011-05-02-15h16_20_thumb.jpg "2011-05-02 15h16_20")](images/2011-05-02-15h16_20.jpg)
+[![2011-05-02 15h16_20](images/2011-05-02-15h16_20_thumb.jpg)]
 
 The command displays all the “delta.vmdk” snapshot files on all the VMFS volumes.  This command show that the snapshot is still active.
 
@@ -37,7 +37,7 @@ To “temporally” solve this problem:
 
 Create a manual snapshot of the VM. When the snapshot is created the old “Consolidate Helper-0” is added to the snapshot manager.
 
-[![2011-05-02 15h13_39](images/2011-05-02-15h13_39_thumb.jpg "2011-05-02 15h13_39")](images/2011-05-02-15h13_39.jpg)
+[![2011-05-02 15h13_39](images/2011-05-02-15h13_39_thumb.jpg)]
 
 Hit the Delete All Button and the two snapshots are committed. When the remove snapshot task is completed (this can take a while depending on the size of the snapshot). Run the find command again and verify if the snapshot is committed.
 

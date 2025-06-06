@@ -22,7 +22,7 @@ That's why I use Hyper-V on my laptop sometimes. When trying to start VMware Wor
 
 > VMware Workstation and Hyper-V are not compatible. Remove the Hyper-V role from the system before running VMware Workstation.
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+![image](images/image_thumb4.png "image")
 
 This is because the Hyper-V role is installed and this conflicts with VMware Workstation. To disable Hyper-V from starting the following command can be used:
 

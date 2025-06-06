@@ -16,10 +16,10 @@ Today vSphere 5.1 is released. I did an upgrade of my existing vSphere 5 vCenter
 
 Error 29115: Cannot authenticate to DB.
 
-[![image](images/image_thumb6.png "image")](images/image7.png)
+![](images/image_thumb6.png)
 
 After this error the installation stops and the rollback begins. To solve this make sure the **server authentication** checkbox is set to **SQL Server and Windows Authentication mode** on the SQL server.
 
-[![image](images/image_thumb7.png "image")](images/image8.png)
+![](images/image_thumb7.png)
 
 Thanks to [Gabrie van Zanten](http://www.gabesvirtualworld.com/) and [Maish Saidel-Keesing](http://technodrone.blogspot.com/) for helping me out!

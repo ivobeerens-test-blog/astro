@@ -11,14 +11,14 @@ url: /2009/02/03/powershell-windows-eventlog-script/
 
 Here a new PowerShell report-event script.
 
-[![image](images/image-thumb.png "image")](images/image.png)
+[![image](images/image-thumb.png)]
 
 figure 1. Output reports-event script
 
 You can specify multiple servers in a text file, select how many hours from the current time to look in the eventlog and e-mail the HTML file after generation. 
 
 The following syntax can be used:
-```powershell
+```
 get-content c:\\script\\servers.txt | c:\\scripts\\report-event.ps1 – report c:\\script\\eventlog.html –hours 48 –smtp mail.beerenss.nl –sendto [eventlogs@beerens.nl](mailto:ivo@ivobeerens.nl) –from [eventlog@beerens.nl](mailto:eventlog@ivobeerens.nl)
 ```
 

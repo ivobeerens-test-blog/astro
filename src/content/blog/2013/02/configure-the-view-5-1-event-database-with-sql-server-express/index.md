@@ -22,17 +22,17 @@ In Proof of Concept (PoC) environments MS SQL Server Express can be used for the
 - Create a new user using SQL Server authentication, disable enforce password policy and select as default database the event database.
 - In the User Mapping field, map de the database and add the role **db\_owner** to the new user
 
-| [![image](images/image_thumb.png "image")](images/image.png) | [![image](images/image_thumb1.png "image")](images/image1.png) |
+| ![image](images/image_thumb.png "image") | ![image](images/image_thumb1.png "image") |
 |---|---|
 
 - Open the SQL Server Configuration Manager > SQL Server Network Configuration > Protocols for VIM\_SQLEXP,  open the TCP/IP protocol and make sure it is enabled. Scroll down to IPAll and write down the TCP Dynamic Ports number
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+![image](images/image_thumb2.png "image")
 
 - Disable Windows Firewall on the SQL server machine. If you are unable to do this, set a Firewall exception for the dynamic port listed
 - In the View Administrator (https://connectionserver/admin) select View Configuration > Event Configuration. In the Event Database section click Edit and enter the information needed.
 
-| [![image](images/image_thumb3.png "image")](images/image3.png) | [![image](images/image_thumb4.png "image")](images/image4.png) |
+| ![image](images/image_thumb3.png "image") | ![image](images/image_thumb4.png "image") |
 |---|---|
 
 And the Event database is configured with MS SQL Server Express.

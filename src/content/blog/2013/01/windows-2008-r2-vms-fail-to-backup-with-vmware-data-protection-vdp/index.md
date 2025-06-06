@@ -23,12 +23,12 @@ To disable application quiescing use the following steps (This example is based 
 - Shut Down the VM
 - Edit the settings of the VM, go to the **Options** tab – go to **General** and click on **Configuration** **Parameters** box
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+![image](images/image_thumb4.png "image")
 
 - Look if the **disk.EnableUUId** parameter exist. If not Add a new row with this parameter.
 - Change the value of the **disk.EnableUUId** parameter to **false**
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+![image](images/image_thumb5.png "image")
 
 - Click
 - Power On the VM

@@ -48,51 +48,50 @@ version 4.x ESX or ESXi software.
 
 - In vCenter open the VUM plug in and import Host Upgrade Image
 
-[![image](images/image_thumb9.png "image")](images/image9.png)
+[![image](images/image_thumb9.png "image")]
 
 - browse to the VMware vSphere 5i installer ISO
 
-[![image](images/image_thumb10.png "image")](images/image10.png)
+[![image](images/image_thumb10.png "image")]
 
 - The ISO is uploaded to VUM.
 
-[![2011-08-19 10h37_31](images/2011-08-19-10h37_31_thumb.jpg "2011-08-19 10h37_31")](images/2011-08-19-10h37_31.jpg)
-
+[![2011-08-19 10h37_31](images/2011-08-19-10h37_31_thumb.jpg)]
 - Create Host Upgrade Baseline
 
-[![image](images/image_thumb11.png "image")](images/image11.png)
+[![image](images/image_thumb11.png)]
 
 - Attach the baseline
 
-[![2011-08-19 10h40_12](images/2011-08-19-10h40_12_thumb.jpg "2011-08-19 10h40_12")](images/2011-08-19-10h40_12.jpg)
+[![2011-08-19 10h40_12](images/2011-08-19-10h40_12_thumb.jpg)]
 
 - Perform an scan
 
-[![image](images/image_thumb12.png "image")](images/image12.png)
+[![image](images/image_thumb12.png)]
 
 - If there is a warning. Click on the warning to expand
 
-[![image](images/image_thumb13.png "image")](images/image13.png)
+[![image](images/image_thumb13.png)]
 
 - The following warning is displayed that some modules are removed by the upgrade
 
-[![image](images/image_thumb14.png "image")](images/image14.png)
+[![image](images/image_thumb14.png)]
 
 - Click on the Remediate button and follow the steps:
 
-[![image](images/image_thumb15.png "image")](images/image15.png)
+[![image](images/image_thumb15.png)]
 
-[![2011-08-19 11h00_15](images/2011-08-19-11h00_15_thumb.jpg "2011-08-19 11h00_15")](images/2011-08-19-11h00_15.jpg)
+[![2011-08-19 11h00_15](images/2011-08-19-11h00_15_thumb.jpg)]
 
-[![2011-08-19 11h01_40](images/2011-08-19-11h01_40_thumb.jpg "2011-08-19 11h01_40")](images/2011-08-19-11h01_40.jpg)
+[![2011-08-19 11h01_40](images/2011-08-19-11h01_40_thumb.jpg)]
 
-[![image](images/image_thumb16.png "image")](images/image16.png)
+[![image](images/image_thumb16.png)]
 
-[![image](images/image_thumb17.png "image")](images/image17.png)
+[![image](images/image_thumb17.png)]
 
-[![image](images/image_thumb18.png "image")](images/image18.png)
+[![image](images/image_thumb18.png)]
 
-[![image](images/image_thumb19.png "image")](images/image19.png)
+[![image](images/image_thumb19.png)]
 
 - When the Remediate finish the upgrade is complete and VMware ESXi 5 is installed.
 
@@ -100,23 +99,23 @@ version 4.x ESX or ESXi software.
 
 ### Steps of the interactive upgrade using the CD/DVD from ESX4 or ESXi 4 to ESXi 5
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+[![image](images/image_thumb3.png)]
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+[![image](images/image_thumb5.png)]
 
 - A existing VMFS volume is found and the following selections can be made:
 
-[![image](images/image_thumb6.png "image")](images/image6.png)
+[![image](images/image_thumb6.png)]
 
 - In this example we migrate VMware ESX 4 to ESXi 5 and choose Migrate ESX, preserver VMFS datastore.
 
-[![image](images/image_thumb7.png "image")](images/image7.png)
+[![image](images/image_thumb7.png)]
 
-[![image](images/image_thumb8.png "image")](images/image8.png)
+[![image](images/image_thumb8.png)]
 
 ### Scripted upgrade from ESX4 or ESXi 4  to ESXi 5
 

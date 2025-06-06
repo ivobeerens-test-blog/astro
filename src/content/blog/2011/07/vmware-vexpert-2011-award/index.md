@@ -11,4 +11,4 @@ During my vacation i received an e-mail that I was designate as vExpert 2011. I 
 
 Congrats to all the other vExpert 2011. Thanks to John Troyer and the VMware Social Media team for given me the vExpert 2011 award!
 
-[![VMware-expert_250x100](images/VMware-expert_250x100_thumb.gif "VMware-expert_250x100")](images/VMware-expert_250x100.gif)
+[![VMware-expert_250x100](images/VMware-expert_250x100_thumb.gif)

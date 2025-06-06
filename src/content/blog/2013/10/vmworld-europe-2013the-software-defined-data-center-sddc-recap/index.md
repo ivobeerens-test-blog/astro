@@ -40,7 +40,7 @@ The SDDC is about virtualization across the entire Data Center. The Software-Def
 - **Storage**
 - **Management**
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+![image](images/image_thumb3.png "image")
 
 ### Compute
 
@@ -73,7 +73,7 @@ NSX gives you the flexibility do deploy a multi tier network with software. You 
 
 VMware has the following announcements made on Software-Defined Storage:
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+![image](images/image_thumb4.png "image")
 
 **Virtual SAN (VSAN)**
 
@@ -95,7 +95,7 @@ vFRC accelerates read IOs of VMs by using local flash storage. It is available i
 
 Virsto is a software-only solution to deliver predictable performance in existing SAN systems. It delivers high performant VM-centric data services.
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+![image](images/image_thumb5.png "image")
 
 Virsto sits on each host and presents a virtual storage appliance (VSA) to the VMs on the host.  The VMs see Virsto as a new storage mount point, which means Virsto is in the I/O path for the VMs.  Virsto offloads the I/O from the Hypervisor in a more efficient manner.   Virsto will perform a set of actions on the random I/O so it is sequentialized and sent to the block storage layer in orderly, logical blocks. Further it can do high performance snapshots and clones of VMs or VMDKs. Virsto is now available.
 
@@ -107,7 +107,7 @@ VMware vSphere Data Protection 5.5 Advanced (VDPA) is now available. It's a back
 
 On the Cloud Management layer the following products are announced:
 
-[![image](images/image_thumb6.png "image")](images/image6.png)
+![image](images/image_thumb6.png "image")
 
 **vCloud Automation Center (vCAC) 6.0**. 
 
@@ -123,7 +123,7 @@ For more information watch the vCloud Automation Center Overview video, [link](h
 
 The new version of the vCenter Operations Management Suite can monitor heterogeneous environments.
 
-[![image](images/image_thumb9.png "image")](images/image9.png)
+![image](images/image_thumb9.png "image")
 
 Some examples of new capabilities are:
 

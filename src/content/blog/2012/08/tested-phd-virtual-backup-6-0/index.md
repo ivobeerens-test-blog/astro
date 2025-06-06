@@ -49,7 +49,7 @@ This is a small executable that installs the PHD Virtual Backup Console and vSph
 
 Via the vSphere client the Virtual Backup Appliance (VBA) appliance (OVF) can be deployed.  
 
-[![image](images/image_thumb22.png "image")](images/image23.png)
+[![image](images/image_thumb22.png)]
 
 When the Virtual Backup Appliance (VBA) appliance is deployed, it can be powered on.
 
@@ -57,7 +57,7 @@ When the Virtual Backup Appliance (VBA) appliance is deployed, it can be powered
 
 First we need to give the Virtual Backup Appliance (VBA) an IP Address by opening the PHD Virtual Backup Console, select configuration and select the network tab.  
 
-[![image](images/image_thumb23.png "image")](images/image24.png)
+[![image](images/image_thumb23.png)]
 
 After settings the IP configuration we configure the following tabs options in the configuration menu:
 
@@ -67,20 +67,20 @@ _General_
 - NTP servers
 - vCenter credentials
 
-[![image](images/image_thumb24.png "image")](images/image25.png)
+[![image](images/image_thumb24.png)]
 
 _Backup Storage_
 
 - Backup Storage type: None, Attached (Virtual Disk(s), NFS and CIFS. When using Attached (Virtual Disk(s) you can add one or more disks to the VBA and create a backup greater than 2 TB.
 - Backup Storage Thresholds
 
-[![image](images/image_thumb25.png "image")](images/image26.png)
+[![image](images/image_thumb25.png)]
 
 _Email_
 
 - configure email reporting recipient(s)  
 
-[![image](images/image_thumb26.png "image")](images/image27.png)
+[![image](images/image_thumb26.png)]
 
 The initial basic configuration is now done.
 

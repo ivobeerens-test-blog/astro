@@ -32,7 +32,7 @@ VMware Data Recovery (vDR) is an appliance to backup, storage, and recovery of v
 - Connect to the VMDK, NFS or CIFS share used as deduplication store(s)
 - Message appears to import the “old” configuration:
 
-> [![image](images/image_thumb7.png "image")](images/image7.png)
+> [![image](images/image_thumb7.png)]
 
 - Select “yes” to import the “old” configuration
 - Now the configuration is back, you are ready to restore all the VMs
@@ -52,7 +52,7 @@ VMware Data Recovery (vDR) is an appliance to backup, storage, and recovery of v
 - VMware Data Recovery uses Microsoft Windows Volume Shadow Copy Service (VSS) quiescing ( point-in-time copies).
 - Here’s an overview of the Guest Operating Systems and the quiescing method:
 
-[![image](images/image_thumb8.png "image")](images/image9.png)
+[![image](images/image_thumb8.png)]
 
 - Application consistent quiescing of Windows 2008 virtual machines is only available when those virtual machines are created in vSphere 4.1 and later. Virtual machines created in vSphere 4.0 can be updated to enable application consistent quiescing, as described in Enable Windows 2008 Virtual Machine Application Consistent Quiescing.
 - Because Data Recovery uses VSS, Data Recovery can create snapshots while ensuring application consistency. This means that applications write to disk any important data that is currently in memory, making sure that a later restore of that virtual machine can restore the application back into a consistent state.

@@ -32,4 +32,4 @@ VM’s per core, In VMware View 3 the number was 6-9 VM’s per core, now in Vie
 - The Connection server must be installed on Windows 2003, support for Windows 2008 will be around the begin of 2010;
 - Advise for virus scanning software is use VMware aware virus scanners (VMsafe), for example Trend Micro and McAfee have beta’s that use the VMsafe technology.
 
-[![logo](images/logo_thumb.jpg "logo")](images/logo.jpg) | [![PCoIP-150x60](images/PCoIP150x60_thumb.gif "PCoIP-150x60")](images/PCoIP150x60.gif)
+[![logo](images/logo_thumb.jpg)] | [![PCoIP-150x60](images/PCoIP150x60_thumb.gif)]

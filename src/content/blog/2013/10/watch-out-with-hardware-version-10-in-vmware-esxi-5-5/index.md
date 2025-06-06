@@ -21,7 +21,7 @@ VMware ESXi 5.5 and vSphere Hypervisor 5.5 it is possible to upgrade the Virtual
 
 > You cannot use the vSphere Client to edit the settings of virtual machines of version 10 or higher…….
 
-[![image](images/image_thumb.png "image")](images/image.png)
+![image](images/image_thumb.png "image")
 
 To edit settings of a version 10 VM you need the VMware vSphere Web Client! vSphere Hypervisor 5.5 does not come with the VMware vSphere Web Client, so don't use version 10 with the vSphere Hypervisor 5.5 else you are unable to edit the settings of a VM! Hardware Version 10 is only compatible with ESXi 5.5 and later.
 

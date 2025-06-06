@@ -20,7 +20,7 @@ The following procedure can be used to kill a VM (The bold text are the commands
 - Press **shift + V** to display VMs only
 - Press **f** to change the display fields
 
-[![image](images/image_thumb13.png "image")](images/image15.png)
+[![image](images/image_thumb13.png)]
 
 - Press **c** to select the LWID (Leader World Id) and press **enter**
 - Identify the VM by it’s LWID

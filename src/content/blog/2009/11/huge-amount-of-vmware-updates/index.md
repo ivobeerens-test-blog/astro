@@ -41,7 +41,7 @@ Today when i woke up there where a lot of VMware updates available (to much to h
 >   
 > The new VMware ESX 4 update 1 build is 208167
 
- [![image](images/image_thumb2.png "image")](images/image2.png)
+ [![image](images/image_thumb2.png)]
 
 ## VMware vCenter Server 4.0 Update 1 improvements:
 
@@ -62,7 +62,7 @@ Today when i woke up there where a lot of VMware updates available (to much to h
 
 The new vCenter version and build is 4.0.0 build 208111
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
 ### When choosing for Operating System for the vCenter server keep the following in your mind:
 
@@ -86,13 +86,13 @@ The new vCenter version and build is 4.0.0 build 208111
 
 File Level Restore (FLR) is a graphical client that can restore individual files.  Here are some screenshots of FLR:
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+[![image](images/image_thumb5.png)]
 
-[![image](images/image_thumb6.png "image")](images/image6.png)
+[![image](images/image_thumb6.png)]
 
-[![image](images/image_thumb7.png "image")](images/image7.png)
+[![image](images/image_thumb7.png)]
 
-[![image](images/image_thumb8.png "image")](images/image8.png) 
+[![image](images/image_thumb8.png)]
 
 ## vSphere PowerCLI 4.0 Update 1 improvements:
 
@@ -147,7 +147,7 @@ File Level Restore (FLR) is a graphical client that can restore individual files
 > - Working with files and directories in datastores by using the Datastore Provider.
 >     
 
-[![image](images/image_thumb9.png "image")](images/image9.png)
+[![image](images/image_thumb9.png)]
 
 ## VMware vCenter Server Heartbeat 5.5 Update 2 improvements:
 

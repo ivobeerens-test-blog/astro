@@ -22,11 +22,11 @@ When validating VMware View designs it is important to simulate real world usage
 
 Desktop RAWC runs on a Windows XP guest operating system and is executed on each desktop virtual machine (VM) on one or more ESX™ hosts. Each target desktop VM is equipped to run a RAWC workload that simulates typical user behavior, running an application set commonly used across a broad array of desktop environments.
 
-[![image](images/image_thumb.png "image")](images/image.png) 
+[![image](images/image_thumb.png)]
 
 The workload has a set of randomly executed functions that perform operations on a variety of applications. Each test is configured using the Desktop RAWC UI
 
-[![image](images/image_thumb1.png "image")](images/image1.png) 
+[![image](images/image_thumb1.png)]
 
 The UI enables you to save and retrieve test parameters, create log folders, and define unique workloads based on Active Directory groups. You can use the UI to increase the load or adjust the user behavior, such as the number of words per minute that are typed and the delay between applications being launched.
 

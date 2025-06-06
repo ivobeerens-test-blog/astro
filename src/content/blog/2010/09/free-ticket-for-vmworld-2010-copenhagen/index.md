@@ -11,7 +11,7 @@ author: Ivo Beerens
 url: /2010/09/24/free-ticket-for-vmworld-2010-copenhagen/
 ---
 
-The Dutch ICT website [Computable](http://www.computable.nl/)_ recently raffled a VMworld 2010 Copenhagen ticket among his followers on Twitter. Last week i was the lucky winner of the free ticket for VMworld Europe 2010. How cool is that!
+The Dutch ICT website [Computable](http://www.computable.nl/) recently raffled a VMworld 2010 Copenhagen ticket among his followers on Twitter. Last week i was the lucky winner of the free ticket for VMworld Europe 2010. How cool is that!
 
 Yesterday i had a interview about my expectations on VMworld 2010 in Copenhagen. The interview (Dutch) can be found by clicking on this [link](https://www.computable.nl/2010/09/23/ivo-beerens-wint-gratis-toegangskaart-vmworld/).
 

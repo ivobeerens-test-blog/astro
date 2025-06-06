@@ -23,11 +23,11 @@ There are different ways to patch your VMware ESX(i) 4 hosts. The most common ut
 
 - The first thing is to download the patch bundles. A bundle contains a metadata zip which defines the bulletins available for installation. This is a great improvement to earlier versions of VMware ESX. It’s possible to select all patch bundles and download them at once. The patch bundles can be found [here](https://www.VMware.com/mysupport/download/).
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
 - Upload the patch bundles on the VMware ESX VMFS  or NFS partition (other options such as HTTP repository are also possible). This can be done by using the datastore browser in the vCenter client.
 
- [![image](images/image4_thumb.png "image")](images/image4.png)
+ [![image](images/image4_thumb.png)]
 
 - Shutdown all VMs on the VMware ESX host to patch using the .vSphere client or the VMware-cmd command.
 - Put the host in maintenance mode using the vSphere client or the following command:

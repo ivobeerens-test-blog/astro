@@ -34,7 +34,7 @@ VM Name, Name of the snapshot, description, time added and modified time
 
 Here is an example how the output looks like:
 
-[![image](images/image_thumb8.png "image")](images/image8.png)
+![image](images/image_thumb8.png "image")
 
 The only parameter that needs to be changed is the **$File** variable that specify the location were the HTML file is stored.
 

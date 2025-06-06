@@ -90,7 +90,7 @@ vim-cmd hostsvc/datastore/rename datastore1 "$(hostname -s)-local-storage-1"
 
 The bootable VMware ESXi 4.1 stick is ready for use. When booting  the USB stick the following message is displayed “**Total number of sectors not a multiple of sectors per track! Add mtools\_skip\_check=1 to your .mtoolsrc file to skip this test**”.
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 **UppubDate: When using VMware ESXi 4.1 Update 1 this bug is fixed. You’re ready to use the USB stick!**
 

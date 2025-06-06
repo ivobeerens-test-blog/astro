@@ -35,11 +35,11 @@ In VMware Workstation Technology Preview 2012 create a new VM with the following
 - Finish
 - After the VM is created, edit virtual Machine settings and browse for  the Windows Server 2012 ISO in the the CD/DVD option
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]
 
 - Remove the VM from VMware Workstation by clicking on the X icon
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
 - Edit the VMX file (i use Notepad++)  and add the following line  to the end to of the VMX file:
 ```
@@ -49,10 +49,10 @@ vmGenCounter.enable = FALSE
 
 - During the installation choose the Windows Server 2012 Release Candidate (Server wit GUI)
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
 - When the installation is ready you have a working Windows Server 2012 server
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+[![image](images/image_thumb3.png)]
 
 - Install VMware tools

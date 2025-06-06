@@ -26,14 +26,14 @@ Here are the steps:
 6. Select “Hardware information” (**2**)
 7. Select “Click to refresh” (**3**)
 
-[](images/image.png)[![image](images/image_thumb3.png "image")](images/image3.png)
+[](images/image.png)[![image](images/image_thumb3.png)]
 
 8. The Storage System Software displays the SAN/iQ version and Software Patches installed:
 
-[](images/image1.png)[![image](images/image6_thumb.png "image")](images/image6.png)
+[](images/image1.png)[![image](images/image6_thumb.png)]
 
 9. Scroll down to the Stat section and look at the Machine Uptime. The up-time is in hours, 2138/24= 89 days up-time for one node.
 
-[](images/image2.png)[![image](images/image10_thumb.png "image")](images/image10.png)
+[](images/image2.png)[![image](images/image10_thumb.png)]
 
 10. Repeat step 5 till 9 for all storage nodes

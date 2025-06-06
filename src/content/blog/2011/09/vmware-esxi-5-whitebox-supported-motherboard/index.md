@@ -35,31 +35,31 @@ Here are some screenshots from the vSphere Client:
 
 **VMware ESXi 5.0.0 DCUI**
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 **Summary page**
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
 **Example of the processor load with 2 x MS Windows 2008 R2 VMs**
 
-[![image](images/image_thumb9.png "image")](images/image10.png)
+[![image](images/image_thumb9.png)]
 
 **Onboard processor**
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+[![image](images/image_thumb3.png)]
 
 **Memory**
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
 **Onboard disk controllers**
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+[![image](images/image_thumb5.png)]
 
 **The Realtek onboard LAN adapter.**
 
-[![image](images/image_thumb6.png "image")](images/image6.png)
+[![image](images/image_thumb6.png)]
 
 In VMware ESX|(i) 4.x the Realtek LAN adapter is not supported.
 

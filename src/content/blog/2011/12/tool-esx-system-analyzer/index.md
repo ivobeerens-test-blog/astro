@@ -39,7 +39,7 @@ Screenshots of the Output in XLS (Excel):
 
 **Overview output:**
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 **ESX server output:**
 

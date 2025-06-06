@@ -39,7 +39,7 @@ During the web based configuration the following  database options can be selec
 
 The installation and configuration is very easily. Within a couple minutes the VCSA is up and running.
 
-[![image](images/image_thumb.png "image")](images/image.png)
+![](images/image_thumb.png)
 
 **Pros:**
 

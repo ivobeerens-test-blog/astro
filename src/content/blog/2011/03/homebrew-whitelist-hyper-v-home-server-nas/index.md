@@ -36,7 +36,7 @@ I selected the following components:
 
 Asus E35M1-M Pro. This motherboard contains  AMD Zacate E-350 1.60 GHz Dual-Core Processor.  It has TDP (Thermal Design Power) of **18W**!
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]
 
 **Specifications:**
 
@@ -56,7 +56,7 @@ This Motherboard has room to expand, it is possible to add extra extra hard driv
 
 The motherboard supports two single channel DDR3 1066MHz DIMMS . The maximum memory is 8GB.
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 I picked 2 x 4 GB G.Skill Ripjaws (F3-10666CL9D-8GBRL ). More supported memory for this motherboard can be found in the Asus [download](http://www.asus.com/product.aspx?P_ID=qSoDxhM5mAk1F607) section
 
@@ -64,7 +64,7 @@ I picked 2 x 4 GB G.Skill Ripjaws (F3-10666CL9D-8GBRL ). More supported memory f
 
 In this set-up I used three hard-drives. As boot drive an old Samsung SP0411C 40GB SATA 150 is used.  For the data and backup storage I picked 2 Samsung EcoGreen F4EG 2TB  hard drives.
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
 Some specifications:
 
@@ -81,7 +81,7 @@ Great price, large space and low power consumption.
 
 As Power Supply I choose the Seasonic S12II-330W ATX power supply.
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+[![image](images/image_thumb3.png)]
 
 Some specifications:
 
@@ -96,7 +96,7 @@ Good quality, high efficiency (85%) and quiet power supply.
 
 Cooler Master CM 690 II Advanced
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
 Some specifications:
 
@@ -137,7 +137,7 @@ Don’t except that this configuration is a performance monster. The performance
 
 Screenshot Hyper-V manager with Microsoft Windows Home Server 2011 running.
 
-[![image](images/image_thumb5.png "image")](images/image5.png) 
+[![image](images/image_thumb5.png)]
 
 #### **Considerations**
 

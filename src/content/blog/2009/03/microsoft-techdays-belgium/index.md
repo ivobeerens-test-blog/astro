@@ -23,7 +23,7 @@ The last three days i attended Microsoft TechDays in Antwerpen (Belgium). The fi
 
 -  **Cluster Shared Volumes (CSV),**   this is a feature for Failover clustering. It allows multiple VMs to be running on a single LUN (volume). CSV uses the NTFS file system. With CSV it is possible to do Live Migration (Hyper-V) of VMs without downtime. Live Migration is the VMotion feature from Microsoft.
 
-[![csv](images/csv-thumb.jpg "csv")](images/csv.jpg) 
+[![csv](images/csv-thumb.jpg)]
 
 - **BranchCache,** caches WAN bandwidth for HTTP and SMB traffic at the branche office network. This improves the response times and reduces WAN  traffic.
 
@@ -57,7 +57,7 @@ More information can be found here.
 
 - There is a now a slider for User Account Control (UAC), with the slider you can set the level from Never notify to Always notifty . This is also possible with Windows 2008 R2.  
 
-[![image](images/image-thumb.png "image")](images/image.png)
+[![image](images/image-thumb.png)]
 
 - Bitlocker-to-go, encrypt data on USB thumb drives. With Bitlocker it is possible to encrypt your root system drive, first available in Vista. From Vista Sp1 is was also possible to encrypt other drives than the root drive. This is also possible with Windows 2008 R2.
 
@@ -65,13 +65,13 @@ More information can be found here.
 
 - AppLocker, prevent unauthorized software from running.
 
-[![image](images/image-thumb1.png "image")](images/image1.png)
+[![image](images/image-thumb1.png)]
 
 This is also possible with Windows 2008 R2.
 
 - Problem Step Recorder, tool to troubleshoot a problem, it records the steps and exports this to a MHT file. The MHT file contains screenshots off every step.
 
-[![image](images/image-thumb2.png "image")](images/image2.png)
+[![image](images/image-thumb2.png)]
 
 This is also possible with Windows 2008 R2.
 

@@ -79,7 +79,7 @@ for i in \`ls /vmfs/devices/disks/ | grep naa.600\` ;
 do esxcli nmp roundrobin getconfig --device $i ;done
 ```
 
-[![image](images/image4_thumb.png "image")](images/image4.png)
+[![image](images/image4_thumb.png)]
 
 To solve this IOPS bug, edit the /etc/rc.local file on every VMware ESX host and and add the  IOPS=1 command. The rc.local file execute after all init scripts are executed.
 
@@ -87,6 +87,6 @@ To solve this IOPS bug, edit the /etc/rc.local file on every VMware ESX host and
 
 After adding the IOPS=1 command restart the VMware ESX host and check the IOPS values when its back online.
 
-[![clip_image002[7]](images/clip_image0027_thumb.jpg "clip_image002[7]")](images/clip_image0027.jpg)
+[![clip_image002[7]](images/clip_image0027_thumb.jpg)]
 
 Now you can check if the the Round Robin policy is active and the LUNs are spread over the two controllers.

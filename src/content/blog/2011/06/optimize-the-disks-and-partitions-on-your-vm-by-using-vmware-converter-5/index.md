@@ -15,12 +15,12 @@ By using VMware Converter 5 the following disk optimizations can be easily done 
 
 - Convert one or more partition(s) on single disk to partitions on a separate disks. When you want to increase disk space on the C: partition this is a problem because of the D partition is on the same disk.
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 - Resize one or more partition(s)
 - Align on or more disks. (not needed anymore for Microsoft Windows 2008, Windows Vista  or greater). This example shows a partition that is not aligned
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
 - Adjust the cluster size
 
@@ -31,13 +31,13 @@ By using VMware Converter 5 the following disk optimizations can be easily done 
 - Follow the instructions on the screen till you got the options screen
 - Edit the “**Data to copy**”
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+[![image](images/image_thumb3.png)]
 
 - Change the “Data copy type” from “**Copy all disks and maintain layout**” in
 
 “**Select volumes to copy**”.
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
 - Select “Advanced” and choose the “Destination” layout
 - Change the disk size (in the example we change the C-partition to 30GB)
@@ -46,11 +46,11 @@ By using VMware Converter 5 the following disk optimizations can be easily done 
 - Be sure that the “Create optimized partition layout” option is selected for all the disks.  VMware Converter optimize the disk partitions alignment”
 - The cluster size in this example at the default value
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+[![image](images/image_thumb5.png)]
 
 - After the V2V the VM has 2 disks, the partition size is increased and both disk are aligned.
 
-[![image](images/image_thumb6.png "image")](images/image6.png)
+[![image](images/image_thumb6.png)]
 
 Check the disk alignment by using msinfo32.exe
 

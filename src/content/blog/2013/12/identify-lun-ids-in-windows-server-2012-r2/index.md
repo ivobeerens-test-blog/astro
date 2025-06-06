@@ -22,12 +22,12 @@ During a Windows Server 2012 R2 Hyper-V implementation I needed to identify all 
 
 `select disk <number>`
 
-[![image](images/image_thumb6.png "image")](images/image6.png)
+![image](images/image_thumb6.png "image")
 
 - **View the LUN ID of the disk**
 
 `detail disk`
 
-[![image](images/image_thumb7.png "image")](images/image7.png)
+![image](images/image_thumb7.png "image")
 
 I didn't find a PowerShell command to view the LUN IDs. You can create a PowerShell script that uses Diskpart to view all the disks and the corresponding LUN IDs.

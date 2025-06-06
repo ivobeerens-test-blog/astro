@@ -39,21 +39,21 @@ bcdedit -set TESTSIGNING ON
 
 - Paste the 5 lines in the **\[Intel.NTamd64.6.2\]** section below the %1502NC lines
 
-[![image](images/image_thumb15.png "image")](images/image16.png)
+[![image](images/image_thumb15.png)]
 
 - After the modifications the **e1c63x64.inf** file must look like this:
 
-[![image](images/image_thumb16.png "image")](images/image17.png)
+[![image](images/image_thumb16.png)]
 
 - Save the file
 
 - Install the Intel drivers
 
-[![image](images/image_thumb17.png "image")](images/image18.png)
+[![image](images/image_thumb17.png)]
 
 - After the installation the Intel 82579V Gigabit NIC is recognized and enabled
 
-[![image](images/image_thumb18.png "image")](images/image19.png)
+[![image](images/image_thumb18.png)]
 
 - Enable the driver integrity checks and disable test signing again by using the following commands:
 

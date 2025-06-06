@@ -21,7 +21,7 @@ Steps:
 
 **2.** Edit VM properties of all VMs. Set the Automatic stop action “Shut down the guest operating system”
 
-[![image](images/image_thumb6.png "image")](images/image6.png)
+[![image](images/image_thumb6.png)]
 
 **3.** Edit the registy to disable auto start the **hvboot** service. When installing the hyper-v role the hibernate and sleep functionality is disabled.  There is no way to use the hiberate or sleep functionality while the Hyper-v service is running.  The Start property of a service can have the following values:
 ```
@@ -33,7 +33,7 @@ Steps:
 ```
 Set the value to 3, so that you can start the service when you want. 0 is not supported for hvboot. Information found [here](http://blogs.msdn.com/b/tejas/archive/2009/03/10/hibernate-and-sleep-with-hyper-v-role-enabled.aspx).
 
-[![2011-03-19 10h48_49](images/2011-03-19-10h48_49_thumb.jpg "2011-03-19 10h48_49")](images/2011-03-19-10h48_49.jpg)
+[![2011-03-19 10h48_49](images/2011-03-19-10h48_49_thumb.jpg)]
 
 Reboot the server so that the hvboot service is not started.
 
@@ -50,9 +50,10 @@ Reboot the server so that the hvboot service is not started.
 
 The **startvm.ps1** script contains the following PowerShell syntax:
 
-```powershell
+```
 import-module hyperv
 start-service hvboot
 start-vm -vm "Windows Home Server 2011"
 ```
+
 Test if the schedule tasks are running fine by manually execute them and you’re ready to hibernate.

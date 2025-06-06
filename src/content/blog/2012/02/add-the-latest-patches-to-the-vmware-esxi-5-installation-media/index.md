@@ -18,7 +18,7 @@ When you want to customize the VMware ESXi 5 installation media you need to use 
 
 In this blog post are the steps outlined on how-to create a customized VMware ESXi5 ISO with the latest patches. Adding the latest patches can be useful because it contains for example the updated HP Emulex net-be2net driver needed for HP Flex-10 ESXi5 installations.
 
-[![image](images/image_thumb11.png "image")](images/image13.png)
+[![image](images/image_thumb11.png)]
 
 #### Prerequirements
 
@@ -34,7 +34,7 @@ Set-ExecutionPolicy RemoteSigned
 
 3. Download the VMware ESXi Offline bundle from the VMware download website and save the file in ```<driveletter>:\ImageBuil\ESXi```
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
 The ESXi offline bundle we use is named ```ESXi500-201111001.zip```
 
@@ -66,13 +66,13 @@ Run the Get-EsxImageProfile cmdlet to find the name of the profile that you want
 
 ```Get-EsxImageProfile | Select Name,CreationTime,AcceptanceLevel | Sort CreationTime | FT -AutoSize```
 
-[![image](images/image_thumb7.png "image")](images/image8.png)
+[![image](images/image_thumb7.png)]
 
 Clone the latest image profile using this command:
 
 ```New-EsxImageProfile -CloneProfile "ESXi-5.0.0-20111204001-standard" -name "VMware ESXi5 custom" -Vendor "Beerens"```
 
-[![image](images/image_thumb8.png "image")](images/image9.png)
+[![image](images/image_thumb8.png)]
 
 **3\. Export the image profile to ISO**
 
@@ -85,6 +85,6 @@ And you are ready to boot from the new installation media named **esxi5custom.is
 - VMware ESXi build
 - Image Profile name
 
-[![image](images/image_thumb9.png "image")](images/image11.png)
+[![image](images/image_thumb9.png)]
 
-[![image](images/image_thumb10.png "image")](images/image12.png)
+[![image](images/image_thumb10.png)]

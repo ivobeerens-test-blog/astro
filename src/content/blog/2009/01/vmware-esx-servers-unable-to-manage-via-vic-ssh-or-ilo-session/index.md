@@ -24,11 +24,10 @@ It looks like we have the same symptoms:
 - Unable to login through SSH to VMware ESX host
 - Unable to login on local Service console
 - HA errors.
-    
 
-I did “ps-ef” on the console of other VMware ESX servers that were still working and returned a couple of thousands cimservera defunct processes. Holy shit.
+I perform the command `ps-ef` on the console of other VMware ESX servers that were still working and returned a couple of thousands cimservera defunct processes. Holy shit.
 
-[![clip_image002[5]](images/clip-image0025-thumb.jpg "clip_image002[5]")](images/clip-image0025.jpg)
+[![clip_image002[5]](images/clip-image0025-thumb.jpg)]
 
 After restarting the pegasus service on the host the cimservera defunct processes are away. Now there are 134 processes active.
 

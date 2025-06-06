@@ -16,7 +16,7 @@ url: /2012/11/22/manage-hyper-v-from-vsphere-with-vmware-vcenter-multi-hyperviso
 
 VMware released the first version (1.0) of the vCenter Multi-Hypervisor Manager (MHM). MHM makes it possible to manage multiple heterogeneous hypervisors in VMware vCenter server.
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+![image](images/image_thumb1.png "image")
 
 MHM supports only Microsoft Hyper-V Server 2008  and Microsoft Hyper-V Server 2008 R2  as hypervisor! MHM requires vCenter Server 5.1 and can manage 20 Hyper-V hosts with up to 500 VMs running.
 
@@ -29,7 +29,7 @@ The installation of MHM consist of two components:
 
 After the installation of the plug-In it appears in the inventory tab of the vSphere Client. The MHM Plug-in s not compatible with the vSphere Web Client.
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+![image](images/image_thumb2.png "image")
 
 The following tasks can be performed by MHM:
 
@@ -41,9 +41,9 @@ The following tasks can be performed by MHM:
 - Ability to perform power operations with hosts and virtual machines.
 - Ability to connect and disconnect DVD, CD-ROM, and floppy drives and images to install operating systems.
 
-| [![image](images/image_thumb3.png "image")](images/image3.png) | [![image](images/image_thumb4.png "image")](images/image4.png) |
+| ![image](images/image_thumb3.png "image") | ![image](images/image_thumb4.png "image") |
 |---|---|
-| [![image](images/image_thumb5.png "image")](images/image5.png) | [![image](images/image_thumb6.png "image")](images/image6.png) |
+| ![image](images/image_thumb5.png "image") | ![image](images/image_thumb6.png "image") |
 
 ### Conclusion
 

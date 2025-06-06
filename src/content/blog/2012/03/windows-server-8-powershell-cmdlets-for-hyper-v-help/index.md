@@ -27,18 +27,18 @@ To search for Cmdlets, for example with the name “host” in it:
 Get-Command -Module Hyper-V -Noun \*host\*
 ```
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]
 
 To get the Cmdlet syntax:
 ```
 Get-VMHost -?
 ```
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 Get the Cmdlet syntax and available parameters, details and examples:
 ```
 get-Help Get-VMHost -Full
 ```
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
 More information over the Hyper-V Cmdlets can be found [here](https://technet.microsoft.com/en-us/library/hh848559.aspx). PowerShell 3.0 is available as Community Technology Preview (CTP) found here.

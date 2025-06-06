@@ -45,7 +45,7 @@ With the HP VIB depot integration for example in VUM there is no need to downloa
 - Press OK
 - Select – Download Now to update the baseline
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 #### Create a new Baseline
 
@@ -71,17 +71,17 @@ With the HP VIB depot integration for example in VUM there is no need to downloa
 
 - Attach the baseline to the cluster
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+[![image](images/image_thumb3.png)]
 
 - Select the baseline and scan for patches and extensions
 - The HP bundles that are missing are listed
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
 - Use Remediate to install the HP bundles
 
 When the hosts are rebooted and the remediation is finished, the Host Compliance overview is 100%.
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+[![image](images/image_thumb5.png)]
 
 Using the  HP VIB depot is great way of keep your HP server up-to-date with the latest HP bundles.

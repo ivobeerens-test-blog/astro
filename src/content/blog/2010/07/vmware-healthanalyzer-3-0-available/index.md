@@ -28,4 +28,4 @@ VMware HealthAnalyzer automates the collection of VMware Infrastructure or VMwar
 
 VMware HealthAnalyzer 3.0 is available at the VMware partner central.
 
-[](images/image2.png)[![image](images/image_thumb1.png "image")](images/image3.png)
+[![image](images/image_thumb1.png)]

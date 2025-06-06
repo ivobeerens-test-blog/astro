@@ -28,7 +28,7 @@ It is possible to schedule this script and output the content to HTML and e-mail
 
 If you have suggestions , let me know!
 
-[![image](images/image-thumb.png "image")](images/image.png)
+[![image](images/image-thumb.png)]
 
 
 

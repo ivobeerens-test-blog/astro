@@ -14,7 +14,7 @@ url: /2012/02/29/install-windows-8-consumer-preview-as-vm-in-vmware-vsphere-5/
 Today the Windows 8 Consumer Preview is launched. To install the Windows 8 Consumer Preview as VM in VMware vSphere 5, use the following steps:
 1. Install VMware ESXi 5.0 patch release [ESXi500-201112001](http://kb.VMware.com/selfservice/microsites/search.do?cmd=displayKC&docType=kc&docTypeID=DT_KB_1_1&externalId=2007680). If you didn’t install the patch the following screen appears when booting the Windows 8 ISO:
 
-[![image](images/image_thumb14.png "image")](images/image16.png)
+[![image](images/image_thumb14.png)]
 
 > Your computer ran into a problem and needs to restart
 
@@ -30,4 +30,4 @@ Today the Windows 8 Consumer Preview is launched. To install the Windows 8 Consu
 
 Now you’re able to install Windows 8 as VM in VMware vSphere 5.
 
-[![image](images/image_thumb31.png "image")](images/image33.png)
+[![image](images/image_thumb31.png)]

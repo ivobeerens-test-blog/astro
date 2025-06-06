@@ -28,16 +28,16 @@ if the SQL Server is not listening on port 1433, use the following steps:
 4. Select TCP/IP – Properties – IP Addresses tab an scroll down to **IPALL,** enter value **1433** in the TCP Port field
 5. Restart the SQL Server service
 
-[![image](images/image_thumb8.png "image")](images/image9.png)
+![](images/image_thumb8.png)
 
 - Open the sql script called “rsaIMSLiteMSSQLSetupTablespaces.sql”  (found in the vCenter ISO in `…..\Single Sign On\DBScripts\SSOServer\schema\mssql\`) and customize the location of the \*.mdf, \*.ndf and \*.lfd file to your needs. After customizing the SQL file execute it and make sure the RSA database is created.
 
-[![image](images/image_thumb9.png "image")](images/image10.png)
+![](images/image_thumb9.png)
 
 - If installing Single Sign On in a IPv6 environment check [this](http://kb.VMware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2035454) KB article
 - If after upgrading the vCenter services hangs on startup check [this](http://kb.VMware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2035623) KB article
 - The warning “**The Fully Qualified Domain Name cannot be resolved. If you continue the installation, some features might not work correctly**” appear during the installation. Make sure the reverse DNS record exist in the Reverse lookup Zones.  Test this with the nslookup command
 
-[![image](images/image_thumb14.png "image")](images/image15.png)
+![](images/image_thumb14.png)
 
 - The vCenter Server services hang on starup after upgrading to vCenter Server 5.1. More info can be found [here](http://kb.VMware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2035623).

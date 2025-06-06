@@ -16,7 +16,7 @@ When deploying the VMware vCenter Server Appliance (VCSA) it will default look f
 
 > O NETWORKING DETECTED.
 
-[![image](images/image_thumb.png "image")](images/image.png)
+![image](images/image_thumb.png "image")
 
 it is possible to manually configure a static IP address by using the command line. Here are the steps:
 
@@ -29,7 +29,7 @@ it is possible to manually configure a static IP address by using the command li
 
 - After executing the command, a menu is displayed. Within the menu It is possible to change the IP address, hostname, DNS, Default gateway and proxy server.
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+![image](images/image_thumb1.png "image")
 
 - After allocate a static IP Address to the VCSA the post configuration can be done by using the following URL: 
 

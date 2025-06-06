@@ -30,11 +30,11 @@ Setting up a VMware Horizon View Security server can be a challenging task becau
 - Back-end firewalls must be set up to support IPsec. If you have a back-end firewall between security servers and View Connection Server instances, you must configure firewall rules to allow the connections to work. More information: See "Configuring a Back-End Firewall to Support IPsec " in the View Installation guide.
 - Windows Firewall with Advanced Security must be enabled on Security Server and View Connection Server hosts.  By default, IPsec rules govern connections between the View security server and View Connection Server and require Windows Firewall with Advanced Security to be enabled.  Best choice: Set Windows Firewall with Advanced Security to on before you install the View servers. Make sure it's on for any active profiles; better still, set it to on for all profiles.  Alternative: Before you install security servers, open View Administrator and disable the Global Setting, Use IPsec for Security Server Connections, by setting it to no. (This is not recommended.)
 
-[![image](images/image_thumb.png "image")](images/image.png)
+![image](images/image_thumb.png "image")
 
 - The firewall rules that needs  to  be used can be found [here](http://pubs.VMware.com/view-52/index.jsp?topic=%2Fcom.VMware.view.planning.doc%2FGUID-5CC0B95F-7B92-4C60-A2F2-B932FB425F0C.html). I made a drawing (based on VMware Horizon View Security server version 5.2) of a single View Security server that list the ports and rules that needs to be opened between the servers:
 
-[![VMware View firewall poorten](images/VMware-View-firewall-poorten_thumb2.jpg "VMware View firewall poorten")](images/VMware-View-firewall-poorten2.jpg)
+![VMware View firewall poorten](images/VMware-View-firewall-poorten_thumb2.jpg "VMware View firewall poorten")
 
 **(\*1)** HTML Access uses TCP port 8443 for client connections to the Blast Secure Gateway
 

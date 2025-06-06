@@ -19,13 +19,13 @@ In my LAB environment I tested Altaro Hyper-V Backup version 3. Altaro Hyper-V B
 
 There are three editions available: The free edition, the standard edition and the unlimited edition. For this test I used the unlimited edition because it supports "Cluster Shared Volumes (CSVs)". More info can be found here.
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]
 
 ### Installation
 
 Altaro Hyper-V Backup needs to be installed on the Hyper-V host. In a Hyper-V Cluster environment, the cluster node were Altaro Hyper-V Backup is installed, is called the Master Controller. On all the other nodes agents are installed. The Master Controller node configures and controls all the Altaro Background Agents on the cluster.
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 On the node you that will become the Master Controller launch the downloaded 14 MB installation file. Within a minute the installation is competed.
 
@@ -35,11 +35,11 @@ The configuration is a couple of steps:
 
 1\. Select the Master Controller Node and install the "background backup agents" to the other cluster node(s).
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
 2\. Select the Hyper-V VMs to backup
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+[![image](images/image_thumb3.png)]
 
 3\. Select a Backup Drive. The following backup drives are supported:
 
@@ -53,17 +53,17 @@ The configuration is a couple of steps:
 
 It supports multiple backup drive swapping and It is possible to mirror the backup data to another location by creating a mirror schedule..
 
-[![image](images/image_thumb4.png "image")](images/image4.png)
+[![image](images/image_thumb4.png)]
 
 4\. Setup the notifications.
 
 Notifications can be set by Event Log and/or Email. 
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+[![image](images/image_thumb5.png)]
 
 5\. Create a backup schedule and place the VMs in the schedule group.
 
-[![image](images/image_thumb6.png "image")](images/image6.png)
+[![image](images/image_thumb6.png)]
 
 After these 5 steps the backup schedule is ready.
 
@@ -71,17 +71,17 @@ After these 5 steps the backup schedule is ready.
 
 Altaro used the ReverseDelta technology. ReverseDelta only save the changes between each version of a changed file, rather than backing up the whole file every time it changes. The latest version of a file is always made available in its entirety and not as a delta file. More information about the ReverseDelta can be found [here](http://www.altaro.com/files/AltaroBackupReverseDelta.pdf).
 
-[![image](images/image_thumb7.png "image")](images/image7.png)
+[![image](images/image_thumb7.png)]
 
 When Altaro initiates a backup from the Hyper-V Host it invokes a VSS on the Hyper-V server (software VSS) and then it invokes a VSS within the Virtual Machines - this last step is done automatically by the MS Hyper-V VSS Writer. This means that as long as the VSS within the VM succeeds then any VSS applications (for example Microsoft SQL or Exchange) within the VM will commit their data to disk resulting in a proper application-consistent backup. When Altaro makes a backup from a VM on a Cluster Shared Volume (CSV) the the volume is in redirected mode during the whole backup! This is common CSV behavior when using software VSS.
 
-[![image](images/image_thumb8.png "image")](images/image8.png)
+[![image](images/image_thumb8.png)]
 
 To shorten the time the volume is in redirected mode it is possible to use a hardware VSS provider (SAN must support a hardware VSS provider). To enable hardware VSS you must contact Altaro support. There is no option in the GUI interface available to enable hardware VSS.
 
 When the backup is finished and Email notification is enable, you get an backup report in your inbox. The report is very limited.
 
-[![image](images/image13_thumb.png "image")](images/image13.png)
+[![image](images/image13_thumb.png)]
 
 ### Restore
 
@@ -90,7 +90,7 @@ In Altaro you can choose the following restore options:
 - Restore a VM to its original location. This will overwrite the current guest VM
 - Restore a VM as clone to a different location. The VM will restored given a new name and to a new location
 
-[![image](images/image_thumb9.png "image")](images/image9.png)
+[![image](images/image_thumb9.png)]
 
 - Individual File level restore. Restores individual files from a VHD or AVHD file
 - Fire Drill. The Fire Drill feature allows you to plan and execute test restores at a scheduled time. That way you can easily verify that your VMs are being backed up correctly
@@ -106,7 +106,7 @@ The dashboard gives an overview on the following items:
 - Graph statistics display with drop down list for Total Backup Size /day, backup duration / day, total data transferred / day and total number of backups / day 
 - Cluster status, Latest Backups, Mirror Backup Drive History, Restore History and Errors Since Last Backup
 
-[![image](images/image_thumb10.png "image")](images/image10.png)
+[![image](images/image_thumb10.png)]
 
 ### Conclusion
 

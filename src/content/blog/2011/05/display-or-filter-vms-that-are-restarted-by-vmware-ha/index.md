@@ -39,4 +39,4 @@ Get-VIEvent -MaxSamples 500 | select FullFormattedMessage,CreatedTime | Out-Grid
 
 This one-liner displays the last 500 events in a gridview. Filter on the keyword “**restarted**” and all the VMs that are restarted are filtered in the gridview.
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]

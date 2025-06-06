@@ -40,7 +40,7 @@ Download the Windows LinuxLive USB creator utility [here](http://www.linuxliveus
 
 Start the Lili USB creator utility.
 
- [![image](images/image_thumb10.png "image")](images/image11.png)
+ [![image](images/image_thumb10.png)]
 
 Follow the steps 1,2,4 and click 5 to create the USB stick. Wait till the USB creation process is finished. So now you have a bootable ESXi stick. You can stop here if you you want to install ESXi with manual installation steps. 
 

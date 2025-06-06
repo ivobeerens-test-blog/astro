@@ -29,18 +29,18 @@ When upgrading from a early version of vSphere such as 4.x and 5 the VMware tool
 
 In this example I upgraded first the vCenter server 5.1 to 5.1.0B and installed the latest patches on all the ESXi 5.1 hosts (build 914609) in the cluster. After the upgrade of all VMware ESXi  5.1 hosts, the VMware tools versions of all the VMs reports that the are **Out-of-date**. This is tested with versions 9.0 Build 782409 of the VMware tools.
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+![image](images/image_thumb2.png "image")
 
-[![image](images/image_thumb11.png "image")](images/image11.png)
+![image](images/image_thumb11.png "image")
 
 In the vSphere client, click VM in the virtual machine menu, then click Guest > Install/Upgrade VMware Tools and click OK.
 
-[![image](images/image_thumb12.png "image")](images/image13.png)
+![image](images/image_thumb12.png "image")
 
 Choose Automatic Tools Upgrade for an unattended upgrade.
 
-[![image](images/image_thumb13.png "image")](images/image14.png)
+![image](images/image_thumb13.png "image")
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+![image](images/image_thumb3.png "image")
 
 After some time the VMware tools are updated the latest version **without a reboot!** This example can be a good business case for upgrading  to vSphere 5.1!

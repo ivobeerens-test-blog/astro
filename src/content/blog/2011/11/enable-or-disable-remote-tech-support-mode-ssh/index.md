@@ -15,7 +15,7 @@ When you start the Remote Tech Support (TSM) service on a VMware ESXi host a war
 
 > Remote Tech Support Mode (SSH) for the host … has been enabled
 
-[![image](images/image_thumb1.png "image")](images/image20.png)
+[![image](images/image_thumb1.png)]
 
 When the warning appears some Admins get a little nervous. Since VMware ESXi 4.1 Update 2 and VMware ESXi 5 the warning can be suppressed.
 

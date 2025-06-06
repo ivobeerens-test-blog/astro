@@ -67,7 +67,7 @@ The future releases of VMware will only contains ESXi and not ESX anymore. VMwar
 
 Pool virtual infrastructure resources in your existing datacenter and deliver them to users as a catalogue-based service with VMware vCloud Director. Coupled with VMware vSphere™, the best platform for cloud infrastructures, VMware vCloud Director enables customers to build secure private clouds, transforming the way IT delivers and manages infrastructure services and the way users access and consume these services  
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]
 
 ### VMware vShield
 
@@ -76,7 +76,7 @@ VMware announced the three new security products:
 - VMware vShield App – Application protection from Network–Based Threats
 - VMware vShield Edge – Security for Edge of the Virtual Datacenter
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 VMware vShield Endpoint is very interesting for VMware View environments. This solution can reduce the IOPS needed for every View desktop.
 

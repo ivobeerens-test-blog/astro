@@ -17,11 +17,11 @@ On my home lab I tried to create a new VMFS volume on a RAID-0 disk set that was
 
 > Call “HostDatastoreSystem.QueryVmfsDatastoreCreateOptions” for object “datastoresystem-9” on vCenter Server “VC01″ failed.
 
-[![image](images/image_thumb2.png "image")](images/image2.png)
+[![image](images/image_thumb2.png)]
 
 On the VMware ESXi 5 server I enabled “Local Tech Support Mode”, so I was able to logging in directly on the console and used the **fdisk-l** command to see the partition information on the disk. I notice that the disk contains four old partitions from another system.
 
-[![2011-12-16 18h37_25](images/2011-12-16-18h37_25_thumb.jpg "2011-12-16 18h37_25")](images/2011-12-16-18h37_25.jpg)
+[![2011-12-16 18h37_25](images/2011-12-16-18h37_25_thumb.jpg)]
 
 I deleted the four partitions by using the following commands (**displayed in bold**):
 
@@ -33,4 +33,4 @@ I deleted the four partitions by using the following commands (**displayed in bo
 
 After the deletion of the old partitions I was able to create the VMFS volume on the RAID-0 disk set.
 
-[![image](images/image_thumb3.png "image")](images/image3.png)
+[![image](images/image_thumb3.png)]

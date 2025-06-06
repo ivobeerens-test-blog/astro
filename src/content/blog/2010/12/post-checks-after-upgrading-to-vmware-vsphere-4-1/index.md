@@ -15,7 +15,7 @@ url: /2010/12/17/post-checks-after-upgrading-to-vmware-vsphere-4-1/
 
 When adding existing VMware ESX servers (for example 3.5) to the VMware vCenter 4.1 server, all the VMs got a memory limit.
 
-[![2010-12-10 12h39_01](images/2010-12-10-12h39_01_thumb.jpg "2010-12-10 12h39_01")](images/2010-12-10-12h39_01.jpg)
+[![2010-12-10 12h39_01](images/2010-12-10-12h39_01_thumb.jpg)]
 
 To reset the memory limits to unlimited for all VMs, use the following PowerCLI script:
 

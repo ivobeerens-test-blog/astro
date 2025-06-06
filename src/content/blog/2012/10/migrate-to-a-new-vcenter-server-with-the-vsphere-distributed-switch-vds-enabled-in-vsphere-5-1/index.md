@@ -31,12 +31,12 @@ Here are the steps:
 - Disconnect all the hosts on the old vCenter server
 - Import all the hosts  on the new vCenter server. The following warning is displayed and it is safe to ignore the warning:
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+![](images/image_thumb1.png)
 
 - Import the VDS configuration on the new vCenter server
 
-| [![image](images/image_thumb2.png "image")](http://www.ivobeerens.nl/wp-content/uploads/2012/10/image2.png) | [![image](images/image_thumb3.png "image")](http://www.ivobeerens.nl/wp-content/uploads/2012/10/image3.png) |
-|---|---|
+![](images/image_thumb2.png)
+![](images/image_thumb3.png)
 
 - Remove the disconnected hosts on the old vCenter server
 

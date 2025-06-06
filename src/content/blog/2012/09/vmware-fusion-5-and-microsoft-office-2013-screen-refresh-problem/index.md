@@ -16,7 +16,7 @@ url: /2012/09/05/vmware-fusion-5-and-microsoft-office-2013-screen-refresh-proble
 
 When using Microsoft Office 2013 on Windows 7 or Windows 8 in VMware Fusion 5 the screen is not properly refreshed and leaving black regions.
 
-[![image](images/image4_thumb.png "image")](images/image4.png)
+![](images/image4_thumb.png)
 
 This is because VMware Fusion 5 offers DirectX9 for Windows 7 and Windows 8, but Microsoft Office 2013 requires DirectX10. This is a know issue in VMware Fusion 5.
 
@@ -31,7 +31,7 @@ There are two work arounds available:
 - Go to Settings and click on  Display
 - Turn the Accelerate 3D Graphics setting to OFF
 
-[![image](images/image_thumb.png "image")](images/image.png)
+![](images/image_thumb.png)
 
 - Start the VM
 

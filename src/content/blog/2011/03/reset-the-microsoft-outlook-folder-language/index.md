@@ -30,7 +30,7 @@ The company Amrein Engineering has an cool utility called [Outlook set folder la
 
 For all the mailboxes I created a custom attribute and added them to the custom address list  by filtering on the  the custom attribute.  In the Outlook set folder language utility I selected the custom address list, selected all the mailboxes,  choose as language “Dutch” and hit the Set button. 
 
-[![2011-03-03 14h04_48](images/2011-03-03-14h04_48_thumb.jpg "2011-03-03 14h04_48")](images/2011-03-03-14h04_48.jpg)
+[![2011-03-03 14h04_48](images/2011-03-03-14h04_48_thumb.jpg)]
 
 Within a short period all the mailbox folders were reset to the Dutch language at the Exchange organization were to migrate from. Now I could export and import all the mailboxes to the other Exchange Organization knowing that that every mailbox has the right Outlook folders language structure.
 

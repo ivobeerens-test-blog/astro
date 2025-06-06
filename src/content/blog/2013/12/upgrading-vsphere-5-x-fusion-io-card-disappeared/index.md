@@ -28,22 +28,22 @@ After the installation of the Fusion-IO drivers on the ESXi hosts, the Fusion-IO
 > 
 > ACTIVE WARNINGS: The ioMemory is currently running in a minimal state.
 
-[![image](images/image_thumb12.png "image")](images/image12.png)
+![image](images/image_thumb12.png "image")
 
 The warning means that the firmware needs to be upgraded. I uploaded the firmware to a central datastore and run the following command:
 
 `fio-update-iodrive firmwarefilename.fff`
 
-[![image](images/image_thumb13.png "image")](images/image13.png)
+![image](images/image_thumb13.png "image")
 
 When the firmware upgrade completed, the ESXi servers needed to restart.
 
-[![image](images/image_thumb14.png "image")](images/image14.png)
+![image](images/image_thumb14.png "image")
 
 After the rebootI checked the status with the **fio-status** command again.  The Fusion-IO card is out of minimal mode.
 
-[![image](images/image_thumb15.png "image")](images/image15.png)
+![image](images/image_thumb15.png "image")
 
-[![image](images/image1_thumb.png "image")](images/image11.png)
+![image](images/image1_thumb.png "image")
 
 After the firmware upgrade the Fusion-IO card is listed again.

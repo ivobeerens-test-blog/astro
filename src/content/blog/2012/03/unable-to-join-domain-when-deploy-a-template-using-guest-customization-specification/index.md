@@ -19,7 +19,7 @@ To solve this problem, you need the do the following in the guest customization 
 - Enter the FQDN name in Windows Server Domain field (1)
 - Enter the [user@domain\_FQDN](mailto:user@domain_FQDN) in the username field (2)
 
-[![image](images/image_thumb23.png "image")](images/image23.png)
+[![image](images/image_thumb23.png)]
 
 I used the NetBIOS domain name in the “Windows Server Domain” field and “domain\\username” in the username field what doesn’t work with Windows 2008 R2 and Windows 7 anymore.
 

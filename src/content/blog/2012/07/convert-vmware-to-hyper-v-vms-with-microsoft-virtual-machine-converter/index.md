@@ -79,39 +79,39 @@ I tested a conversion and deployment of a Windows 2008 R2 VM, hosted on a VMware
 - Start MVMC.GUI.exe
 - Enter the vCenter or ESXi information
 
-[![image](images/image_thumb9.png "image")](images/image9.png)
+[![image](images/image_thumb9.png)]
 
 - Select a **running** VM. Be aware that the VM will be stopped during the conversion!
 
-[![image](images/image_thumb10.png "image")](images/image10.png)
+[![image](images/image_thumb10.png)]
 
 - Specify account details en select the final state of the source and target
 
-[![image](images/image_thumb11.png "image")](images/image11.png)
+[![image](images/image_thumb11.png)]
 
 - Select the temporarily location to store the disks. Make sure it has enough free space (double size of the source VMDKs). It will store the VMDKs and convert the VMDKs to VHDs.
 
-[![image](images/image_thumb12.png "image")](images/image12.png)
+[![image](images/image_thumb12.png)]
 
 - Enter the Hyper-V server information and select the share to store the VHD. Make sure you have enough free space to store all the VHDs
 
-[![image](images/image_thumb13.png "image")](images/image13.png)
+[![image](images/image_thumb13.png)]
 
 - Some warnings will appear. Read them and click Finish
 
-[![image](images/image_thumb14.png "image")](images/image14.png)
+[![image](images/image_thumb14.png)]
 
 - The copy and conversion steps are executed
 
-[![image](images/image_thumb15.png "image")](images/image15.png)
+[![image](images/image_thumb15.png)]
 
 - The VM is converted successfully
 
-[![image](images/image_thumb16.png "image")](images/image16.png)
+[![image](images/image_thumb16.png)]
 
 - In Windows Server 2012 the VM can be started. It has the Integrated Components installed
 
-[![image](images/image_thumb17.png "image")](images/image17.png)
+[![image](images/image_thumb17.png)]
 
 
 #### Conclusion

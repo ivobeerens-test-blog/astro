@@ -15,19 +15,16 @@ I ‘am testing an unattended installation of VMware ESXi from an USB drive. Aft
 - Download the BLOP boot manager
 - Add a USB controller to the VM and select Automatically connect new USB devices.
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]
 
 - Attach the PLOP boot manager image as floppy- or CD image
 - Boot the VM in PLOP
 - Insert the USB stick and select USB
 
-[![image](images/image_thumb1.png "image")](images/image1.png)
+[![image](images/image_thumb1.png)]
 
 Sometimes the USB device is not detected at once, reboot the VM once more and it should work.
 
 With PLOP it is possible to use USB boot VMware Workstation.
 
 Credits goes to Uli Hankeln from [http://sanbarrow.com](http://sanbarrow.com), thanks for pointing me to this boot manager.
-
-
-

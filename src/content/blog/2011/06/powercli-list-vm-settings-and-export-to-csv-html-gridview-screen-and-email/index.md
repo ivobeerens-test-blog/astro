@@ -20,11 +20,11 @@ The output can be specified in the scripts. The following formats:
 - CSV
 - HTML
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]
 
 - GridView. The cool about gridview is that you can easily sort and filter columns.
 
-[![2011-06-09 11h44_42](images/2011-06-09-11h44_42_thumb.jpg "2011-06-09 11h44_42")](images/2011-06-09-11h44_42.jpg)
+[![2011-06-09 11h44_42](images/2011-06-09-11h44_42_thumb.jpg)]
 
 - On screen
 - HTML file can be send by email.
@@ -126,32 +126,32 @@ Get-VM | Sort Name -Descending | %
     $vms = "" | Select-Object VMName, Hostname, IPAddress, OS, Boottime, VMState, TotalCPU, CPUAffinity, CPUHotAdd, CPUShare, CPUlimit, OverallCpuUsage, CPUreservation, TotalMemory, MemoryShare, MemoryUsage, MemoryHotAdd, MemoryLimit, MemoryReservation, Swapped, Ballooned, Compressed, TotalNics, ToolsStatus, ToolsVersion, HardwareVersion, TimeSync, CBT
     $vms.VMName = $vm.Name
     $vms.Hostname = $vm.guest.hostname
-$vms.IPAddress = $vm.guest.ipAddress
-$vms.OS = $vm.Config.GuestFullName
-$vms.Boottime = $vm.Runtime.BootTime
-$vms.VMState = $vm.summary.runtime.powerState
+    $vms.IPAddress = $vm.guest.ipAddress
+    $vms.OS = $vm.Config.GuestFullName
+    $vms.Boottime = $vm.Runtime.BootTime
+    $vms.VMState = $vm.summary.runtime.powerState
     $vms.TotalCPU = $vm.summary.config.numcpu
     $vms.CPUAffinity = $vm.Config.CpuAffinity
-$vms.CPUHotAdd = $vm.Config.CpuHotAddEnabled
-$vms.CPUShare = $vm.Config.CpuAllocation.Shares.Level
-$vms.TotalMemory = $vm.summary.config.memorysizemb
+    $vms.CPUHotAdd = $vm.Config.CpuHotAddEnabled
+    $vms.CPUShare = $vm.Config.CpuAllocation.Shares.Level
+    $vms.TotalMemory = $vm.summary.config.memorysizemb
     $vms.MemoryHotAdd = $vm.Config.MemoryHotAddEnabled
-$vms.MemoryShare = $vm.Config.MemoryAllocation.Shares.Level
-$vms.TotalNics = $vm.summary.config.numEthernetCards
-$vms.OverallCpuUsage = $vm.summary.quickStats.OverallCpuUsage
+    $vms.MemoryShare = $vm.Config.MemoryAllocation.Shares.Level
+    $vms.TotalNics = $vm.summary.config.numEthernetCards
+    $vms.OverallCpuUsage = $vm.summary.quickStats.OverallCpuUsage
     $vms.MemoryUsage = $vm.summary.quickStats.guestMemoryUsage
     $vms.ToolsStatus = $vm.guest.toolsstatus
     $vms.ToolsVersion = $vm.config.tools.toolsversion
-$vms.TimeSync = $vm.Config.Tools.SyncTimeWithHost
-$vms.HardwareVersion = $vm.config.Version
+    $vms.TimeSync = $vm.Config.Tools.SyncTimeWithHost
+    $vms.HardwareVersion = $vm.config.Version
     $vms.MemoryLimit = $vm.resourceconfig.memoryallocation.limit
     $vms.MemoryReservation = $vm.resourceconfig.memoryallocation.reservation
     $vms.CPUreservation = $vm.resourceconfig.cpuallocation.reservation
     $vms.CPUlimit = $vm.resourceconfig.cpuallocation.limit
-$vms.CBT = $vm.Config.ChangeTrackingEnabled
-$vms.Swapped = $vm.Summary.QuickStats.SwappedMemory
-$vms.Ballooned = $vm.Summary.QuickStats.BalloonedMemory
-$vms.Compressed = $vm.Summary.QuickStats.CompressedMemory
+    $vms.CBT = $vm.Config.ChangeTrackingEnabled
+    $vms.Swapped = $vm.Summary.QuickStats.SwappedMemory
+    $vms.Ballooned = $vm.Summary.QuickStats.BalloonedMemory
+    $vms.Compressed = $vm.Summary.QuickStats.CompressedMemory
 $Report += $vms
 }
 

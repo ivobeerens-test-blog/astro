@@ -18,4 +18,4 @@ I want to thank John Troyer, Alex Maier and the VMware team for making this poss
 
 The full list of all the 2012 vExperts  can be found [here](https://blogs.vmware.com/vmtn/2012/04/announcing-vexpert-2012-title-holders.html).
 
-[![image](images/image_thumb.png "image")](images/image.png)
+[![image](images/image_thumb.png)]

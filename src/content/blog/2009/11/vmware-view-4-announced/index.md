@@ -13,7 +13,7 @@ url: /2009/11/09/vmware-view-4-announced/
 
 Today VMware has View 4 announced. VMware View 4 is supported on VMware vSphere and has a new protocol named PCoIP (View 3 uses RDP).
 
-[![image](images/image_thumb.png "image")](images/image.png) 
+[![image](images/image_thumb.png)]
 
 Here’s a list of new and/or improved features:
 

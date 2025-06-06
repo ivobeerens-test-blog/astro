@@ -45,7 +45,7 @@ Get-vmhostnetworkadapter | Select vmhost,mac | Out-GridView
 
 With a gridview it is possible to filter easily. Add the last part of the MAC address (including the : ) and the corresponding VMware ESX server is displayed:
 
-[![2011-03-29 16h20_42](images/2011-03-29-16h20_42_thumb.jpg "2011-03-29 16h20_42")](images/2011-03-29-16h20_42.jpg)
+[![2011-03-29 16h20_42](images/2011-03-29-16h20_42_thumb.jpg)]
 
 On the VMware server that holds the lock restart the Management agents by using the following command:
 

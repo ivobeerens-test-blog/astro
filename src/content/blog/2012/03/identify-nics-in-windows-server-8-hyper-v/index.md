@@ -35,7 +35,7 @@ Get-NetAdapter | Select Name, InterfaceDescription, MediaConnectionState | FL
 
 Look at which NIC is connected and rename the NIC to a meaningful name (listed below)
 
-[![image](images/image9_thumb1.png "image")](images/image91.png)
+[![image](images/image9_thumb1.png)]
 
 Add the second NIC and execute the command again and rename the name of the NIC. Do this for all NICs
 
@@ -47,7 +47,7 @@ When you know the MAC address of the NIC (for example in a HP Flex-10 environmen
 Get-NetAdapter | Select Name, InterfaceDescription, MacAddress | FL
 ```
 
-[![image](images/image17_thumb1.png "image")](images/image171.png)
+[![image](images/image17_thumb1.png)]
 
 Look at the corresponding MAC address  and rename the NIC to a meaningful name (listed below). Do this for all NICs.
 
@@ -60,7 +60,7 @@ Get-NetAdapterHardwareInfo | select Name, InterfaceDescription, DeviceType,
 Busnumber, Devicenumber, Functionnumber | FL
 ```
 
-[![image](images/image13_thumb1.png "image")](images/image131.png)
+[![image](images/image13_thumb1.png)]
 
 Look at the corresponding PCI bus and rename the NIC to a meaningful name (listed below). Do this for all NICs.
 

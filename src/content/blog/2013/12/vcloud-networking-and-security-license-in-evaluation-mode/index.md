@@ -14,7 +14,7 @@ url: /2013/12/18/vcloud-networking-and-security-license-in-evaluation-mode/
 
 A customer has a VMware vSphere 5.1 environment with VMware Horizon View 5.2 environment and Trend Micro Deep Security installed. Trend Micro Deep Security uses the VMware vShield Endpoint framework. In the vSphere license manager asset the "vCloud Networking and Security" license is displayed in evaluation mode and has a expire date.
 
-[![image](images/image_thumb5.png "image")](images/image5.png)
+![image](images/image_thumb5.png "image")
 
 This is strange because vSphere 5.1 > includes a vShield Endpoint license. So no extra vShield licenses are required. I found a [KB](http://kb.VMware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2036875) about vShield Endpoint. It states:
 

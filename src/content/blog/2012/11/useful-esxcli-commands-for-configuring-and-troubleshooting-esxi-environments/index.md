@@ -8,7 +8,7 @@ url: /2012/11/21/useful-esxcli-commands-for-configuring-and-troubleshooting-esxi
 
 ESXCLI commands are very useful for configuring and troubleshooting ESXi servers. The vSphere vCLI 5.1 includes the following namespaces:
 
-[![image](images/image_thumb.png "image")](images/image.png)
+![image](images/image_thumb.png "image")
 
 Here is a small list of some examples of ESXCLI commands:
 

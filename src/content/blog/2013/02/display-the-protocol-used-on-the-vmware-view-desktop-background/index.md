@@ -36,11 +36,11 @@ VMware View 5.1 has the following environment variables available in a desktop s
 
 The View environment variables can be added to BgInfo using the custom field option.
 
-[![image](images/image_thumb11.png "image")](images/image11.png)
+![image](images/image_thumb11.png "image")
 
 After running BgInfo, the View environment variables are displayed on the desktop background. In the following example we added information on the desktop about what protocol (RDP or PCoIP) is used  to connect to the View desktop:
 
-[![image](images/image_thumb12.png "image")](images/image12.png)
+![image](images/image_thumb12.png "image")
 
 
 

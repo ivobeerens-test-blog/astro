@@ -21,7 +21,7 @@ The vSphere Quick Start guide is released and available from Amazon. This guide 
 - [Thomas Bryant](http://twitter.com/kix1979)
 - [Stewart Radnidge](http://vinternals.com/)
 
-[![vSphere Quick](images/vSphereQuick_thumb.jpg "vSphere Quick")](images/vSphereQuick.jpg)
+[![vSphere Quick](images/vSphereQuick_thumb.jpg)
 
 The book summary from Amazon:
 

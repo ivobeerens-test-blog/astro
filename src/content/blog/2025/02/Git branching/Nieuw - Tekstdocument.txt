@@ -1,0 +1,26 @@
+Git branch
+Git log
+git push -u origin test1
+Merge in Main
+git checkout test1
+git merge main
+
+Git remove branch
+git branch -d <branch_name> # short form
+git push origin -d test1
+
+
+Branch
+git pull origin main
+Create new branch
+git checkout -b branchname
+Git add .
+Git commit -m “new branch”
+Git push -u origin test2
+
+Git switch main
+git pull origin main
+git merge test2
+git push origin main
+
+https://www.namehero.com/blog/how-to-merge-a-git-branch-to-master/

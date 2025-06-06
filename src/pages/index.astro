@@ -1,0 +1,151 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 10); // Get only the latest 10 posts
+
+// Get the first 6 lines of the post
+const getExcerpt = (content: string | undefined) => {
+	if (!content) return '';
+	const lines = content.split('\n').filter(line => line.trim().length > 0);
+	const firstSixLines = lines.slice(0, 6);
+	return firstSixLines.join('\n');
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.blog-preview {
+				margin: 2rem 0;
+			}
+			.blog-preview h2 {
+				padding-bottom: 0.5rem;
+				border-bottom: 2px solid var(--accent);
+				margin-bottom: 2rem;
+			}
+			.blog-preview ul {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			.blog-preview ul li {
+				width: 100%;
+				border-bottom: 1px solid rgba(var(--gray), 0.2);
+				padding-bottom: 2rem;
+			}
+			.blog-preview ul li:last-child {
+				border-bottom: none;
+			}
+			.blog-preview ul li * {
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			.blog-preview ul li:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
+			.blog-preview ul li:first-child .title {
+				font-size: 2rem;
+			}
+			.blog-preview ul li a {
+				display: block;
+			}
+			.title {
+				margin: 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+			}
+			.date {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 0.9em;
+			}
+			.excerpt {
+				margin: 0.5rem 0 0 0;
+				color: rgb(var(--gray-dark));
+				font-size: 0.95em;
+				line-height: 1.5;
+			}
+			.blog-preview ul li a:hover .title {
+				color: var(--accent);
+			}
+			.show-more {
+				display: block;
+				width: fit-content;
+				margin: 2rem auto;
+				padding: 0.75rem 1.5rem;
+				background-color: #2563eb;
+				color: #ffffff;
+				text-decoration: none;
+				border-radius: 8px;
+				font-size: 1.1rem;
+				font-weight: 600;
+				transition: all 0.2s ease;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+			}
+			.show-more:hover {
+				background-color: #1d4ed8;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+				color: #ffffff;
+			}
+			.button-container {
+				text-align: center;
+				margin-top: 3rem;
+				padding: 1rem 0;
+				border-top: 1px solid rgba(var(--gray), 0.2);
+			}
+			main {
+				width: 960px;
+				max-width: calc(100% - 2em);
+				margin: 0 auto;
+				padding: 0 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Welcome to {SITE_TITLE}</h1>
+			<p>
+				Welcome to my blog where I share insights and experiences about Cloud Computing, DevOps, Infrastructure as Code,
+				Virtualization, and End User Computing (EUC).
+			</p>
+			
+			<div class="blog-preview">
+				<h2>The latest blog posts</h2>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.id}/`} target="_blank" rel="noopener noreferrer">
+									<h4 class="title">{post.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+									<p class="excerpt">{post.data.description}</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+				<div class="button-container">
+					<a href="/blog" class="show-more" target="_blank" rel="noopener noreferrer">Show More Blog Posts →</a>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

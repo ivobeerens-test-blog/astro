@@ -1,0 +1,109 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+// Get the first 6 lines of the post
+const getExcerpt = (content: string | undefined) => {
+	if (!content) return '';
+	const lines = content.split('\n').filter(line => line.trim().length > 0);
+	const firstSixLines = lines.slice(0, 6);
+	return firstSixLines.join('\n');
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+				max-width: calc(100% - 2em);
+				margin: 0 auto;
+				padding: 0 1rem;
+			}
+			ul {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				width: 100%;
+				border-bottom: 1px solid rgba(var(--gray), 0.2);
+				padding-bottom: 2rem;
+			}
+			ul li:last-child {
+				border-bottom: none;
+			}
+			ul li * {
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			ul li:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
+			ul li:first-child .title {
+				font-size: 2rem;
+			}
+			ul li a {
+				display: block;
+			}
+			.title {
+				margin: 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+			}
+			.date {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 0.9em;
+			}
+			.excerpt {
+				margin: 0.5rem 0 0 0;
+				color: rgb(var(--gray-dark));
+				font-size: 0.95em;
+				line-height: 1.5;
+				white-space: pre-line;
+			}
+			ul li a:hover .title {
+				color: var(--accent);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section>
+				<h2>All Blog Posts</h2>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.id}/`} target="_blank" rel="noopener noreferrer">
+									<h4 class="title">{post.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+									<p class="excerpt">{post.data.description}</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

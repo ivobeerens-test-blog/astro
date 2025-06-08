@@ -1,2 +1,2 @@
-# astro
-Astro blog
+Welcome to my blog ivobeerens.nl
+

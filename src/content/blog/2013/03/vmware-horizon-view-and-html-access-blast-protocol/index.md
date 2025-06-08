@@ -36,13 +36,13 @@ This component is installed on the Blast Secure Gateway know as View Connection 
 
 Here is an overview of the components and firewall ports that's needs to be opened:
 
-![VMware Blast](images/VMware-Blast_thumb1.jpg "VMware Blast")
+![VMware Blast](images/VMware-Blast_thumb1.jpg)]
 
 A single security server can support up to 100 simultaneous connections to Web clients using the Blast protocol. For a complete list and drawing of the firewall ports that needs to be opened in a VMware View Security Server environment see my earlier post [here](https://www.ivobeerens.nl/2013/03/05/tips-for-implementing-a-VMware-horizon-view-security-server/).
 
 In the View Administrator the connections using a the Blast protocol can be monitored:
 
-![image](images/image_thumb4.png "image")
+![image](images/image_thumb4.png)]
 
 Unity Touch is supported on the following Horizon View Client versions:
 

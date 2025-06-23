@@ -1,0 +1,67 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="VMware Version Tracker" description="Track the latest versions of VMware products including ESXi, vCenter Server, and VMware Tools" />
+		<style>
+			main {
+				width: 100%;
+				max-width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.versions-container {
+				width: 100%;
+				height: calc(100vh - 200px);
+				min-height: 600px;
+				border: none;
+				margin: 0;
+				padding: 0;
+			}
+			.versions-header {
+				padding: 1rem;
+				background: white;
+				border-bottom: 1px solid rgba(var(--gray), 0.2);
+				text-align: center;
+			}
+			.versions-header h1 {
+				margin: 0;
+				color: var(--accent);
+			}
+			.versions-header p {
+				margin: 0.5rem 0 0 0;
+				color: rgb(var(--gray));
+				font-size: 0.9em;
+			}
+			iframe {
+				width: 100%;
+				height: 100%;
+				border: none;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="versions-header">
+				<h1>VMware Version Tracker</h1>
+				<p>Track the latest versions of VMware products including ESXi, vCenter Server, VMware Tools, and VMware Cloud Foundation</p>
+			</div>
+			<iframe 
+				src="https://checkversions1.github.io/" 
+				class="versions-container"
+				title="VMware Version Tracker"
+				loading="lazy"
+				allow="fullscreen">
+			</iframe>
+		</main>
+		<Footer />
+	</body>
+</html> 

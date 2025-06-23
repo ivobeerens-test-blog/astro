@@ -97,8 +97,7 @@ vSphere Standard and vSphere Enterprise Plus are only available as versions up t
 - Overview of all VMware Cloud Foundation 9.0 Hands-on Labs. [**Read the article**](https://lnkd.in/e84cT4W2)
 
 
-## VCF 9 – Quick Tech Modules (16 Videos)
-
+## VCF 9 – Quick Tech VCF modules
 - Introduction. [**Watch the movie**](https://lnkd.in/eDi_uX5i)
 - Architecture. [**Watch the movie**](https://lnkd.in/eAzjE5Cb)
 - Deployment & Scale. [**Watch the movie**](https://lnkd.in/eutRxcsX)

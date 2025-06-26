@@ -1,0 +1,178 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = await getCollection('blog');
+const postsData = posts.map(post => ({
+	id: post.id,
+	title: post.data.title,
+	description: post.data.description || '',
+	pubDate: post.data.pubDate.toISOString(),
+	url: `/blog/${post.id}/`
+}));
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Search - Ivo Beerens Blog" description="Search through blog posts about Cloud Computing, DevOps, Infrastructure as Code, Virtualization, and End User Computing" />
+		<style>
+			main {
+				width: 960px;
+				max-width: calc(100% - 2em);
+				margin: 0 auto;
+				padding: 2rem 1rem;
+			}
+			.search-container {
+				margin-bottom: 2rem;
+			}
+			.search-form {
+				display: flex;
+				gap: 1rem;
+				margin-bottom: 2rem;
+			}
+			.search-input {
+				flex: 1;
+				padding: 0.75rem 1rem;
+				border: 2px solid rgba(var(--gray), 0.2);
+				border-radius: 8px;
+				font-size: 1rem;
+				font-family: inherit;
+			}
+			.search-input:focus {
+				outline: none;
+				border-color: var(--accent);
+			}
+			.search-button {
+				padding: 0.75rem 1.5rem;
+				background-color: var(--accent);
+				color: white;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				font-size: 1rem;
+				font-weight: 600;
+				transition: background-color 0.2s ease;
+			}
+			.search-button:hover {
+				background-color: var(--accent-dark);
+			}
+			.results {
+				display: none;
+			}
+			.results.show {
+				display: block;
+			}
+			.result-item {
+				padding: 1rem 0;
+				border-bottom: 1px solid rgba(var(--gray), 0.2);
+			}
+			.result-item:last-child {
+				border-bottom: none;
+			}
+			.result-title {
+				margin: 0 0 0.5rem 0;
+				color: var(--accent);
+				font-size: 1.2rem;
+			}
+			.result-title a {
+				text-decoration: none;
+				color: inherit;
+			}
+			.result-title a:hover {
+				text-decoration: underline;
+			}
+			.result-date {
+				color: rgb(var(--gray));
+				font-size: 0.9rem;
+				margin-bottom: 0.5rem;
+			}
+			.result-excerpt {
+				color: rgb(var(--gray-dark));
+				line-height: 1.5;
+			}
+			.no-results {
+				text-align: center;
+				padding: 2rem;
+				color: rgb(var(--gray));
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Search Blog Posts</h1>
+			<div class="search-container">
+				<form class="search-form" id="searchForm">
+					<input 
+						type="text" 
+						class="search-input" 
+						id="searchInput" 
+						placeholder="Search for topics, technologies, or keywords..."
+						autocomplete="off"
+					>
+					<button type="submit" class="search-button">Search</button>
+				</form>
+			</div>
+			
+			<div class="results" id="results">
+				<div id="resultsList"></div>
+			</div>
+		</main>
+		<Footer />
+
+		<script define:vars={{ postsData }}>
+			const searchInput = document.getElementById('searchInput');
+			const searchForm = document.getElementById('searchForm');
+			const results = document.getElementById('results');
+			const resultsList = document.getElementById('resultsList');
+
+			function performSearch(query) {
+				if (!query.trim()) {
+					results.classList.remove('show');
+					return;
+				}
+
+				const searchTerms = query.toLowerCase().split(' ');
+				const filteredPosts = postsData.filter(post => {
+					const searchableText = `${post.title} ${post.description}`.toLowerCase();
+					return searchTerms.some(term => searchableText.includes(term));
+				});
+
+				displayResults(filteredPosts);
+			}
+
+			function displayResults(posts) {
+				if (posts.length === 0) {
+					resultsList.innerHTML = '<div class="no-results">No posts found matching your search.</div>';
+				} else {
+					resultsList.innerHTML = posts.map(post => `
+						<div class="result-item">
+							<h3 class="result-title">
+								<a href="${post.url}">${post.title}</a>
+							</h3>
+							<div class="result-date">${new Date(post.pubDate).toLocaleDateString()}</div>
+							<div class="result-excerpt">${post.description}</div>
+						</div>
+					`).join('');
+				}
+				results.classList.add('show');
+			}
+
+			searchForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+				performSearch(searchInput.value);
+			});
+
+			searchInput.addEventListener('input', (e) => {
+				performSearch(e.target.value);
+			});
+
+			// Focus search input on page load
+			searchInput.focus();
+		</script>
+	</body>
+</html> 

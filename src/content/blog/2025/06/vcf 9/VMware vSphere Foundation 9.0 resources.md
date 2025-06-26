@@ -27,9 +27,9 @@ Whether you are modernizing your data center or building a hybrid cloud, VMware 
 
 VMware Cloud Foundation (VCF) is released on June 17, 2025. Here is an overview of the latest resources about VCF 9.0.
 
-Last updated: **June 16, 2025.**
+Last updated: **June 26, 2025.**
 
-<!-- [**Read the article**]() -->
+[**Read the article**]()
 
 ## General
 - What’s New in VMware Cloud Foundation 9.0. [**Read the article**](https://blogs.vmware.com/cloud-foundation/2025/06/17/whats-new-in-vmware-cloud-foundation-9-0/)
@@ -39,7 +39,7 @@ Last updated: **June 16, 2025.**
 - VMware Cloud Foundation VCF 9.0 Released New Features. [**Read the article**](https://www.virtualizationhowto.com/2025/06/vmware-cloud-foundation-vcf-9-0-released-new-features/)
 - VCF 9 Youtube series. [**Watch the movies**](https://www.youtube.com/playlist?list=PL8_k3uUCO39t-8kKT6u8Ghvos4TvRyEp5)
 - Advanced Memory Tiering Now Available with VMware Cloud Foundation 9.0. [**Read the article**](https://blogs.vmware.com/cloud-foundation/2025/06/19/advanced-memory-tiering-now-available/)
-
+- Depot & Binary Management in VCF Operations fleet management appliance or OPS LCM 9.0. [**Read the article**](https://www.arunnukula.com/post/depot-binary-management-in-vcf-operations-fleet-management-appliance-or-ops-lcm-9-0)
 
 ## Deprecation Notes / End of Support Notes:
 - VMware Cloud Foundation 9.0 - vSphere. [**Read the article**](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/release-notes/vmware-cloud-foundation-90-release-notes/platform-product-support-notes/product-support-notes-vsphere.html)
@@ -71,6 +71,15 @@ Last updated: **June 16, 2025.**
 - VCF 9.0 Installer workaround for ESXi hosts with different vendor. [**Read the article**](https://williamlam.com/2025/06/vcf-9-0-installer-workaround-for-esxi-hosts-with-different-vendor.html)
 - Failed to locate kickstart on Nested ESXi VM CD-ROM in VCF 9.0. [**Read the article**](https://williamlam.com/2025/06/failed-to-locate-kickstart-on-nested-esxi-vm-cd-rom-in-vcf-9-0.html)
 - PowerCLI remediation script for running NSX Edge on AMD Ryzen for VCF 9.0. [**Read the article**](https://williamlam.com/2025/06/powercli-remediation-script-for-running-nsx-edge-on-amd-ryzen-for-vcf-9-0.html)
+- VCF Holodeck 9.0. Holodeck is a toolkit designed to provide a standardized and automated method to deploy nested VMware Cloud Foundation (VCF) environments on a VMware ESX host or a vSphere cluster. [**Documentation**](https://vmware.github.io/Holodeck/), [**Download**](https://lnkd.in/gFEt7Ddm)
+- VMware Cloud Foundation (VCF) on Minisforum MS-A2. [**Read the article**](https://williamlam.com/2025/06/vmware-cloud-foundation-vcf-on-minisforum-ms-a2.html)
+- Installing VMware Cloud Foundation 9.0: A Step-by-Step Guide for a Lab Environment. [**Read the article**](https://vworld.com.pl/installing-vmware-cloud-foundation-9-0-a-step-by-step-guide-for-a-lab-environment/)
+- SDDC.Lab, Ansible playbooks that automate deployment and configuration of nested VMware Software-Defined Data Center environments including solutions like vSphere, vSAN, NSX, Tanzu Kubernetes Grid Service, NSX Advanced Load Balancer, Aria Operations for Logs, VyOS, and ISC BIND. [**Read the article**](https://github.com/rutgerblom/SDDC.Lab/tree/dev-v8)
+- VMware Cloud Foundation (VCF) on ASUS NUC 15 Pro (Cyber Canyon). [**Read the article**](https://williamlam.com/2025/06/vmware-cloud-foundation-vcf-on-asus-nuc-15-pro-cyber-canyon.html)
+- VCF 9.0 Offline Depot using Synology. [**Read the article**](https://williamlam.com/2025/06/vcf-9-0-offline-depot-using-synology.html)
+
+[**Read the article**]()
+
 
 ## VCF 9 - Licensing
 vSphere Standard and vSphere Enterprise Plus are only available as versions up to the 8 Update 3 release currently, vSphere 9.0 features are only available as part of VMware vSphere Foundation 9.0 and VMware Cloud Foundation 9.0. To get VCF 9 you need a new subscription license. Existing customers with licenses from pre-Broadcom will not be able to upgrade before a new agreement is signed.
@@ -97,7 +106,7 @@ vSphere Standard and vSphere Enterprise Plus are only available as versions up t
 - Overview of all VMware Cloud Foundation 9.0 Hands-on Labs. [**Read the article**](https://lnkd.in/e84cT4W2)
 
 
-## VCF 9 – Quick Tech VCF modules
+## VCF 9 – Quick Tech Getting Started VCF videos
 - Introduction. [**Watch the movie**](https://players.brightcove.net/6415810555001/default_default/index.html?videoId=6374387256112)
 - Architecture. [**Watch the movie**](https://players.brightcove.net/6415810555001/default_default/index.html?videoId=6374392039112)
 - Deployment & Scale. [**Watch the movie**](https://players.brightcove.net/6415810555001/default_default/index.html?videoId=6374392509112)

@@ -1,0 +1,8 @@
+# llms.txt
+# This file allows LLM-based crawlers (such as ChatGPT, Bing, and others) to index and use the content of this website for AI and search purposes.
+
+User-agent: *
+Allow: /
+
+# You may add additional rules or contact information below if desired.
+# For more information, see: https://platform.openai.com/docs/gptbot

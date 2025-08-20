@@ -78,14 +78,15 @@ Last updated: **June 26, 2025.**
 - VMware Cloud Foundation (VCF) on ASUS NUC 15 Pro (Cyber Canyon). [**Read the article**](https://williamlam.com/2025/06/vmware-cloud-foundation-vcf-on-asus-nuc-15-pro-cyber-canyon.html)
 - VCF 9.0 Offline Depot using Synology. [**Read the article**](https://williamlam.com/2025/06/vcf-9-0-offline-depot-using-synology.html)
 
-[**Read the article**]()
-
+<!-- [**Read the article**]() -->
 
 ## VCF 9 - Licensing
 vSphere Standard and vSphere Enterprise Plus are only available as versions up to the 8 Update 3 release currently, vSphere 9.0 features are only available as part of VMware vSphere Foundation 9.0 and VMware Cloud Foundation 9.0. To get VCF 9 you need a new subscription license. Existing customers with licenses from pre-Broadcom will not be able to upgrade before a new agreement is signed.
 - VMware vSphere Product Line Comparison. [**Read the article**](https://www.vmware.com/docs/vmw-datasheet-vsphere-product-line-comparison)
 - VCF 9.0 Licensing. Simplified. Real talk on what VCF licensing looks like now. [**Read the article**](https://www.linkedin.com/pulse/vcf-90-licensing-simplified-real-talk-what-looks-like-kusek-hn5vc/)
 - What's Inside a VCF 9 License File? Understanding Connected vs. Disconnected Registration. [**Read the article**](https://www.linkedin.com/pulse/whats-inside-vcf-9-license-file-understanding-connected-kusek-95gfc/)
+- VMware Cloud Foundation 9.0 and VMware vSphere Foudation 9.0 Feature Comparison & Upgrade Paths. [**Read the article**](https://www.vmware.com/docs/vmware-cloud-foundation-9-0-feature-comparison-and-upgrade-paths)
+
 ### VCF Licensing videos:
 - VCF License Overview. [**Read the article**](https://lnkd.in/eb49BfQr)
 - VCF Register Instance. [**Read the article**](https://lnkd.in/esGuZbhh)

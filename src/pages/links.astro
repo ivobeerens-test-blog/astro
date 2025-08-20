@@ -1,0 +1,49 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<BaseHead title="Useful Links" description="A curated list of useful resources and references." />
+<Header />
+<main class="links-container">
+  <h1>Useful Links</h1>
+  <ul>
+    <h3>Broadcom</h3>
+    <li><a href="https://compatibilityguide.broadcom.com/" target="_blank" rel="noopener noreferrer">- Broadcom Compatibility Guide</a></li>
+    <h3>Omnissa</h3>
+    <li><a href="https://interopmatrix.omnissa.com/Interoperability" target="_blank" rel="noopener noreferrer">- Omnissa Interoperability Matrix</a></li>
+    <li><a href="https://kb.omnissa.com/s/article/6000681" target="_blank" rel="noopener noreferrer">- Rebranding Changes in Omnissa Horizon Products (6000681)</a></li>
+    <h3>NVIDIA</h3>
+    <li><a href="https://docs.nvidia.com/vgpu/index.html" target="_blank" rel="noopener noreferrer">- NVIDIA Virtual GPU (vGPU) Software</a></li>
+    <li><a href="https://docs.nvidia.com/vgpu/index.html#driver-versions" target="_blank" rel="noopener noreferrer">- NVIDIA Virtual GPU (vGPU) Driver versions</a></li>
+    <h3>Veeam</h3>
+    <li><a href="https://www.veeam.com/kb2443" target="_blank" rel="noopener noreferrer">- Veeam Backup & Replication support for vSphere/a></li>
+    <h3>Other</h3>
+    <li><a href="https://endoflife.date/" target="_blank" rel="noopener noreferrer">- End-of-life (EOL) and support information</a></li>
+  </ul>
+  <p>Feel free to suggest more links!</p>
+</main>
+<Footer />
+
+<style>
+.links-container {
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 1em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.links-container h1 {
+  text-align: center;
+}
+.links-container ul {
+  list-style: none;
+  padding: 0;
+}
+.links-container li {
+  margin: 0.5em 0;
+}
+</style>

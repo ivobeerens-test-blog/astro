@@ -1,0 +1,22 @@
+# Allow all common search engine bots
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# Allow current AI search engine bots
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Block specific directories you don't want indexed (edit as needed)
+# User-agent: *
+# Disallow: /wp-admin/
+# Disallow: /private/
+
+# Allow everything else
+User-agent: *
+Allow: /

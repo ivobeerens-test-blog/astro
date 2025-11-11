@@ -41,20 +41,21 @@ After years of running my Shuttle SH370R6 and SH370R8 as a home lab server ([see
 
 Here are the components I used for this build:
 
-| **Component**  | **Type / Model**                  | **Qty** |
-| -------------- | --------------------------------- | -------:|
-| Motherboard    | ASROCK B650D4U-2L2T/BCM           |      1  |
-| CPU            | AMD EPYC 4565P, 4.3 GHz, 64 MB L3 |      1  |
-| TPM module     | ASRock TPM2-SLI                   |      1  |
-| CPU Cooler     | Be Quiet! DARK ROCK 5, 12 cm      |      1  |
-| Memory         | Crucial PRO DDR5‑5600, 48GB       |      4  |
-| PSU            | MSI MAG A850GL PCIE5, 850W ATX    |      1  |
-| Disk NVMe      | Samsung SSD 990 PRO M.2, 4TB      |      1  |
-| Disk HDD       | Seagate Barracuda, 24TB, 7200 RPM |      1  |
-| Case           | NZXT H6 Flow Midi Tower, black    |      1  |
-
+| **Component**  | **Type / Model**                  | **Qty** | **Total Costs (€)** |
+| -------------- | --------------------------------- | -------| ---:|
+| Motherboard    | ASROCK B650D4U-2L2T/BCM           |      1  | 562,95 |
+| CPU            | AMD EPYC 4565P, 4.3 GHz, 64 MB L3 |      1  | 683.23 |
+| TPM module     | ASRock TPM2-SLI                   |      1  |  27,42 |
+| CPU Cooler     | Be Quiet! DARK ROCK 5             |      1  |  71,08 |
+| Memory         | Crucial PRO DDR5‑5600, 48GB       |      4  | 540,00 |
+| PSU            | MSI MAG A850GL PCIE5, 850W ATX    |      1  | 105,99 |
+| Disk NVMe      | Samsung SSD 990 PRO M.2, 4TB      |      1  | 314,68 |
+| Disk HDD       | Seagate Barracuda, 24TB, 7200 RPM |      1  | 339,00 |
+| Case           | NZXT H6 Flow black                |      1  |  95,90 |
 ---
 ![alt text](./server1.PNG)
+
+The total hardware costs are around €2669,17. At the moment of writing this blog the hardware prices of DDR5 memory and SSDs are increased (almost the double) because of the great demand.
 
 ## Hardware components overview
 ---
@@ -101,7 +102,7 @@ With the current CPU and memory utilization the temperature is **47 °C**.
 
 ### Memory
 
-- 4 × Crucial PRO DDR5‑5600, 48GB modules (**total: 192 GB physical memory**).
+- 4 × Crucial PRO DDR5‑5600 (CP48G56C46U5), 48GB modules (**total: 192 GB physical memory**).
 - *Note:* Using all 4 DIMM slots drops memory speed to **3600 MHz**; with 2 slots, it can run at **5600 MHz**.
 - System stability is excellent with this configuration.
 - **NVMe memory tiering ``(1)``** enabled for additional virtual RAM capacity.

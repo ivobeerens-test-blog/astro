@@ -55,7 +55,7 @@ Here are the components I used for this build:
 ---
 ![alt text](./server1.PNG)
 
-The total hardware costs are around €2669,17. At the moment of writing this blog the hardware prices of DDR5 memory and SSDs are surging (almost the double) because of the great demand.
+The total hardware costs are around €2669,17. At the moment of writing this blog the hardware prices of DDR5 memory and SSDs are surging (almost the double for the memory) because of the demand.
 
 ## Hardware components overview
 ---

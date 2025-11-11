@@ -1,6 +1,6 @@
 ---
 title: "Custom AMD EPYC Home Lab Server Build (2025)"
-description: "Detailed BOM and build guide for a powerful, quiet, remotely manageable AMD EPYC home lab server for VMware, VCF, and Proxmox testing."
+description: "Building a AMD EPYC Home lab server for running VMware VCF, Azure Local and Proxmox"
 author: Ivo Beerens
 pubDate: 2025-11-05T00:00:00+01:00
 image: 
@@ -11,27 +11,31 @@ categories:
     - vexpert
     - vcf
     - home lab
+    - azure local
+    - proxmox
 tags:
     - broadcom
     - vmware
     - vexpert
     - vcf
     - home lab
+    - azure local
+    - proxmox
 ---
 
 # Introduction
 
-After years of running my Shuttle SH370R8 as a home lab server ([2019 build can be found here](https://www.ivobeerens.nl/blog/2019/06/using-the-shuttle-sh370r8-as-home-lab-server-with-vmware-esxi/)), it was time for an upgrade to meet new virtualization demands. My goals for the new lab server build:
-- Powerful CPU to efficiently run multiple nested hypervisor platforms such as:
+After years of running my Shuttle SH370R6 & SH370R8 as a home lab server ([2019 build can be found here](https://www.ivobeerens.nl/blog/2019/06/using-the-shuttle-sh370r8-as-home-lab-server-with-vmware-esxi/)), it was time for an upgrade to meet new virtualization demands. My goals for the new lab server build:
+- Powerful hardware to efficiently run multiple nested hypervisor platforms such as:
     - **VMware Cloud Foundation (VCF)**
     - **Azure Local**
     - **HPE VM Essentials**
     - **Proxmox**
     - **Omnissa**
-- Test IaC, HashiCorp Packer, Terraform, Vault and AI systems
+- Testing IaC, Packer, Terraform, Vault and AI systems
 - IPMI remote management for easy remote administration
 - Low noise and efficient cooling system
-- Room for expansion cards such as a GPU
+- Enough room for expansion cards such as a GPU
 
 ## Build of Materials (BOM)
 
@@ -52,7 +56,9 @@ Here is a list of components I used to build this home lab:
 ---
 ![alt text](./server1.PNG)
 
-## Hardware component overview
+## Hardware components overview  
+---
+***
 
 ### Motherboard
 
@@ -60,20 +66,18 @@ Here is a list of components I used to build this home lab:
 A Micro-ATX platform, it has non-ECC memory support, multi‑GbE connectivity, and integrated IPMI.  
 **Key specs:**
 - Micro-ATX (9.6" x 9.6")
-- Supports AMD EPYC™ 4005/4004 and Ryzen™ 9000/8000/7000 Series
+- Supports AMD EPYC 4005/4004 and Ryzen 9000/8000/7000 Series
 - 4 memory slots (DDR5 ECC/non-ECC UDIMM)
 - PCIe 5.0 ×16, PCIe 5.0 ×4, PCIe 4.0 ×1
 - 1 × M.2 (PCIe 5.0 ×4)
 - **Network:** 2 × 10 GbE (Broadcom BCM57416), 2 × 1 GbE (Intel i210)
 - 4 × SATA 6 Gb/s
 - HDMI & DisplayPort  
-- Remote IPMI management interface
+- Remote IPMI management interface. 
 
-All onboard M.2., SATA and NIC controllers are recognized by VMware ESXi out-of-the-box. The remote management using IPMI makes system installation and control hassle-free.
+All the onboard M.2., SATA and NICs (2 × 10 GbE Broadcom BCM57416, 2 × 1 GbE Intel i210) controllers are recognized out-of-the-box by VMware ESXi. The remote management using IPMI makes system installation and control hassle-free without the need of buying an extra license!
 
-![alt text](image-3.png)
-
-![alt text](image-4.png)
+![alt text](image-12.png)
 
 ### CPU
 
@@ -89,7 +93,7 @@ The AMD EPYC 4565P processor is a powerful CPU with the following specs:
 
 ### CPU Cooler
 
-The Be Quiet DARK ROCK 5 is a big, silent, high-performance tower cooler that keeps the CPU cool. 
+The Be Quiet DARK ROCK 5 is a big, silent, high-performance tower cooler. 
 ![alt text](image-10.png)
 
 With the current utilization the temperature is **47 °C**.
@@ -101,9 +105,6 @@ With the current utilization the temperature is **47 °C**.
 - *Note:* Using all 4 DIMM slots drops memory speed to **3600 MHz**; with 2 slots, it can run at **5600 MHz**.
 - System stability is excellent with this config.
 - **NVMe memory tiering ``(*1)``** enabled for additional virtual RAM capacity.
-
-`` (*1) Memory Tiering over NVMe (Memory Tiering) allows you to add memory capacity to an ESX host by using NVMe devices installed locally on the ESX host as tiered memory. It optimizes performance by intelligently allocating VM memory to either NVMe devices or faster dynamic random access memory (DRAM) in the ESX host.`` [source](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/9-0/vsphere-resource-management/memory-tiering-over-nvme.html)
-
 
 ![alt text](image-9.png)
 
@@ -123,7 +124,7 @@ MSI MAG A850GL PCIE5 power supply unit 850 W 20+4 pin ATX ATX black.
 
 ### Disks
 
-On the motherboard there is only one NVMe slot available. In this slot a Samsung SSD 990 PRO M.2 NVME 4TB with Heatsink is installed.
+On the motherboard there is only 1 NVMe slot available. In this slot a Samsung SSD 990 PRO M.2 NVMe 4TB with Heatsink is installed.
 
 As backup disk I installed a Seagate Barracuda Desktop 24TB HDD 7200 RPM 512 MB 3.5" disk.
 
@@ -137,14 +138,18 @@ The NZXT H6 Flow Midi Tower black case has a dual-chamber design and has three p
 
 ## Conclusion
 
-Building a home lab server from custom hardware is always a challenge, especially when ensuring all components are recognized by platforms like VMware ESXi 9. In this project, all critical hardware—CPU, memory, storage, and network controllers—was recognized immediately by VMware ESXi 9, which made setup smooth and reliable.
+Building a home lab server with custom hardware can be challenging, you need to ensure all hardware components are recognized by platforms like VMware VCF. In this project, all the critical hardware such as CPU, memory, storage, and network controllers are recognized immediately by VMware ESXi 9, which made setup smooth and reliable.
 
-However, there are some limitations. Running a full nested VCF 9 environment isn’t possible with “just” 192 GB of physical RAM, and NVMe memory tiering does not work for nested ESXi hosts when Virtual Hardware-Assisted Virtualization is enabled. I hope future VMware updates will allow more flexible use of NVMe tiering for nested labs.
+![alt text](image-4.png)
+
+However, there are some limitations at the moment. Running a full nested VCF 9 environment isn’t possible with “just” 192 GB of physical RAM. NVMe memory tiering (*1) does not work for nested ESXi hosts when Virtual Hardware-Assisted Virtualization is enabled. I hope future VMware updates will allow more flexible use of NVMe tiering for nested labs.
 
 **Build highlights**:
-- Remote management: IPMI made installation and troubleshooting easy.
-- Performance: The AMD EPYC CPU offers the cores and RAM for extensive nested virtualization. NVMe memory tiering expands available memory for VMs.
-- Future ready: PCIe 5.0 and 10GbE deliver high-speed storage and network options.
-- Quiet: The selected components keep noise low.
-- Expansion potential: There’s room to add a GPU or other expansion cards.
-- Clean build: Spacious case design ensures good airflow and a tidy setup.
+- **Remote management**: IPMI made installation and troubleshooting easy. No license is needed to use all the IPME functions 
+- **Performance**: The AMD EPYC CPU offers the cores and RAM for extensive nested virtualization. NVMe memory tiering expands available memory for VMs.
+- **Future ready**: PCIe 5.0 and 10GbE LAN deliver high-speed storage and network options. All the hardware is recognized out-of-the box.
+- **Quiet System**: The selected components keep noise low.
+- **Expansion room**: There’s room to add a GPU or other expansion cards.
+- **Clean build**: Spacious case design ensures good airflow and a tidy setup.
+
+> (*1) Memory Tiering over NVMe (Memory Tiering) allows you to add memory capacity to an ESX host by using NVMe devices installed locally on the ESX host as tiered memory. It optimizes performance by intelligently allocating VM memory to either NVMe devices or faster dynamic random access memory (DRAM) in the ESX host.`` [source](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/9-0/vsphere-resource-management/memory-tiering-over-nvme.html)

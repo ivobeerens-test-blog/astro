@@ -95,7 +95,7 @@ Create your own passwords with a .httpd password generator such as [.htpasswd Ge
 ## 2. Configure VCF Download Tool (VCFDT) and UMDS
 
 The VCF Download Tool (VCFDT) and VMware Update Manager Download Service (UMDS) are used to download the VCF components and vSphere patches.
-
+- Downloaad the `vcf-download-tool-9.0.1.0.24962179.tar.gz` form the Broadcom website and upload the file `/volume1/docker/vcfweb/vcfdt` folder.
 - Open the SSH connection to the UGREEN NAS and go to the following folder
 `/volume1/docker/vcfweb/vcfdt` and perform the following command:
 `tar -xvf vcf-download-tool-9.0.1.0.24962179.tar.gz`

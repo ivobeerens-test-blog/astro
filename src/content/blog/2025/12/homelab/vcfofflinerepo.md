@@ -1,5 +1,5 @@
 ---
-title: "Configure a Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation on my UGREEN NAS"
+title: "Configure a Offline Depot for VMware Cloud Foundation on my UGREEN NAS"
 description: "Running a Offline depot for VFF or VCF 9 on my UGREEN NAS"
 author: Ivo Beerens
 pubDate: 2025-12-04T00:00:00+01:00
@@ -21,7 +21,7 @@ tags:
 
 # Introduction
 
-In my home lab I have a UGREEN DXP2800 NAS. This is a 2-bay NAS. For my lab environment I wanted to  create a Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation. The most blogs are running an Ubuntu with Apache as webserver VM as offline depot server. I didn't wanted to use an Ubuntu VM as webserver. I use a small NGINX container that is running on the NAS as offline depot web server without requiring certificates. The VCF Download Tool (VCFDT) will be used for downloading install and upgrade VCF components. With the VCFDT you can enable  Update Manager Download Service (UMDS) for downloading a ESX software depot that is backwards compatible. 
+In my home lab I have a UGREEN DXP2800 NAS. This is a 2-bay NAS. For my lab environment I wanted to create a Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation. The most blogs are running an Ubuntu with Apache as webserver VM as offline depot server. I didn't wanted to use an Ubuntu VM as webserver. I use a small NGINX container that is running on the NAS as offline depot web server without requiring certificates. The VCF Download Tool (VCFDT) will be used for downloading install and upgrade VCF components. With the VCFDT you can enable  Update Manager Download Service (UMDS) for downloading a ESX software depot that is backwards compatible. 
 
 ## Webserver NGINX container configuration
 
@@ -162,7 +162,7 @@ After installing the VMware Cloud Installer appliance perform the following step
 
 ![alt text](image-6.png)
 
-After configuring these steps you have an offline depot on your UGREEN NAS configured with a NGINX docker web container.
+After configuring these steps you have an Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation hosted on your UGREEN NAS. 
 
 More information:
 

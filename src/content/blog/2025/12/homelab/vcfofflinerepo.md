@@ -36,7 +36,7 @@ For the web server a NGINX container will be configured.
 - In the web portal of the UGREEN NAS, perform the following steps:
   - In the App Center, search for Docker and install Docker.
   - Open `Control Panel`, select `Terminal`, and enable the `SSH protocol` on port `22`.
-- Download the vcfweb folder from my GitHub [repository]() and transfer it into the docker file (I use [WinSCP](https://winscp.net/eng/download.php) for example on Windows)
+- Download the vcfweb folder from my GitHub [repository](https://github.com/ibeerens/vcfweb) and transfer the repo to the docker folder `/volume1/docker` on the UGREEN NAS. I use [WinSCP](https://winscp.net/eng/download.php) for transfering the folder to the UGREEN NAS.
 - Make an SSH connection to the NAS and perform the command 'id'
 ```
 ibeerens@DXP2800-01:~$ id

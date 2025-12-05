@@ -31,9 +31,9 @@ The last step is to configure the VMware Cloud Installer appliance (SDDC Manager
 
 ## 1. Setup the Web Server
 
-For the web server a NGINX container will be configured.
+For the web server a NGINX container will be configured. Here are the steps:
 
-- In the web portal of the UGREEN NAS, perform the following steps:
+- Open the web portal of the UGREEN NAS
   - In the App Center, search for Docker and install Docker.
   - Open `Control Panel`, select `Terminal`, and enable the `SSH protocol` on port `22`.
 - Download the vcfweb folder from my GitHub [repository](https://github.com/ibeerens/vcfweb) and transfer the repo to the docker folder `/volume1/docker` on the UGREEN NAS. I use [WinSCP](https://winscp.net/eng/download.php) for transfering the folder to the UGREEN NAS.
@@ -79,11 +79,9 @@ services:
 ![alt text](image-10.png)
 
 - Use the SSH connection to the UGREEN NAS and enter the following command: 
-`sudo chmod 755 /volume1/docker/vcfweb`
-
+`sudo chmod 755 /volume1/docker/vcfweb`  
 - In the web browser enter the NAS IP with the port number
-`http://192.168.250.166:8086/`
-
+`http://192.168.250.166:8086/`  
 - Check if the webpage with authentication is displayed. The authentication is:
   - username: `vcf`
   - password: `VCFdepot`
@@ -95,7 +93,7 @@ Create your own passwords with a .httpd password generator such as [.htpasswd Ge
 ## 2. Configure VCF Download Tool (VCFDT) and UMDS
 
 The VCF Download Tool (VCFDT) and VMware Update Manager Download Service (UMDS) are used to download the VCF components and vSphere patches.
-- Downloaad the `vcf-download-tool-9.0.1.0.24962179.tar.gz` form the Broadcom website and upload the file `/volume1/docker/vcfweb/vcfdt` folder.
+- Download the `vcf-download-tool-9.0.1.0.24962179.tar.gz` from the Broadcom website and upload the file `/volume1/docker/vcfweb/vcfdt` folder.
 - Open the SSH connection to the UGREEN NAS and go to the following folder
 `/volume1/docker/vcfweb/vcfdt` and perform the following command:
 `tar -xvf vcf-download-tool-9.0.1.0.24962179.tar.gz`
@@ -109,7 +107,9 @@ Perform the following command to download binaries needed by VCF Installer for d
 
 Use the VCF Download Tool UMDS commands to install UMDS and list, download and manage ESX binaries and metadata.
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds install`
-`sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds run -S --add-entitlement-token <enter the download token>`
+
+`sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds run -S --add-entitlement-token <enter the download token>`  
+
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds run -S --patch-store /volume1/docker/vcfweb/config/umds-patch-store/`
 
 The default Host platforms will be downloaded are:
@@ -122,14 +122,14 @@ esxio-9.0.1-INTL
 embeddedEsx-7.0-INTL
 embeddedEsx-8.0-INTL
 ```
-
 - We only need the ESX 9 bits, so we disable all the host platforms and enable ESX 9 with the following commands: 
 
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds run -S --disable-host`
 
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds run -S -e embeddedEsx-9.0-INTL`
 
-- To start the download use the following command:
+- To start the download use the following command:  
+
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds run vmware-umds -D`
 
 More information can be found here: [VCF download tool](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/lifecycle-management/what-is-the-vcf-download-tool-.html)
@@ -149,7 +149,7 @@ After installing the VMware Cloud Installer appliance (SDDC Manager), we will di
 
 - Log in to the VMware Cloud Foundation Installer.
 - Select `Depot settings and binary management`
-
+  
 ![alt text](image.png)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Configure a Offline Depot for VMware Cloud Foundation on my UGREEN NAS"
+title: "Configure a Offline Depot for VMware Cloud Foundation on an UGREEN NAS"
 description: "Running a Offline depot for VFF or VCF 9 on my UGREEN NAS"
 author: Ivo Beerens
 pubDate: 2025-12-04T00:00:00+01:00
@@ -21,27 +21,33 @@ tags:
 
 # Introduction
 
-In my home lab I have a UGREEN DXP2800 NAS. This is a 2-bay NAS. For my lab environment I wanted to create a Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation. The most blogs are running an Ubuntu with Apache as webserver VM as offline depot server. I didn't wanted to use an Ubuntu VM as webserver. I use a small NGINX container that is running on the NAS as offline depot web server without requiring certificates. The VCF Download Tool (VCFDT) will be used for downloading install and upgrade VCF components. With the VCFDT you can enable  Update Manager Download Service (UMDS) for downloading a ESX software depot that is backwards compatible. 
+In my home lab, I have a UGREEN DXP2800 NAS. This is a 2-bay NAS. For my lab environment I wanted to create an Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation. Most blogs are running an Ubuntu VM with Apache as web server.
 
-## Webserver NGINX container configuration
+I didn't want to use an Ubuntu VM as web server. I use a small NGINX container that is running on the NAS as offline depot web server without requiring certificates. 
 
-- In the webportal of the UGREEN NAS perform the following steps:
-  - In the App Center seach for Docker and install it
-  - Open Control Panel - Select "Terminal" and enable the SSH protocol on port 22
-- Download the vcfweb folder from my GitHub [repository]()  and transfer it in the docker file (I use [WinSCP](https://winscp.net/eng/download.php) for example on Windows)
-- Make a SSH connection to the NAS and perform the command 'id'
+The VCF Download Tool (VCFDT) will be used for downloading, installing and upgrading VCF components. With the VCFDT you can enable Update Manager Download Service (UMDS) for downloading an ESX software depot that is backwards compatible.
+
+The last step is to configure the VMware Cloud Installer appliance (SDDC Manager). We will disable the HTTPS requirement for the Offline Depot.
+
+## 1. Setup the Web Server
+
+For the web server a NGINX container will be configured.
+
+- In the web portal of the UGREEN NAS, perform the following steps:
+  - In the App Center, search for Docker and install Docker.
+  - Open `Control Panel`, select `Terminal`, and enable the `SSH protocol` on port `22`.
+- Download the vcfweb folder from my GitHub [repository]() and transfer it into the docker file (I use [WinSCP](https://winscp.net/eng/download.php) for example on Windows)
+- Make an SSH connection to the NAS and perform the command 'id'
 ```
 ibeerens@DXP2800-01:~$ id
 uid=1000(ibeerens) gid=10(admin) groups=10(admin),100(users),133(ughomeusers)
 ```
 
-- In the web UI of the UGREEN NAS docker
+- In the web UI of the UGREEN NAS:
   - Open Docker
-  - Copy the vcfweb folder under the docker folder
-  - Open Docker on the NAS and select Project
-  - Select Create
-    - Name = vcfweb
-    - Storage path:
+  - Copy the vcfweb folder under the Docker folder
+  - In Docker on the NAS and select `Project`
+  - Select `Create`:
     - Paste the following Docker compose file and match the `PUID` and `PGID` with the IDs from the ID command:
 
 ```
@@ -66,7 +72,9 @@ services:
 
 ![alt text](image-9.png)
 
-- Select Deploy and the container will be created
+  - Name = `vcfweb`
+  - Storage path: browse to `/volume1/docker/vcfweb`
+- Select `Deploy` and the container will be created
 
 ![alt text](image-10.png)
 
@@ -82,23 +90,22 @@ services:
 
 ![alt text](image-11.png)
 
-You can create your own passwords with a .httpd password generator such as [.htpasswd Generatorr](https://codeshack.io/htpasswd-generator/)
+Create your own passwords with a .httpd password generator such as [.htpasswd Generatorr](https://codeshack.io/htpasswd-generator/). The NGINX webserver is now running.
 
-The NGINX webserver is now running.
+## 2. Configure VCF Download Tool (VCFDT) and UMDS
 
-## VCF Download Tool
-The VCF Download Tool is a command-line interface (CLI) utility designed to simplify the management of binaries and metadata for VMware Cloud Foundation platforms. 
+The VCF Download Tool (VCFDT) and VMware Update Manager Download Service (UMDS) are used to download the VCF components and vSphere patches.
 
-- SSH to to the UGREEN NAS and go to the following folder
+- Open the SSH connection to the UGREEN NAS and go to the following folder
 `/volume1/docker/vcfweb/vcfdt` and perform the following command:
 `tar -xvf vcf-download-tool-9.0.1.0.24962179.tar.gz`
 - Copy the download token from the Broadcom website and create a file named 'downloadtoken.txt' and save this in the `/volume1/docker/vcfweb` folder
 
-Perform the following command to download install binaries needed by VCF Installer for deploying VCF instance:
+Perform the following command to download binaries needed by VCF Installer for deploying VCF instance:
 
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool binaries download --depot-download-token-file=/volume1/docker/vcfweb/downloadtoken.txt --depot-store /volume1/docker/vcfweb/config/PROD --vcf-version=9.0.1 --automated-install --type=install --ceip=disable`
 
-Download vSphere binaries
+**Download vSphere binaries**
 
 Use the VCF Download Tool UMDS commands to install UMDS and list, download and manage ESX binaries and metadata.
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds install`
@@ -116,7 +123,7 @@ embeddedEsx-7.0-INTL
 embeddedEsx-8.0-INTL
 ```
 
-- We only need the ESX 9 bits, so we disable all the host platforms and enable ESX 9 bits. 
+- We only need the ESX 9 bits, so we disable all the host platforms and enable ESX 9 with the following commands: 
 
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds run -S --disable-host`
 
@@ -125,9 +132,12 @@ embeddedEsx-8.0-INTL
 - To start the download use the following command:
 `sudo /volume1/docker/vcfweb/vcfdt/bin/vcf-download-tool umds run vmware-umds -D`
 
-## VMware Cloud Foundation Installer appliance
+More information can be found here: [VCF download tool](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/lifecycle-management/what-is-the-vcf-download-tool-.html)
 
-After installing the VMware Cloud Installer appliance perform the following steps to connect to the Offline Depot web server.
+## 3. Configure the VMware Cloud Foundation Installer appliance
+
+After installing the VMware Cloud Installer appliance (SDDC Manager), we will disable the HTTPS requirement.This makes the configuration easier.
+
 - SSH to the VMware Cloud Foundation Installer appliance
 - Perform the following commands:
 
@@ -138,34 +148,30 @@ After installing the VMware Cloud Installer appliance perform the following step
 `systemctl restart lcm`
 
 - Log in to the VMware Cloud Foundation Installer.
-- Select "Depot settings and binary management".
+- Select `Depot settings and binary management`
 
 ![alt text](image.png)
 
 
-- Select "Offline depot" configure
+- Select `Offline depot` to configure  
 
 ![alt text](image-1.png)
 
-- Enter Offline depot credentials  
-  `- FQDN or IP Address`  
-  `- Port`  
-  `- Username`  
-  `- Password`    
+- Enter Offline depot credentials:
+  - `FQDN or IP Address`  
+  - `Port`  
+  - `Username`  
+  - `Password`    
 
 ![alt text](image-3.png)
-- If everything is ok the Offline Depot checkmark is green
+- If everything is ok, the Offline Depot checkmark is green.
 
 ![alt text](image-4.png)
 
-- Select the product and version and download all the components
+- Select the product and version and download all the components. This can take a while.
 
 ![alt text](image-6.png)
 
-After configuring these steps you have an Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation hosted on your UGREEN NAS. 
+## Conclusion
 
-More information:
-
-VCF download tool
-https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/lifecycle-management/what-is-the-vcf-download-tool-.html
-
+After configuring these steps, you have an Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation hosted on an UGREEN NAS with a NGINX Docker container. The VMware Cloud Foundation Installer will connect by HTTP so no certificates are needed.

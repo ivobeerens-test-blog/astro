@@ -21,7 +21,7 @@ tags:
 
 # Introduction
 
-In my home lab, I have a UGREEN DXP2800 NAS. This is a 2-bay NAS. For my lab environment I wanted to create an Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation. Most blogs are running an Ubuntu VM with Apache as web server.
+In my home lab, I have a UGREEN DXP2800 NAS. I wanted to create an Offline Depot for VMware Cloud Foundation or VMware vSphere Foundation. Most blogs are running an Ubuntu VM with Apache as web server.
 
 I didn't want to use an Ubuntu VM as web server. I use a small NGINX container that is running on the NAS as offline depot web server without requiring certificates. 
 

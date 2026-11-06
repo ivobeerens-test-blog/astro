@@ -138,10 +138,10 @@ More information can be found here: [VCF download tool](https://techdocs.broadco
 
 After installing the VMware Cloud Installer appliance (SDDC Manager), we will disable the HTTPS requirement.This makes the configuration easier.
 
-- SSH to the VMware Cloud Foundation Installer appliance
+- SSH to the VMware Cloud Foundation Installer appliance with the user 'vcf'
 - Perform the following commands:
 
-`sudo`
+`su root`
 
 `echo "lcm.depot.adapter.httpsEnabled=false" >> /opt/vmware/vcf/lcm/lcm-app/conf/application-prod.properties`
 

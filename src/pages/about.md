@@ -24,7 +24,7 @@ My name is Ivo Beerens, currently working as Solution Consultant specialized in 
 
 ## Awards
 
-- VMware vExpert title (2011 till 2025), 15 years in a row.
+- VMware vExpert title (2011 till 2026), 16 years in a row.
 <div style="text-align: left;">
   <img src="/vexpert2025.png" alt="vexpert" />
 </div>

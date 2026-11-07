@@ -192,13 +192,15 @@ const today = new Date();
 		gap: 1em;
 		margin-top: 1em;
 	}
+	/* Social icons in the logo's blue */
 	.social-links a {
 		text-decoration: none;
-		color: rgb(var(--gray));
+		color: var(--logo-blue);
 		transition: color 0.2s ease;
 	}
-	.social-links a:hover {
-		color: var(--accent);
+	.social-links a:hover,
+	.social-links a:focus-visible {
+		color: var(--logo-navy);
 	}
 	@media (max-width: 720px) {
 		footer {

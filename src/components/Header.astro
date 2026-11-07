@@ -97,6 +97,11 @@ import logo from '../assets/logo.png';
 	.social-links a {
 		display: flex;
 	}
+	/* Social icons in the logo's blue */
+	.social-links a {
+		color: var(--logo-blue);
+		transition: color 0.15s ease;
+	}
 		.internal-links .search-link {
 			display: inline-flex;
 			align-items: center;
@@ -141,8 +146,9 @@ import logo from '../assets/logo.png';
 			font-size: 1.05em;
 		}
 	}
-	.social-links a:hover {
-		color: var(--accent);
+	.social-links a:hover,
+	.social-links a:focus-visible {
+		color: var(--logo-navy);
 	}
 	@media (max-width: 720px) {
 		.social-links {

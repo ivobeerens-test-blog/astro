@@ -7,6 +7,9 @@
 :root {
 	--accent: #45ADFE;
 	--accent-dark: #0B6E99;
+	/* The two blues from the logo */
+	--logo-blue: #0070c0;
+	--logo-navy: #002060;
 	--black: 26, 26, 35;
 	--gray: 67, 67, 91;
 	--gray-light: 247, 243, 252;

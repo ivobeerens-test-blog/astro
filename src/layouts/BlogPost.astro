@@ -4,6 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import { ETHICALADS_PUBLISHER, SUPPORT_LABEL, SUPPORT_URL } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { ogImage?: string };
 
@@ -34,7 +35,44 @@ const jsonLd = {
 			article={{ publishedTime: pubDate, modifiedTime: updatedDate }}
 		/>
 		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
+		{ETHICALADS_PUBLISHER && <script is:inline async src="https://media.ethicalads.io/media/client/ethicalads.min.js" />}
 		<style>
+			/* EthicalAds: one ad per page, under the title and above the article */
+			.ethical-ad {
+				display: flex;
+				justify-content: center;
+				margin: 0 0 2em;
+			}
+			/* "Support my work" box at the end of each post */
+			.support {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1rem 2rem;
+				margin: 3em 0 1em;
+				padding: 1.25rem 1.5rem;
+				border: 1px solid rgba(var(--gray), 0.2);
+				border-radius: 8px;
+				background: rgb(var(--gray-light));
+			}
+			.support p {
+				flex: 1 1 280px;
+				margin: 0;
+			}
+			.support a {
+				padding: 0.6rem 1.2rem;
+				border-radius: 8px;
+				background: var(--accent-dark);
+				color: #fff;
+				font-weight: 600;
+				text-decoration: none;
+				white-space: nowrap;
+			}
+			.support a:hover,
+			.support a:focus-visible {
+				background: rgb(var(--black));
+			}
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
@@ -103,7 +141,27 @@ const jsonLd = {
 						</div>
 						<hr />
 					</div>
+					{
+						ETHICALADS_PUBLISHER && (
+							<div class="ethical-ad">
+								<div data-ea-publisher={ETHICALADS_PUBLISHER} data-ea-type="image" class="horizontal raised" />
+							</div>
+						)
+					}
 					<slot />
+					{
+						SUPPORT_URL && (
+							<aside class="support" aria-label="Support my work">
+								<p>
+									<strong>Did this post save you time?</strong> If it helped you, you can support my
+									work. Thank you!
+								</p>
+								<a href={SUPPORT_URL} target="_blank" rel="noopener">
+									{SUPPORT_LABEL}
+								</a>
+							</aside>
+						)
+					}
 				</div>
 			</article>
 		</main>

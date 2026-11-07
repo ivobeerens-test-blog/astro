@@ -8,11 +8,32 @@ import FormattedDate from '../components/FormattedDate.astro';
 type Props = CollectionEntry<'blog'>['data'] & { ogImage?: string };
 
 const { title, description, pubDate, updatedDate, heroImage, ogImage } = Astro.props;
+
+// Structured data so search engines can show the post as an article
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: title,
+	description,
+	datePublished: pubDate.toISOString(),
+	dateModified: (updatedDate ?? pubDate).toISOString(),
+	author: { '@type': 'Person', name: 'Ivo Beerens', url: new URL('/about/', Astro.site).href },
+	image: new URL(ogImage ?? '/logo.png', Astro.site).href,
+	mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+	url: pageUrl,
+};
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} image={ogImage} />
+		<BaseHead
+			title={title}
+			description={description}
+			image={ogImage}
+			article={{ publishedTime: pubDate, modifiedTime: updatedDate }}
+		/>
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -29,11 +50,17 @@ const { title, description, pubDate, updatedDate, heroImage, ogImage } = Astro.p
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
+				width: 80%;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
 				color: rgb(var(--gray-dark));
+			}
+			/* On phones and small tablets 80% is too narrow, so use the full width */
+			@media (max-width: 900px) {
+				.prose {
+					width: 100%;
+				}
 			}
 			.title {
 				margin-bottom: 1em;

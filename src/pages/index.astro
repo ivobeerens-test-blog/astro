@@ -106,10 +106,14 @@ const getExcerpt = (content: string | undefined) => {
 				border-top: 1px solid rgba(var(--gray), 0.2);
 			}
 			main {
-				width: 960px;
 				max-width: calc(100% - 2em);
 				margin: 0 auto;
 				padding: 0 1rem;
+				text-align: center;
+			}
+			/* Shrink the welcome heading on phones so "IvoBeerens.NL" isn't split across lines */
+			main h1 {
+				font-size: clamp(2rem, 8vw, 3.052em);
 			}
 		</style>
 	</head>
@@ -129,7 +133,7 @@ const getExcerpt = (content: string | undefined) => {
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.id}/`} target="_blank" rel="noopener noreferrer">
+								<a href={`/blog/${post.id}/`}>
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
@@ -141,7 +145,7 @@ const getExcerpt = (content: string | undefined) => {
 					}
 				</ul>
 				<div class="button-container">
-					<a href="/blog" class="show-more" target="_blank" rel="noopener noreferrer">Show More Blog Posts →</a>
+					<a href="/blog/" class="show-more">Show More Blog Posts →</a>
 				</div>
 			</div>
 		</main>

@@ -23,9 +23,7 @@ tags:
 # Introduction
 
 Broadcom announced this week the vSphere Express license. vSphere Express is a new entry-level package for smaller environments. It is built on vSphere 9 and is available now in all regions.
-
-VMware vSphere 8.0 (including ESXi 8.x, vCenter Server 8.x, and vSAN 8.x) reaches End of General Support on October 11, 2027. After this date, VMware/Broadcom stops providing standard patches, security fixes, hardware enablement, and full support
-
+VMware vSphere 8.0 (including ESXi 8.x, vCenter Server 8.x, and vSAN 8.x) reaches End of General Support on October 11, 2027. After this date, VMware/Broadcom stops providing standard patches, security fixes and hardware enablement.
 This makes vSphere Express the only low-end route to vSphere 9. If you don't need VMware vSphere Foundation (VVF) or VMware Cloud Foundation (VCF), this is the package to look at.
 
 In this blog post, I give an overview of what is included, what the limits are.
@@ -58,11 +56,11 @@ The following components are **not** included:
 - Private AI
 
 Check **DRS** first. Without DRS, you need to review everything that depends on it, such as affinity rules, VM-host groups, and the automatic evacuation of VMs during maintenance mode.
-
+  
 ## How does it compare?
-
+  
 Here is an overview of vSphere Express compared to the other editions:
-
+  
 | Capability | Standard 8 | Enterprise Plus 8 | Express | VVF | VCF |
 | --- | --- | --- | --- | --- | --- |
 | vSphere 9 | No | No | Yes | Yes | Yes |
@@ -76,7 +74,7 @@ Here is an overview of vSphere Express compared to the other editions:
 | VCF Operations | No | No | No | Yes | Yes |
 | VCF Automation, Private AI | No | No | No | No | Yes |
 | VCF Private AI | No | No | No | No | Yes |
-
+  
 ## Licensing and limits
 
 The licensing rules are the most important part of vSphere Express. The Broadcom documentation states the following:
@@ -88,9 +86,7 @@ The licensing rules are the most important part of vSphere Express. The Broadcom
 - vSphere Express is only available for version 9 or later.
 - It uses the same licensing infrastructure as VVF and VCF.
 
-Broadcom's announcement describes the scope as 128 cores "across all environments". Shenoy told The Register that the product is "tested for small implementations". The Register also reports that vSphere Express instances are discrete and cannot be managed centrally.
-
-So vSphere Express is not a fit if you need central management across multiple sites, or if you expect to grow beyond 128 cores.
+Broadcom licenses a minimum of 16 cores per CPU socket. With 128 cores, you can license up to 8 single-socket hosts or up to 4 dual-socket hosts, when each CPU has 16 cores or fewer!
 
 ## Pricing
 
@@ -117,8 +113,8 @@ Look at VVF, VCF, or an alternative when you:
 
 vSphere Express brings a low-end vSphere 9 option back, but three big questions remain:
 
-- **Pricing**. You have to buy the full 128-core pack at once, even if you use fewer cores. 
-- **Licensing**. The pack is fixed at 128 cores per customer, with no add-ons and no option to split the license. Does this fit how smaller customers actually grow?
+- **Pricing**. You have to buy the full 128-core pack, even if you use fewer cores. 
+- **Licensing**. The pack is fixed at 128 cores per customer per 12 months, with no add-ons and no option to split the license. Does this fit how smaller customers actually grow?
 - **Customer trust**. Many vSphere Standard users and former partners were burned by Broadcom's earlier changes. Can VMware win them back?
 
 ## Resources

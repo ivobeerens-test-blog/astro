@@ -4,7 +4,10 @@ const today = new Date();
 
 <footer>
 	<div class="footer-content">
-		<p>&copy; {today.getFullYear()} Ivo Beerens. All rights reserved.</p>
+		<p>
+			&copy; {today.getFullYear()} Ivo Beerens. All rights reserved.
+			· <button type="button" class="link-button" id="cookie-settings">Cookie settings</button>
+		</p>
 		<div class="social-links">
 			<a href="https://www.linkedin.com/in/ivobeerens/" target="_blank">
 				<span class="sr-only">Follow ibeerens on LinkedIn</span>
@@ -39,6 +42,134 @@ const today = new Date();
 		</div>
 	</div>
 </footer>
+
+<div class="cookie-consent" id="cookie-consent" role="region" aria-label="Cookie consent" hidden>
+	<p>
+		This site uses Google Analytics cookies to see which posts are read. Nothing is tracked
+		unless you accept.
+	</p>
+	<div class="cookie-actions">
+		<button type="button" data-consent="denied">Decline</button>
+		<button type="button" data-consent="granted" class="accept">Accept</button>
+	</div>
+</div>
+
+<script>
+	const STORAGE_KEY = 'analytics-consent';
+	const banner = document.getElementById('cookie-consent');
+
+	const readConsent = () => {
+		try {
+			return localStorage.getItem(STORAGE_KEY);
+		} catch {
+			return null;
+		}
+	};
+
+	// Remove the cookies Google Analytics set (_ga, _ga_<id>) on this domain and its parent
+	const removeAnalyticsCookies = () => {
+		const host = location.hostname;
+		const domains = ['', host, `.${host}`, `.${host.replace(/^www\./, '')}`];
+		for (const cookie of document.cookie.split(';')) {
+			const name = cookie.split('=')[0].trim();
+			if (!name.startsWith('_ga')) continue;
+			for (const domain of domains) {
+				document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ''}`;
+			}
+		}
+	};
+
+	if (banner) {
+		if (!readConsent()) banner.hidden = false;
+
+		banner.addEventListener('click', (event) => {
+			const choice = (event.target as HTMLElement).closest<HTMLElement>('[data-consent]')?.dataset.consent;
+			if (!choice) return;
+			const previous = readConsent();
+			try {
+				localStorage.setItem(STORAGE_KEY, choice);
+			} catch {}
+			banner.hidden = true;
+
+			if (choice === 'granted') {
+				// Defined in BaseHead.astro
+				(window as Window & { loadAnalytics?: () => void }).loadAnalytics?.();
+			} else if (previous === 'granted') {
+				// Consent withdrawn: delete the cookies and reload so the GA script is gone
+				removeAnalyticsCookies();
+				location.reload();
+			}
+		});
+
+		document.getElementById('cookie-settings')?.addEventListener('click', () => {
+			banner.hidden = false;
+			banner.querySelector<HTMLButtonElement>('button')?.focus();
+		});
+	}
+</script>
+
+<style>
+	.link-button {
+		padding: 0;
+		border: none;
+		background: none;
+		color: inherit;
+		font: inherit;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	.cookie-consent {
+		position: fixed;
+		right: 1rem;
+		bottom: 1rem;
+		left: 1rem;
+		z-index: 100;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem 1.5rem;
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 1rem 1.25rem;
+		border-radius: 8px;
+		background: #fff;
+		color: rgb(var(--gray-dark));
+		box-shadow: var(--box-shadow);
+		font-size: 0.95rem;
+	}
+	.cookie-consent[hidden] {
+		display: none;
+	}
+	.cookie-consent p {
+		flex: 1 1 280px;
+		margin: 0;
+	}
+	.cookie-actions {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.cookie-actions button {
+		padding: 0.5rem 1.1rem;
+		border: 1px solid rgb(var(--gray));
+		border-radius: 6px;
+		background: #fff;
+		color: rgb(var(--gray-dark));
+		font: inherit;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.cookie-actions button.accept {
+		border-color: var(--accent-dark);
+		background: var(--accent-dark);
+		color: #fff;
+	}
+	.cookie-actions button:focus-visible,
+	.link-button:focus-visible {
+		outline: 2px solid var(--accent-dark);
+		outline-offset: 2px;
+	}
+</style>
 <style>
 	footer {
 		padding: 2em 1em;

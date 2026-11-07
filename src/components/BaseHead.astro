@@ -2,17 +2,22 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { SITE_TITLE } from '../consts';
+import { GA_MEASUREMENT_ID, SITE_TITLE } from '../consts';
+
+// Count only the live site, not `npm run dev`
+const gaId = import.meta.env.PROD ? GA_MEASUREMENT_ID : '';
 
 interface Props {
 	title: string;
 	description?: string;
 	image?: string;
+	/** Set for blog posts, so social sites and search engines treat the page as an article */
+	article?: { publishedTime: Date; modifiedTime?: Date };
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description = '', image = '/logo.png' } = Astro.props;
+const { title, description = '', image = '/logo.png', article } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -41,7 +46,9 @@ const { title, description = '', image = '/logo.png' } = Astro.props;
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={article ? 'article' : 'website'} />
+{article && <meta property="article:published_time" content={article.publishedTime.toISOString()} />}
+{article?.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime.toISOString()} />}
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -54,11 +61,21 @@ const { title, description = '', image = '/logo.png' } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MVK8GXB3DR"></script>
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MVK8GXB3DR');
+<!-- Google Analytics: loaded only once the visitor has accepted cookies (banner in Footer.astro) -->
+<script is:inline define:vars={{ gaId }}>
+	window.dataLayer = window.dataLayer || [];
+	window.gtag = function () { window.dataLayer.push(arguments); };
+	window.loadAnalytics = function () {
+		if (!gaId || window.analyticsLoaded) return;
+		window.analyticsLoaded = true;
+		var script = document.createElement('script');
+		script.async = true;
+		script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+		document.head.appendChild(script);
+		window.gtag('js', new Date());
+		window.gtag('config', gaId);
+	};
+	try {
+		if (localStorage.getItem('analytics-consent') === 'granted') window.loadAnalytics();
+	} catch (e) {}
 </script>

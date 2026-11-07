@@ -46,8 +46,9 @@ body {
 	line-height: 1.7;
 }
 
+/* Pages use 80% of the screen; posts set the same width in BlogPost.astro */
 main {
-	width: 720px;
+	width: 80%;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
@@ -156,6 +157,20 @@ blockquote {
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
+}
+
+/* On phones and small tablets 80% is too narrow, so use the full width */
+@media (max-width: 900px) {
+	main {
+		width: 100%;
+	}
+}
+
+/* Wide tables scroll on their own instead of making the whole page scroll sideways on phones */
+table {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
 }
 
 @media (max-width: 720px) {

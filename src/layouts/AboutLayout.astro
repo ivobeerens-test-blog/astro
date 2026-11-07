@@ -5,9 +5,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+// Markdown pages that use this layout (about.md) pass their frontmatter as `frontmatter`
+type Props = { frontmatter: CollectionEntry<'blog'>['data'] };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props.frontmatter;
 ---
 
 <html lang="en">
@@ -29,11 +30,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
+				width: 80%;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
 				color: rgb(var(--gray-dark));
+			}
+			/* On phones and small tablets 80% is too narrow, so use the full width */
+			@media (max-width: 900px) {
+				.prose {
+					width: 100%;
+				}
 			}
 			.title {
 				margin-bottom: 1em;

@@ -1,36 +1,43 @@
 ---
 layout: '../layouts/AboutLayout.astro'
 title: 'About Me'
-description: 'Learn more about who I am and what I do'
+description: 'Ivo Beerens, solution consultant and 16-year VMware vExpert, writing about VMware, Azure, Infrastructure as Code and End User Computing.'
 pubDate: 2024-03-20
-heroImage: '/blog-placeholder-about.jpg'
 ---
 
-# About
-
-Welcome to my blog! This is where I share my thoughts, experiences, and knowledge about technology, particularly focusing on:
-
-- Cloud Computing
-- DevOps
-- Infrastructure as Code
-- Virtualization
-- End User Computing (EUC)
+<img src="/ivobeerens.jpg" alt="Ivo Beerens" width="1400" height="1400" style="display: block; width: 50%; margin: 0 auto;" />
 
 ## Who Am I?
 
-My name is Ivo Beerens, currently working as Solution Consultant specialized in virtualization technologies such as VMware SDDC, End-User Computing (EUC), DAAS, Azure, Azure Virtual Desktop (AVD), Infrastructure as Code (IaC), Business Continuity (BC), and Disaster Recovery (DR).
+My name is Ivo Beerens. I work as a Solution Consultant at Ictivity, specializing in:
 
-![Ivo Beerens](/ivobeerens.jpg)
+- Virtualization with VMware and Hyper-V
+- Azure, including designing and building landing zones
+- Azure Virtual Desktop (AVD)
+- Omnissa Horizon
+
+I use Infrastructure as Code (IaC) with Terraform, Ansible and PowerShell for deploying and managing infrastructure.
+
+## What I Write About
+
+On this blog I share my thoughts, experiences, and knowledge about technology, particularly focusing on:
+
+- On-premises virtualization solutions (VMware and Hyper-V)
+- Cloud Computing (Hybrid and Azure)
+- DevOps
+- Infrastructure as Code (IaC) using Terraform, Ansible and PowerShell
+- End User Computing (EUC) such as Omnissa Horizon and Azure Virtual Desktop (AVD)
+
+*The opinions on this blog are my own and do not necessarily reflect those of my employer.*
 
 ## Awards
 
 - VMware vExpert title (2011 till 2026), 16 years in a row.
-<div style="text-align: left;">
-  <img src="/vexpert2025.png" alt="vexpert" />
-</div>
 - HashiCorp Ambassador 2024.
-<div style="text-align: center;">
-  <img src="/hashicorp-ambassador-2024-1.png" alt="vexpert" />
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; margin: 1.5rem 0 2.5rem;">
+  <img src="/vexpert2025.png" alt="VMware vExpert" width="835" height="562" style="height: 150px; width: auto;" />
+  <img src="/hashicorp-ambassador-2024-1.png" alt="HashiCorp Ambassador 2024" width="150" height="150" style="height: 150px; width: auto;" />
 </div>
 
 ## Certifications

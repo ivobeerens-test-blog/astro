@@ -120,7 +120,27 @@ import logo from '../assets/logo.png';
 		.internal-links .search-link .search-icon {
 			display: inline-block;
 			vertical-align: middle;
+			width: 1.3em;
+			height: 1.3em;
 		}
+	/* Larger menu links */
+	.internal-links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
+	.internal-links :global(a) {
+		padding: 1em 0.75em;
+		font-size: 1.25em;
+	}
+	/* Medium screens: a bit smaller so the menu stays on one line */
+	@media (max-width: 1200px) {
+		.internal-links :global(a) {
+			padding: 1em 0.35em;
+			font-size: 1.05em;
+		}
+	}
 	.social-links a:hover {
 		color: var(--accent);
 	}
@@ -130,6 +150,11 @@ import logo from '../assets/logo.png';
 		}
 		.logo {
 			height: 60px;
+		}
+		/* Keep the menu compact enough to fit on phones */
+		.internal-links :global(a) {
+			padding: 0.75em 0.5em;
+			font-size: 1.05em;
 		}
 			/* On small screens show the text label instead of the icon */
 			.internal-links .search-link .search-text {

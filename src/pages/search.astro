@@ -21,7 +21,6 @@ const postsData = posts.map(post => ({
 		<BaseHead title="Search - Ivo Beerens Blog" description="Search through blog posts about Cloud Computing, DevOps, Infrastructure as Code, Virtualization, and End User Computing" />
 		<style>
 			main {
-				width: 960px;
 				max-width: calc(100% - 2em);
 				margin: 0 auto;
 				padding: 2rem 1rem;
@@ -170,6 +169,13 @@ const postsData = posts.map(post => ({
 			searchInput.addEventListener('input', (e) => {
 				performSearch(e.target.value);
 			});
+
+			// Run a search passed in the address, e.g. /search/?q=vsan (used by the 404 page)
+			const initialQuery = new URLSearchParams(location.search).get('q');
+			if (initialQuery) {
+				searchInput.value = initialQuery;
+				performSearch(initialQuery);
+			}
 
 			// Focus search input on page load
 			searchInput.focus();

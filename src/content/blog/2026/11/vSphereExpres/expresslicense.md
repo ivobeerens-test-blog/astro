@@ -84,7 +84,7 @@ The licensing rules are the most important part of vSphere Express. The Broadcom
 - **128 cores** is the maximum per customer.
 - Only the default license is used. You **cannot** split this license into smaller licenses or share it across sites.
 - No add-ons are available.
-- vSphere Express is only available for version 9 or later.
+- vSphere Express is only available for version 9 or later (no Version 8 licenses)
 - It uses the same licensing infrastructure as VVF and VCF.
 
 Broadcom licenses a minimum of 16 cores per CPU socket. With 128 cores, you can license up to 8 single-socket hosts or up to 4 dual-socket hosts, when each CPU has 16 cores or fewer!

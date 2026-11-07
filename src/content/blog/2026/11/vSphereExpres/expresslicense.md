@@ -1,7 +1,7 @@
 ---
 title: "What is the vSphere Express license?"
 slug: 2026/11/vsphere-express-license
-description: "vSphere Express is Broadcom's new entry-level vSphere 9 package, capped at 128 cores. What's included, what's missing, and what it means for EEA customers."
+description: "vSphere Express is Broadcom's new entry-level vSphere 9 package, capped at 128 cores. What's included"
 author: Ivo Beerens
 pubDate: 2026-11-07T00:00:00+01:00
 coverImage: "chooselicense.jpg"
@@ -12,24 +12,22 @@ categories:
     - vmware
     - vexpert
     - vcf
-    - home lab
 tags:
     - broadcom
     - vmware
     - vexpert
     - vcf
-    - home lab
 ---
 
 # Introduction
 
-Broadcom announced this week the vSphere Express license. vSphere Express is a new entry-level package for smaller environments. It is built on vSphere 9 and is available now in all regions.
+This week, Broadcom announced the vSphere Express license. vSphere Express is a new entry-level package for smaller environments. It is built on vSphere 9 and is available now in all regions.
 VMware vSphere 8.0 (including ESXi 8.x, vCenter Server 8.x, and vSAN 8.x) reaches End of General Support on October 11, 2027. After this date, VMware/Broadcom stops providing standard patches, security fixes and hardware enablement.
 This makes vSphere Express the only low-end route to vSphere 9. If you are a small shop and don't need VMware vSphere Foundation (VVF) or VMware Cloud Foundation (VCF), this may be the package to look at.
 
 ![Illustration of three road lanes signposted vSphere Express (up to 128 cores, for small environments), VMware vSphere Foundation (VVF) and VMware Cloud Foundation (VCF)](chooselicense.jpg)
 
-In this blog post, I give an overview of what is included, what the limits are.
+In this blog post, I give an overview of what is included, what is not, and what the limits are.
 
 ## What is included?
 
@@ -60,8 +58,6 @@ The following components are **not** included:
 - GPU and vGPU
 - VCF Automation
 - Private AI
-
-Check **DRS** first. Without DRS, you need to review everything that depends on it, such as affinity rules, VM-host groups, and the automatic evacuation of VMs during maintenance mode.
   
 ## How does it compare?
   
@@ -78,7 +74,7 @@ Here is an overview of vSphere Express compared to the other editions:
 | GPU/vGPU | No | Yes | No | Yes | Yes |
 | vSAN | No | No | No | Yes | Yes |
 | VCF Operations | No | No | No | Yes | Yes |
-| VCF Automation, Private AI | No | No | No | No | Yes |
+| VCF Automation | No | No | No | No | Yes |
 | VCF Private AI | No | No | No | No | Yes |
   
 ## Licensing and limits
@@ -86,7 +82,6 @@ Here is an overview of vSphere Express compared to the other editions:
 The licensing rules are the most important part of vSphere Express. The Broadcom documentation states the following:
 
 - **128 cores** is the maximum per customer.
-- Only for new customers
 - Only the default license is used. You **cannot** split this license into smaller licenses or share it across sites.
 - No add-ons are available.
 - vSphere Express is only available for version 9 or later.
@@ -96,8 +91,8 @@ Broadcom licenses a minimum of 16 cores per CPU socket. With 128 cores, you can 
 
 ## Pricing
 
-vSphere Express is a fixed 128-core pack with a 12-month (per year) term. It costs **$9,600 USD** or **€9,631.77** excluding VAT.
-Per customer only one pack is possible and Broadcom must approve an order before it becomes binding. Check the price and your eligibility with your reseller.
+vSphere Express is a fixed 128-core pack with a 12-month term. It costs **$9,600 USD** or **€9,631.77** excluding VAT.
+Only one pack is possible per customer and Broadcom must approve an order before it becomes binding. Check the price and your eligibility with your reseller.
 
 ## Who is it for?
 
@@ -111,8 +106,8 @@ Look at VVF, VCF, or an alternative when you:
 
 - Depend on DRS, vGPU, or SR-IOV.
 - Need central management across multiple sites.
+- If you have less than 128 cores, this will make the pricing per core higher
 - Have more than 128 cores across your organization, or expect to in the near future.
-- The pricing is to high
 
 ## Conclusion
 
@@ -124,5 +119,5 @@ vSphere Express brings a low-end vSphere 9 option back, but three big questions 
 
 ## Resources
 
-- Broadcom Updates VMware Portfolio to Protect and Accelerate Private AI Cloud Deployments [***Read the article**](https://blogs.vmware.com/cloud-foundation/2026/11/04/broadcom-vcf-portfolio-updates/)
+- Broadcom Updates VMware Portfolio to Protect and Accelerate Private AI Cloud Deployments [**Read the article**](https://blogs.vmware.com/cloud-foundation/2026/11/04/broadcom-vcf-portfolio-updates/)
 - Broadcom TechDocs: vSphere Express. [**Read the article**](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/9-1/vsphere-express.html)

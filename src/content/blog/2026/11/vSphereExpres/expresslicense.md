@@ -4,6 +4,7 @@ slug: 2026/11/vsphere-express-license
 description: "vSphere Express is Broadcom's new entry-level vSphere 9 package, capped at 128 cores. What's included, what's missing, and what it means for EEA customers."
 author: Ivo Beerens
 pubDate: 2026-11-07T00:00:00+01:00
+coverImage: "chooselicense.jpg"
 image: 
 draft: false
 categories:
@@ -24,7 +25,9 @@ tags:
 
 Broadcom announced this week the vSphere Express license. vSphere Express is a new entry-level package for smaller environments. It is built on vSphere 9 and is available now in all regions.
 VMware vSphere 8.0 (including ESXi 8.x, vCenter Server 8.x, and vSAN 8.x) reaches End of General Support on October 11, 2027. After this date, VMware/Broadcom stops providing standard patches, security fixes and hardware enablement.
-This makes vSphere Express the only low-end route to vSphere 9. If you don't need VMware vSphere Foundation (VVF) or VMware Cloud Foundation (VCF), this is the package to look at.
+This makes vSphere Express the only low-end route to vSphere 9. If you are a small shop and don't need VMware vSphere Foundation (VVF) or VMware Cloud Foundation (VCF), this may be the package to look at.
+
+![Illustration of three road lanes signposted vSphere Express (up to 128 cores, for small environments), VMware vSphere Foundation (VVF) and VMware Cloud Foundation (VCF)](chooselicense.jpg)
 
 In this blog post, I give an overview of what is included, what the limits are.
 
@@ -40,7 +43,10 @@ Broadcom lists the following features for vSphere Express:
 
 The following components are part of vSphere Express:
 
-- **Mandatory:** ESX, vCenter, VCF Operations, and the License server. VCF Operations is used for licensing only.
+- ESX
+- vCenter Server
+- VCF Operations (VCF Operations is used for licensing only)
+- License server
 
 ## What is not included?
 
@@ -61,7 +67,7 @@ Check **DRS** first. Without DRS, you need to review everything that depends on 
   
 Here is an overview of vSphere Express compared to the other editions:
   
-| Capability | Standard 8 | Enterprise Plus 8 | Express | VVF | VCF |
+| Capability | Standard | Enterprise Plus | Express | VVF | VCF |
 | --- | --- | --- | --- | --- | --- |
 | vSphere 9 | No | No | Yes | Yes | Yes |
 | vCenter, ESX, vMotion, HA, TPM | Yes | Yes | Yes | Yes | Yes |
@@ -91,8 +97,7 @@ Broadcom licenses a minimum of 16 cores per CPU socket. With 128 cores, you can 
 ## Pricing
 
 vSphere Express is a fixed 128-core pack with a 12-month (per year) term. It costs **$9,600 USD** or **€9,631.77** excluding VAT.
-
-Software Express also states that only one pack is possible per customer and that Broadcom must approve an order before it becomes binding. Check the price and your eligibility with your reseller.
+Per customer only one pack is possible and Broadcom must approve an order before it becomes binding. Check the price and your eligibility with your reseller.
 
 ## Who is it for?
 

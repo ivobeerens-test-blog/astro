@@ -113,6 +113,16 @@ p {
 	margin-bottom: 2em;
 }
 
+/* Keep an introductory sentence close to the list that follows it */
+.prose p:has(+ ul, + ol) {
+	margin-bottom: 0.5em;
+}
+
+.prose p + ul,
+.prose p + ol {
+	margin-top: 0.5em;
+}
+
 textarea {
 	width: 100%;
 	font-size: 16px;
@@ -124,6 +134,56 @@ input {
 
 table {
 	width: 100%;
+}
+
+/* Center an image that stands on its own line in a blog post */
+.prose p > img:only-child {
+	display: block;
+	margin: 0 auto;
+}
+
+/* Tables in blog posts: clear rows, padding and aligned columns */
+.prose table {
+	border-collapse: collapse;
+	margin: 1em 0 2em;
+	font-size: 0.95em;
+	line-height: 1.4;
+}
+
+.prose th,
+.prose td {
+	padding: 0.6em 0.8em;
+	border-bottom: 1px solid rgba(var(--gray), 0.2);
+	vertical-align: top;
+}
+
+.prose thead th {
+	background-color: var(--logo-navy);
+	color: #fff;
+	border-bottom: none;
+}
+
+.prose tbody tr:nth-child(even) {
+	background-color: rgba(var(--gray), 0.06);
+}
+
+/* First column is the label; the other columns are values */
+.prose th:not(:first-child),
+.prose td:not(:first-child) {
+	text-align: center;
+}
+
+.prose th:first-child,
+.prose td:first-child {
+	text-align: left;
+}
+
+/* Wide tables scroll sideways on small screens instead of squeezing */
+@media (max-width: 720px) {
+	.prose table {
+		display: block;
+		overflow-x: auto;
+	}
 }
 
 img {

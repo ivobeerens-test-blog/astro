@@ -7,7 +7,7 @@ categories:
 tags: 
   - "vcenter-server"
   - "VMware"
-coverImage: "overview.png"
+coverImage: "images/overview.png"
 author: Ivo Beerens
 url: /2020/12/15/adding-static-routes-to-a-vcenter-server-with-multiple-network-cards/
 ---

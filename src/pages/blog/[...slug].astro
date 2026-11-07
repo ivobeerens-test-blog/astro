@@ -1,10 +1,12 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { render } from 'astro:content';
+import { getDescription, getPublishedPosts } from '../../lib/posts';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const posts = await getPublishedPosts();
 	return posts.map((post) => ({
 		params: { slug: post.id },
 		props: post,
@@ -14,8 +16,14 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+// Keep PNG for transparency; JPEG otherwise, as WebP isn't reliably supported by social sites
+const { coverImage } = post.data;
+const ogImage = coverImage
+	? (await getImage({ src: coverImage, width: 1200, format: coverImage.format === 'png' ? 'png' : 'jpeg' })).src
+	: undefined;
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} description={getDescription(post)} ogImage={ogImage}>
 	<Content />
 </BlogPost>

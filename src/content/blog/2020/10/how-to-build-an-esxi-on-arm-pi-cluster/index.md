@@ -8,7 +8,7 @@ tags:
   - "esxi-arm"
   - "home-lab"
   - "pi"
-coverImage: "h8-scaled.jpg"
+coverImage: "images/h8-scaled.jpg"
 url: /2020/10/21/how-to-build-an-esxi-on-arm-pi-cluster/
 author: Ivo Beerens
 ---

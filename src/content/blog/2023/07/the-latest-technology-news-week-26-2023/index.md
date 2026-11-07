@@ -3,7 +3,7 @@ title: "The latest technology news week 26–2023"
 pubDate: "2023-07-03T06:09:40.000Z"
 tags: 
   - "news"
-coverImage: "weeklytechnews-1.jpg"
+coverImage: "images/weeklytechnews-1.jpg"
 author: Ivo Beerens
 url: /2023/07/03/the-latest-technology-news-week-26-2023/
 ---

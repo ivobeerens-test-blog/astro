@@ -5,7 +5,7 @@ categories:
   - "azure"
 tags: 
   - "news"
-coverImage: "weeklytechnews-1.jpg"
+coverImage: "images/weeklytechnews-1.jpg"
 author: Ivo Beerens
 url: /2023/06/25/the-latest-technology-news-week-25-2023/
 ---

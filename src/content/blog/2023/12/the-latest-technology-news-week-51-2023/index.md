@@ -8,7 +8,7 @@ tags:
   - "azure"
   - "news"
   - "vmware"
-coverImage: "santa.jpg"
+coverImage: "images/santa.jpg"
 author: Ivo Beerens
 url: /2023/12/25/the-latest-technology-news-week-51-2023/
 ---

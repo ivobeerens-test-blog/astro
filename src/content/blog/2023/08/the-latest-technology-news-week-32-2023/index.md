@@ -7,7 +7,7 @@ categories:
   - "VMware"
 tags: 
   - "news"
-coverImage: "weeklytechnews-1.jpg"
+coverImage: "images/weeklytechnews-1.jpg"
 author: Ivo Beerens
 url: /2023/08/15/the-latest-technology-news-week-32-2023/
 ---

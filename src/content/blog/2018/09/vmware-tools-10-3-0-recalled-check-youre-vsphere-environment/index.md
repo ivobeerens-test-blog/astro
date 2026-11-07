@@ -7,7 +7,7 @@ tags:
   - "powercli"
   - "VMware"
   - "VMware-tools"
-coverImage: "1-3.png"
+coverImage: "images/1-3.png"
 author: Ivo Beerens
 url: /2018/09/07/vmware-tools-10-3-0-recalled-check-youre-vsphere-environment/
 ---

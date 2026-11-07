@@ -12,7 +12,7 @@ tags:
   - "ubiquiti"
   - "vnet"
   - "vpn"
-coverImage: "azure-1.png"
+coverImage: "images/azure-1.png"
 author: Ivo Beerens
 url: /2021/11/08/create-a-site-to-site-vpn-to-microsoft-azure/
 ---

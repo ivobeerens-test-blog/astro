@@ -5,7 +5,7 @@ categories:
   - "news"
 tags: 
   - "news"
-coverImage: "Design-3-1-1.jpg"
+coverImage: "images/Design-3-1-1.jpg"
 author: Ivo Beerens
 url: /2023/11/27/the-latest-technology-news-week-47-2023/
 ---

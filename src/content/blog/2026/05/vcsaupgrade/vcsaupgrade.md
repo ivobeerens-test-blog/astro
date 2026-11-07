@@ -1,5 +1,5 @@
 ---
-title: "Deploy VCF9 on my homelab with NFS as primary storage"
+title: "Upgrade the vCenter Server appliance in my home lab"
 description: ""
 author: Ivo Beerens
 pubDate: 2026-05-12T00:00:00+01:00

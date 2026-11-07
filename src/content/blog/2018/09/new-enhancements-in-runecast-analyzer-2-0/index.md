@@ -8,7 +8,7 @@ categories:
 tags: 
   - "review"
   - "VMware"
-coverImage: "1-2.png"
+coverImage: "images/1-2.png"
 author: Ivo Beerens
 url: /2018/09/05/new-enhancements-in-runecast-analyzer-2-0/
 ---

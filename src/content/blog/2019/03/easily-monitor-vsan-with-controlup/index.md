@@ -10,7 +10,7 @@ tags:
   - "review"
   - "reviews-2"
   - "vsan"
-coverImage: "vsangreen.png"
+coverImage: "images/vsangreen.png"
 author: Ivo Beerens
 url: /2019/03/11/easily-monitor-vsan-with-controlup/
 ---

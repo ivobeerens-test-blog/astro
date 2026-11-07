@@ -7,7 +7,7 @@ categories:
 tags: 
   - "avd"
   - "rds"
-coverImage: "2.jpg"
+coverImage: "images/2.jpg"
 author: Ivo Beerens
 url: /2022/12/22/troubleshoot-your-azure-virtual-desktop-avd-or-remote-desktop-environment-with-msrd-collect/
 ---

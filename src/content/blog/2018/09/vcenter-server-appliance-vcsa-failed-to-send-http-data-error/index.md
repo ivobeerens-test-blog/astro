@@ -3,7 +3,7 @@ title: "vCenter Server Appliance (VCSA) Failed to send http data error"
 pubDate: "2018-09-12T14:23:45.000Z"
 tags: 
   - "VMware"
-coverImage: "error.png"
+coverImage: "images/error.png"
 author: Ivo Beerens
 ---
 

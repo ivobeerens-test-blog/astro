@@ -7,7 +7,7 @@ tags:
   - "azure"
   - "news"
   - "vmware"
-coverImage: "Design-3-1-1.jpg"
+coverImage: "images/Design-3-1-1.jpg"
 author: Ivo Beerens
 url: /2023/12/18/the-latest-technology-news-week-50-2023/
 ---

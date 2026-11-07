@@ -7,7 +7,7 @@ categories:
 tags: 
   - "esxi-2"
   - "mac"
-coverImage: "0A1868CA-4AA9-4C85-A23F-F10FB515DEE0-e1542027369403.jpeg"
+coverImage: "images/0A1868CA-4AA9-4C85-A23F-F10FB515DEE0-e1542027369403.jpeg"
 author: Ivo Beerens
 url: /2018/11/12/using-the-apple-mac-mini-2018-as-vmware-esxi-homelab-host/
 ---

@@ -6,7 +6,7 @@ categories:
 tags: 
   - "VMware"
   - "vmworld"
-coverImage: "vmworld.jpg"
+coverImage: "images/vmworld.jpg"
 author: Ivo Beerens
 url: /2018/08/27/whats-announced-at-vmworld-2018-us/
 ---

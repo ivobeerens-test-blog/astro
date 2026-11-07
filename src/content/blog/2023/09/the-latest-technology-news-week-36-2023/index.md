@@ -7,7 +7,7 @@ tags:
   - "azure"
   - "news"
   - "VMware"
-coverImage: "weeklytechnews-1.jpg"
+coverImage: "images/weeklytechnews-1.jpg"
 author: Ivo Beerens
 url: /2023/09/12/the-latest-technology-news-week-36-2023/
 ---

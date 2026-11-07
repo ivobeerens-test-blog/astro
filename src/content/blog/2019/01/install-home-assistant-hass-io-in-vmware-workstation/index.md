@@ -7,7 +7,7 @@ categories:
 tags: 
   - "hass-io"
   - "home-assistant"
-coverImage: "2019-01-14_19-53-49.png"
+coverImage: "images/2019-01-14_19-53-49.png"
 author: Ivo Beerens
 url: /2019/01/15/install-home-assistant-hass-io-in-vmware-workstation/
 ---

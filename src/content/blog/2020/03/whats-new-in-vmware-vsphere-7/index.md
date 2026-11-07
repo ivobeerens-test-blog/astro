@@ -5,7 +5,7 @@ categories:
   - "vSphere"
 tags: 
   - "vSphere"
-coverImage: "vSphere-Icon-Color-2020.png"
+coverImage: "images/vSphere-Icon-Color-2020.png"
 author: Ivo Beerens
 url: /2020/03/10/whats-new-in-vmware-vsphere-7/
 ---

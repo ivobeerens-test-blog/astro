@@ -6,7 +6,7 @@ categories:
 tags: 
   - "home-lab"
   - "VMware"
-coverImage: "unnamed.jpg"
+coverImage: "images/unnamed.jpg"
 author: Ivo Beerens
 url: /2019/01/30/home-lab-extension-with-a-shuttle-sh370r6-plus/
 ---

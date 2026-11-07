@@ -4,7 +4,7 @@ description: "The latest VMware Cloud Foundation (VCF) 9 resources"
 author: Ivo Beerens
 pubDate: 2025-06-20T00:00:00+01:00
 image: 
-draft: true
+draft: false
 categories:
     - broadcom
     - vmware

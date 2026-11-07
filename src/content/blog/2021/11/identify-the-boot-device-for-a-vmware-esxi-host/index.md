@@ -8,7 +8,7 @@ tags:
   - "boot"
   - "sd-card"
   - "vSphere-7"
-coverImage: "BootDevice.jpg"
+coverImage: "images/BootDevice.jpg"
 url: /2021/11/26/identify-the-boot-device-for-a-vmware-esxi-host/
 author: Ivo Beerens
 ---

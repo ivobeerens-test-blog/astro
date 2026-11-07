@@ -1,13 +1,16 @@
 ---
+import { Image } from 'astro:assets';
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import logo from '../assets/logo.png';
 ---
 
 <header>
 	<nav>
 		<div class="logo-container">
 			<a href="/">
-				<img src="/logo.png" alt="Site Logo" class="logo" />
+				<!-- Optimised copy of public/logo.png, which stays as the default social sharing image -->
+				<Image src={logo} alt="IvoBeerens.NL home" height={100} densities={[1, 2]} loading="eager" class="logo" />
 			</a>
 		</div>
 		<div class="internal-links">

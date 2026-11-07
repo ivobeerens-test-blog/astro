@@ -4,7 +4,7 @@ description: "Complete guide to deploying new Microsoft Teams in various VDI pla
 author: Ivo Beerens
 pubDate: 2024-04-03T08:02:36+01:00
 image: 
-draft: true
+draft: false
 categories:
     - news
 tags:

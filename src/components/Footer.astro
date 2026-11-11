@@ -132,7 +132,8 @@ const today = new Date();
 		max-width: 720px;
 		margin: 0 auto;
 		padding: 1rem 1.25rem;
-		border-radius: 8px;
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
 		background: #fff;
 		color: rgb(var(--gray-dark));
 		box-shadow: var(--box-shadow);
@@ -151,8 +152,8 @@ const today = new Date();
 	}
 	.cookie-actions button {
 		padding: 0.5rem 1.1rem;
-		border: 1px solid rgb(var(--gray));
-		border-radius: 6px;
+		border: 1px solid var(--line);
+		border-radius: 4px;
 		background: #fff;
 		color: rgb(var(--gray-dark));
 		font: inherit;
@@ -160,8 +161,8 @@ const today = new Date();
 		cursor: pointer;
 	}
 	.cookie-actions button.accept {
-		border-color: var(--accent-dark);
-		background: var(--accent-dark);
+		border-color: var(--link);
+		background: var(--link);
 		color: #fff;
 	}
 	.cookie-actions button:focus-visible,
@@ -172,42 +173,48 @@ const today = new Date();
 </style>
 <style>
 	footer {
-		padding: 2em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		margin-top: 4em;
+		margin-top: 3em;
+		padding: 2.25em 1.25em;
+		background: var(--navy);
+		color: #c9d4e1;
 	}
 	.footer-content {
-		max-width: 720px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem 2rem;
+		max-width: calc(var(--wrap) - 2.5em);
 		margin: 0 auto;
-		text-align: center;
 	}
 	.footer-content p {
-		margin: 0.5em 0;
-		font-size: 0.9em;
+		margin: 0;
+		font-size: 0.85em;
 	}
 	.social-links {
 		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
+		gap: 1rem;
 	}
-	/* Social icons in the logo's blue */
 	.social-links a {
-		text-decoration: none;
-		color: var(--logo-blue);
-		transition: color 0.2s ease;
+		display: flex;
+		color: #fff;
+		transition: color 0.15s ease;
 	}
 	.social-links a:hover,
 	.social-links a:focus-visible {
-		color: var(--logo-navy);
+		color: var(--amber);
+	}
+	.social-links svg {
+		width: 24px;
+		height: 24px;
 	}
 	@media (max-width: 720px) {
 		footer {
-			padding: 2em 1em 4em 1em;
+			padding-bottom: 4em;
 		}
-		.social-links {
-			gap: 0.75em;
+		.footer-content {
+			flex-direction: column;
+			text-align: center;
 		}
 	}
 </style>

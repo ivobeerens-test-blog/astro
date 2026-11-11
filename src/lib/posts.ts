@@ -13,7 +13,12 @@ export function getDescription(post: CollectionEntry<'blog'>) {
 	return post.data.description?.trim() || excerptFromMarkdown(post.body) || post.data.title;
 }
 
-function excerptFromMarkdown(markdown = '') {
+/** A longer summary from the post's opening text, for lists that show a few lines per post. */
+export function getExcerpt(post: CollectionEntry<'blog'>, maxLength = 400) {
+	return excerptFromMarkdown(post.body, maxLength) || getDescription(post);
+}
+
+function excerptFromMarkdown(markdown = '', maxLength = MAX_DESCRIPTION_LENGTH) {
 	const text = markdown
 		.replace(/```[\s\S]*?```/g, ' ')
 		.replace(/<!--[\s\S]*?-->/g, ' ')
@@ -36,7 +41,7 @@ function excerptFromMarkdown(markdown = '') {
 		.replace(/\s+/g, ' ')
 		.trim();
 
-	if (text.length <= MAX_DESCRIPTION_LENGTH) return text;
-	const cut = text.slice(0, MAX_DESCRIPTION_LENGTH);
+	if (text.length <= maxLength) return text;
+	const cut = text.slice(0, maxLength);
 	return `${cut.slice(0, cut.lastIndexOf(' ')).replace(/[\s,;:.-]+$/, '')}…`;
 }

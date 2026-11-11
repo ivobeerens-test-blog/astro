@@ -3,12 +3,11 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 
 // Markdown pages that use this layout (about.md) pass their frontmatter as `frontmatter`
 type Props = { frontmatter: CollectionEntry<'blog'>['data'] };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props.frontmatter;
+const { title, description, heroImage } = Astro.props.frontmatter;
 ---
 
 <html lang="en">
@@ -16,47 +15,26 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props.fron
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
+				max-width: 960px;
 			}
 			.hero-image img {
 				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
+				width: 100%;
+				margin-bottom: 1.5rem;
+				border: 1px solid var(--line);
+				border-radius: var(--radius);
 			}
 			.prose {
-				width: 80%;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
+				padding: 2.25rem 2.75rem 2.5rem;
+				border: 1px solid var(--line);
+				border-top: 6px solid var(--navy);
+				border-radius: var(--radius);
+				background: var(--card);
 			}
-			/* On phones and small tablets 80% is too narrow, so use the full width */
-			@media (max-width: 900px) {
+			@media (max-width: 720px) {
 				.prose {
-					width: 100%;
+					padding: 1.25rem 1.1rem 1.5rem;
 				}
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
 			}
 		</style>
 	</head>
@@ -65,14 +43,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props.fron
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
+				<div class="page-head">
+					<div>
 						<h1>{title}</h1>
-						<hr />
 					</div>
+				</div>
+				{heroImage && (
+					<div class="hero-image">
+						<img width={1020} height={510} src={heroImage} alt="" />
+					</div>
+				)}
+				<div class="prose">
 					<slot />
 				</div>
 			</article>

@@ -3,18 +3,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import FormattedDate from '../components/FormattedDate.astro';
-import { getDescription, getPublishedPosts } from '../lib/posts';
+import { getExcerpt, getPublishedPosts } from '../lib/posts';
 
-const posts = (await getPublishedPosts()).slice(0, 10); // Get only the latest 10 posts
+const posts = (await getPublishedPosts()).slice(0, 10); // Only the latest 10 posts
 
-// Get the first 6 lines of the post
-const getExcerpt = (content: string | undefined) => {
-	if (!content) return '';
-	const lines = content.split('\n').filter(line => line.trim().length > 0);
-	const firstSixLines = lines.slice(0, 6);
-	return firstSixLines.join('\n');
-};
+const day = (date: Date) => date.toLocaleDateString('en-GB', { day: 'numeric' });
+const monthYear = (date: Date) => date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
 ---
 
 <!doctype html>
@@ -22,132 +16,72 @@ const getExcerpt = (content: string | undefined) => {
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			.blog-preview {
-				margin: 2rem 0;
-			}
-			.blog-preview h2 {
-				padding-bottom: 0.5rem;
-				border-bottom: 2px solid var(--accent);
-				margin-bottom: 2rem;
-			}
-			.blog-preview ul {
-				display: flex;
-				flex-direction: column;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			.blog-preview ul li {
-				width: 100%;
-				border-bottom: 1px solid rgba(var(--gray), 0.2);
-				padding-bottom: 2rem;
-			}
-			.blog-preview ul li:last-child {
-				border-bottom: none;
-			}
-			.blog-preview ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			.blog-preview ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-			}
-			.blog-preview ul li:first-child .title {
-				font-size: 2rem;
-			}
-			.blog-preview ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0.5rem 0;
-				color: rgb(var(--black));
-				line-height: 1.2;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-				font-size: 0.9em;
-			}
+			/* Exactly three lines of summary per post */
 			.excerpt {
-				margin: 0.5rem 0 0 0;
-				color: rgb(var(--gray-dark));
-				font-size: 0.95em;
-				line-height: 1.5;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 3;
+				line-clamp: 3;
+				overflow: hidden;
 			}
-			.blog-preview ul li a:hover .title {
-				color: var(--accent);
-			}
-			.show-more {
-				display: block;
-				width: fit-content;
-				margin: 2rem auto;
-				padding: 0.75rem 1.5rem;
-				background-color: #2563eb;
-				color: #ffffff;
-				text-decoration: none;
-				border-radius: 8px;
-				font-size: 1.1rem;
-				font-weight: 600;
-				transition: all 0.2s ease;
-				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-			}
-			.show-more:hover {
-				background-color: #1d4ed8;
-				transform: translateY(-2px);
-				box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-				color: #ffffff;
-			}
-			.button-container {
+			/* Centered site title and intro; the amber segment moves to the middle too */
+			.page-head.centered {
+				justify-content: center;
 				text-align: center;
-				margin-top: 3rem;
-				padding: 1rem 0;
-				border-top: 1px solid rgba(var(--gray), 0.2);
 			}
-			main {
-				max-width: calc(100% - 2em);
+			.page-head.centered .lead {
 				margin: 0 auto;
-				padding: 0 1rem;
-				text-align: center;
 			}
-			/* Shrink the welcome heading on phones so "IvoBeerens.NL" isn't split across lines */
-			main h1 {
-				font-size: clamp(2rem, 8vw, 3.052em);
+			.page-head.centered::after {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.more {
+				margin-top: 2rem;
+				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<p></p>
-			<h1>Welcome to IvoBeerens.NL</h1>
-			<p>
-				On my blog I share insights and experiences about Cloud Computing, DevOps, Infrastructure as Code (IaC),
-				Virtualization, and End User Computing (EUC).
-			</p>
-			
-			<div class="blog-preview">
-				<h2>The latest blog posts</h2>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-									<p class="excerpt">{getDescription(post)}</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-				<div class="button-container">
-					<a href="/blog/" class="show-more">Show More Blog Posts →</a>
+			<div class="page-head centered">
+				<div>
+					<!-- The logo already shows the name; keep the heading for screen readers and search engines -->
+					<h1 class="sr-only">IvoBeerens.NL</h1>
+					<p class="lead">
+						Insights and experiences about Cloud Computing, DevOps, Infrastructure as Code (IaC),
+						Virtualization and End User Computing (EUC).
+					</p>
 				</div>
 			</div>
+
+			<ol class="stack">
+				<li class="stack-head" aria-hidden="true"><span></span><span>Latest blog posts</span></li>
+				{
+					posts.map((post, i) => (
+						<li class="stack-row">
+							<div class="panel-label">
+								<span class="big">{day(post.data.pubDate)}</span>
+								<small>{monthYear(post.data.pubDate)}</small>
+							</div>
+							<div class:list={['stack-body', { 'is-new': i === 0 }]}>
+								<div class="top">
+									<h2 class="stack-title">
+										<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+									</h2>
+									{i === 0 && <span class="pill">NEW</span>}
+								</div>
+								<p class="stack-text excerpt">{getExcerpt(post)}</p>
+							</div>
+						</li>
+					))
+				}
+			</ol>
+
+			<p class="more">
+				<a href="/blog/" class="button">All blog posts</a>
+			</p>
 		</main>
 		<Footer />
 	</body>

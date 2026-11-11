@@ -1,16 +1,23 @@
 ---
 import { Image } from 'astro:assets';
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
-import logo from '../assets/logo.png';
+import Logo from './Logo.astro';
+import { HEADER_STYLE } from '../consts';
+// Header copy of the logo with the empty border cropped off; public/logo.png stays the social sharing image
+import logo from '../assets/logo-trimmed.png';
 ---
 
-<header>
+<header class:list={[`header-${HEADER_STYLE}`]}>
 	<nav>
 		<div class="logo-container">
-			<a href="/">
-				<!-- Optimised copy of public/logo.png, which stays as the default social sharing image -->
-				<Image src={logo} alt="IvoBeerens.NL home" height={100} densities={[1, 2]} loading="eager" class="logo" />
+			<a href="/" aria-label="IvoBeerens.NL home">
+				{
+					HEADER_STYLE === 'image' ? (
+						<Image src={logo} alt="" height={56} densities={[1, 2]} loading="eager" class="logo" />
+					) : (
+						<Logo />
+					)
+				}
 			</a>
 		</div>
 		<div class="internal-links">
@@ -18,7 +25,7 @@ import logo from '../assets/logo.png';
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 			<HeaderLink href="/links">Links</HeaderLink>
-			<HeaderLink href="/versions">Versions</HeaderLink>
+			<HeaderLink href="/versions">VMware Versions</HeaderLink>
 			<HeaderLink href="/search" aria-label="Search" class="search-link">
 				<!-- Magnifying glass icon -->
 				<svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
@@ -64,111 +71,155 @@ import logo from '../assets/logo.png';
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	.logo-container {
-		display: flex;
-		align-items: center;
-	}
-	.logo {
-		height: 100px;
-		width: auto;
-		margin-right: 1em;
+		padding: 0 1.25em;
+		background: #fff;
+		border-bottom: 1px solid var(--line);
 	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0.5em 0;
+		gap: 1rem;
+		max-width: calc(var(--wrap) - 2.5em);
+		margin: 0 auto;
+		padding: 0.4em 0;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
+	.logo-container {
+		display: flex;
+		align-items: center;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
+	.logo-container a {
 		display: flex;
 	}
-	/* Social icons in the logo's blue */
-	.social-links a {
-		color: var(--logo-blue);
-		transition: color 0.15s ease;
+	.logo {
+		display: block;
+		height: 56px;
+		width: auto;
+		border-radius: 0;
 	}
-		.internal-links .search-link {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.4rem;
-			padding: 0.25rem 0.5rem;
-			border-radius: 4px;
-			color: var(--black);
-			transition: color 0.15s ease, background-color 0.15s ease;
-		}
-		.internal-links .search-link:hover {
-			color: var(--accent);
-			background: rgba(var(--gray-light), 0.5);
-		}
-		.internal-links .search-link:focus {
-			outline: 2px solid var(--accent);
-			outline-offset: 2px;
-		}
-		.internal-links .search-link .search-text {
-			display: none;
-		}
-		.internal-links .search-link .search-icon {
-			display: inline-block;
-			vertical-align: middle;
-			width: 1.3em;
-			height: 1.3em;
-		}
-	/* Larger menu links */
+	nav {
+		min-height: 88px;
+	}
+	/* Navy header: white logo, white menu, amber marks */
+	.header-navy {
+		background: var(--navy);
+		border-bottom: none;
+	}
+	.header-navy :global(.logo) {
+		--logo-fill: var(--navy);
+		--logo-cloud: #fff;
+		--logo-net: #fff;
+		--logo-ink: #fff;
+		--logo-mid: #9cc6f0;
+	}
+	.header-navy .internal-links :global(a),
+	.header-navy .social-links a {
+		color: #fff;
+	}
+	.header-navy .internal-links :global(a:hover),
+	.header-navy .social-links a:hover,
+	.header-navy .social-links a:focus-visible {
+		color: var(--amber);
+	}
+	/* Menu: condensed caps, amber bar under the current section */
 	.internal-links {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
+		gap: 0.25rem;
 	}
 	.internal-links :global(a) {
-		padding: 1em 0.75em;
-		font-size: 1.25em;
+		position: relative;
+		padding: 0.6em 0.7em;
+		color: var(--ink);
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-size: 1.1em;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
 	}
-	/* Medium screens: a bit smaller so the menu stays on one line */
-	@media (max-width: 1200px) {
-		.internal-links :global(a) {
-			padding: 1em 0.35em;
-			font-size: 1.05em;
-		}
+	.internal-links :global(a::after) {
+		content: '';
+		position: absolute;
+		left: 0.7em;
+		right: 0.7em;
+		bottom: 0.25em;
+		height: 3px;
+		background: transparent;
+		transition: background-color 0.15s ease;
+	}
+	.internal-links :global(a:hover) {
+		color: var(--link);
+	}
+	.internal-links :global(a.active::after) {
+		background: var(--amber);
+	}
+	.internal-links .search-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+	.internal-links .search-link:focus-visible {
+		outline: 2px solid var(--link);
+		outline-offset: 2px;
+	}
+	.internal-links .search-link .search-text {
+		display: none;
+	}
+	.internal-links .search-link .search-icon {
+		width: 1.2em;
+		height: 1.2em;
+	}
+	.social-links,
+	.social-links a {
+		display: flex;
+	}
+	.social-links {
+		gap: 0.6rem;
+	}
+	.social-links a {
+		color: var(--navy);
+		transition: color 0.15s ease;
 	}
 	.social-links a:hover,
 	.social-links a:focus-visible {
-		color: var(--logo-navy);
+		color: var(--amber);
 	}
-	@media (max-width: 720px) {
+	.social-links svg {
+		width: 22px;
+		height: 22px;
+	}
+	@media (max-width: 1000px) {
 		.social-links {
 			display: none;
 		}
+	}
+	@media (max-width: 720px) {
+		nav {
+			flex-direction: column;
+			gap: 0;
+		}
+		nav {
+			min-height: 0;
+			padding-top: 0.6em;
+		}
 		.logo {
-			height: 60px;
+			height: 40px;
 		}
-		/* Keep the menu compact enough to fit on phones */
 		.internal-links :global(a) {
-			padding: 0.75em 0.5em;
-			font-size: 1.05em;
+			padding: 0.5em 0.45em;
+			font-size: 1em;
 		}
-			/* On small screens show the text label instead of the icon */
-			.internal-links .search-link .search-text {
-				display: inline-block;
-				font-weight: 600;
-			}
-			.internal-links .search-link .search-icon {
-				display: none;
-			}
+		.internal-links :global(a::after) {
+			left: 0.45em;
+			right: 0.45em;
+		}
+		.internal-links .search-link .search-text {
+			display: inline-block;
+		}
+		.internal-links .search-link .search-icon {
+			display: none;
+		}
 	}
 </style>

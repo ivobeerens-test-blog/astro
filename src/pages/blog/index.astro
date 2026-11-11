@@ -8,13 +8,12 @@ import { getDescription, getPublishedPosts } from '../../lib/posts';
 
 const posts = await getPublishedPosts();
 
-// Get the first 6 lines of the post
-const getExcerpt = (content: string | undefined) => {
-	if (!content) return '';
-	const lines = content.split('\n').filter(line => line.trim().length > 0);
-	const firstSixLines = lines.slice(0, 6);
-	return firstSixLines.join('\n');
-};
+// Group the posts by year, newest year first
+const years = new Map<number, typeof posts>();
+for (const post of posts) {
+	const year = post.data.pubDate.getFullYear();
+	years.set(year, [...(years.get(year) ?? []), post]);
+}
 ---
 
 <!doctype html>
@@ -22,84 +21,62 @@ const getExcerpt = (content: string | undefined) => {
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			main {
-				max-width: calc(100% - 2em);
-				margin: 0 auto;
-				padding: 0 1rem;
-			}
-			ul {
-				display: flex;
-				flex-direction: column;
-				gap: 2rem;
-				list-style-type: none;
+			.year-posts {
 				margin: 0;
-				padding: 0;
+				list-style: none;
 			}
-			ul li {
-				width: 100%;
-				border-bottom: 1px solid rgba(var(--gray), 0.2);
-				padding-bottom: 2rem;
+			.year-posts li + li {
+				margin-top: 1.4rem;
+				padding-top: 1.4rem;
+				border-top: 1px solid var(--line);
 			}
-			ul li:last-child {
-				border-bottom: none;
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-			}
-			ul li:first-child .title {
-				font-size: 2rem;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0.5rem 0;
-				color: rgb(var(--black));
-				line-height: 1.2;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-				font-size: 0.9em;
-			}
-			.excerpt {
-				margin: 0.5rem 0 0 0;
-				color: rgb(var(--gray-dark));
-				font-size: 0.95em;
-				line-height: 1.5;
-				white-space: pre-line;
-			}
-			ul li a:hover .title {
-				color: var(--accent);
+			.year-posts .stack-title {
+				font-size: 1.35em;
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<section>
-				<h1>All Blog Posts</h1>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-									<p class="excerpt">{getDescription(post)}</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+			<div class="page-head">
+				<div>
+					<h1>All blog posts</h1>
+					<p class="lead">Every post on the blog, grouped by year, newest first.</p>
+				</div>
+				<div class="meta">
+					Posts
+					<strong>{posts.length}</strong>
+				</div>
+			</div>
+
+			<div class="stack">
+				{
+					[...years].map(([year, yearPosts], y) => (
+						<section class="stack-row" aria-label={`Posts from ${year}`}>
+							<div class="panel-label">
+								<span class="big">{year}</span>
+								<small>
+									{yearPosts.length} {yearPosts.length === 1 ? 'post' : 'posts'}
+								</small>
+							</div>
+							<ul class="stack-body year-posts">
+								{yearPosts.map((post, i) => (
+									<li>
+										<h2 class="stack-title">
+											<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+										</h2>
+										<p class="stack-text">{getDescription(post)}</p>
+										<p class="stack-meta">
+											<FormattedDate date={post.data.pubDate} />
+											{y === 0 && i === 0 && <span class="pill">NEW</span>}
+										</p>
+									</li>
+								))}
+							</ul>
+						</section>
+					))
+				}
+			</div>
 		</main>
 		<Footer />
 	</body>

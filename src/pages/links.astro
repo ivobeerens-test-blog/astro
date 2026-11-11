@@ -2,49 +2,104 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE } from '../consts';
+
+const groups = [
+	{
+		vendor: 'Broadcom',
+		links: [
+			['Broadcom Compatibility Guide', 'https://compatibilityguide.broadcom.com/'],
+			['Broadcom product lifecycle', 'https://support.broadcom.com/group/ecx/productlifecycle'],
+		],
+	},
+	{
+		vendor: 'Omnissa',
+		links: [
+			['Omnissa Interoperability Matrix', 'https://interopmatrix.omnissa.com/Interoperability'],
+			['Rebranding Changes in Omnissa Horizon Products (6000681)', 'https://kb.omnissa.com/s/article/6000681'],
+		],
+	},
+	{
+		vendor: 'NVIDIA',
+		links: [
+			['NVIDIA Virtual GPU (vGPU) Software', 'https://docs.nvidia.com/vgpu/index.html'],
+			['NVIDIA Virtual GPU (vGPU) Driver versions', 'https://docs.nvidia.com/vgpu/index.html#driver-versions'],
+		],
+	},
+	{
+		vendor: 'Veeam',
+		links: [['Veeam Backup & Replication support for vSphere', 'https://www.veeam.com/kb2443']],
+	},
+	{
+		vendor: 'Other',
+		links: [['End-of-life (EOL) and support information', 'https://endoflife.date/']],
+	},
+];
 ---
 
-<BaseHead title="Useful Links" description="A curated list of useful resources and references." />
-<Header />
-<main class="links-container">
-  <h1>Useful Links</h1>
-  <ul>
-    <h3>Broadcom</h3>
-    <li><a href="https://compatibilityguide.broadcom.com/" target="_blank" rel="noopener noreferrer">- Broadcom Compatibility Guide</a></li>
-    <li><a href="https://support.broadcom.com/group/ecx/productlifecycle" target="_blank" rel="noopener noreferrer">- Broadcom product lifecycle</a></li>
-    <h3>Omnissa</h3>
-    <li><a href="https://interopmatrix.omnissa.com/Interoperability" target="_blank" rel="noopener noreferrer">- Omnissa Interoperability Matrix</a></li>
-    <li><a href="https://kb.omnissa.com/s/article/6000681" target="_blank" rel="noopener noreferrer">- Rebranding Changes in Omnissa Horizon Products (6000681)</a></li>
-    <h3>NVIDIA</h3>
-    <li><a href="https://docs.nvidia.com/vgpu/index.html" target="_blank" rel="noopener noreferrer">- NVIDIA Virtual GPU (vGPU) Software</a></li>
-    <li><a href="https://docs.nvidia.com/vgpu/index.html#driver-versions" target="_blank" rel="noopener noreferrer">- NVIDIA Virtual GPU (vGPU) Driver versions</a></li>
-    <h3>Veeam</h3>
-    <li><a href="https://www.veeam.com/kb2443" target="_blank" rel="noopener noreferrer">- Veeam Backup & Replication support for vSphere</a></li>
-    <h3>Other</h3>
-    <li><a href="https://endoflife.date/" target="_blank" rel="noopener noreferrer">- End-of-life (EOL) and support information</a></li>
-  </ul>
-  <p>Feel free to suggest more links!</p>
-</main>
-<Footer />
-
-<style>
-.links-container {
-  box-sizing: border-box;
-  margin: 2em auto;
-  padding: 1em;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.links-container h1 {
-  text-align: center;
-}
-.links-container ul {
-  list-style: none;
-  padding: 0;
-}
-.links-container li {
-  margin: 0.5em 0;
-}
-</style>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Useful Links" description="A curated list of useful resources and references." />
+		<style>
+			/* Vendor name and its links centred on the same line in each row */
+			.stack-row .panel-label {
+				display: flex;
+				align-items: center;
+			}
+			.stack-row .panel-label .big {
+				font-size: 1.6rem;
+				white-space: nowrap;
+				overflow-wrap: normal;
+			}
+			.link-list {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				margin: 0;
+				list-style: none;
+			}
+			.link-list li + li {
+				margin-top: 0.5rem;
+			}
+			.link-list a {
+				font-weight: 500;
+			}
+			.link-list a::after {
+				content: ' ↗';
+				color: var(--muted);
+				font-size: 0.85em;
+			}
+			.note {
+				margin-top: 1.5rem;
+				color: var(--muted);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="page-head">
+				<div>
+					<h1>Useful links</h1>
+					<p class="lead">Compatibility guides, lifecycle pages and driver matrices I use all the time.</p>
+				</div>
+			</div>
+			<div class="stack">
+				{
+					groups.map((group) => (
+						<section class="stack-row" aria-label={group.vendor}>
+							<div class="panel-label"><span class="big">{group.vendor}</span></div>
+							<ul class="stack-body link-list">
+								{group.links.map(([label, href]) => (
+									<li><a href={href} target="_blank" rel="noopener noreferrer">{label}</a></li>
+								))}
+							</ul>
+						</section>
+					))
+				}
+			</div>
+			<p class="note">Feel free to suggest more links!</p>
+		</main>
+		<Footer />
+	</body>
+</html>

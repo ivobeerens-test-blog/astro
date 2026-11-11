@@ -17,3 +17,7 @@ export const SUPPORT_LABEL = '☕ Buy me a coffee';
 
 // Google Analytics only loads after a visitor accepts the cookie banner (see Footer.astro)
 export const GA_MEASUREMENT_ID = 'G-MVK8GXB3DR';
+
+// Header look: 'image' = the logo PNG (trimmed), 'svg' = vector logo on a white header,
+// 'navy' = vector logo in white on a navy header
+export const HEADER_STYLE: 'image' | 'svg' | 'navy' = 'svg';

@@ -37,7 +37,36 @@ const jsonLd = {
 		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
 		{ETHICALADS_PUBLISHER && <script is:inline async src="https://media.ethicalads.io/media/client/ethicalads.min.js" />}
 		<style>
-			/* EthicalAds: one ad per page, under the title and above the article */
+			main {
+				max-width: 960px;
+			}
+			.page-head h1 {
+				font-size: clamp(2.1rem, 5vw, 3.2rem);
+			}
+			.meta .updated {
+				margin-top: 0.5rem;
+			}
+			.hero-image img {
+				display: block;
+				width: 100%;
+				margin-bottom: 1.5rem;
+				border: 1px solid var(--line);
+				border-radius: var(--radius);
+			}
+			/* The article sits in a white card with a navy top edge */
+			.prose {
+				padding: 2.25rem 2.75rem 2.5rem;
+				border: 1px solid var(--line);
+				border-top: 6px solid var(--navy);
+				border-radius: var(--radius);
+				background: var(--card);
+			}
+			@media (max-width: 720px) {
+				.prose {
+					padding: 1.25rem 1.1rem 1.5rem;
+				}
+			}
+			/* EthicalAds: one ad per page, above the article */
 			.ethical-ad {
 				display: flex;
 				justify-content: center;
@@ -45,76 +74,22 @@ const jsonLd = {
 			}
 			/* "Support my work" box at the end of each post */
 			.support {
+				margin-top: 1.5rem;
+			}
+			.support .panel-label .big {
+				font-size: 2rem;
+			}
+			.support-body {
 				display: flex;
 				flex-wrap: wrap;
 				align-items: center;
 				justify-content: space-between;
 				gap: 1rem 2rem;
-				margin: 3em 0 1em;
-				padding: 1.25rem 1.5rem;
-				border: 1px solid rgba(var(--gray), 0.2);
-				border-radius: 8px;
-				background: rgb(var(--gray-light));
+				padding: 1.25rem 1.75rem;
 			}
-			.support p {
-				flex: 1 1 280px;
+			.support-body p {
+				flex: 1 1 260px;
 				margin: 0;
-			}
-			.support a {
-				padding: 0.6rem 1.2rem;
-				border-radius: 8px;
-				background: var(--accent-dark);
-				color: #fff;
-				font-weight: 600;
-				text-decoration: none;
-				white-space: nowrap;
-			}
-			.support a:hover,
-			.support a:focus-visible {
-				background: rgb(var(--black));
-			}
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 80%;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			/* On phones and small tablets 80% is too narrow, so use the full width */
-			@media (max-width: 900px) {
-				.prose {
-					width: 100%;
-				}
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
 			}
 		</style>
 	</head>
@@ -123,46 +98,55 @@ const jsonLd = {
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
+				<div class="page-head">
+					<div>
 						<h1>{title}</h1>
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<hr />
+						{description && <p class="lead">{description}</p>}
 					</div>
-					{
-						ETHICALADS_PUBLISHER && (
-							<div class="ethical-ad">
-								<div data-ea-publisher={ETHICALADS_PUBLISHER} data-ea-type="image" class="horizontal raised" />
-							</div>
-						)
-					}
+					<div class="meta">
+						Published
+						<strong><FormattedDate date={pubDate} /></strong>
+						{
+							updatedDate && (
+								<div class="updated">
+									Last updated
+									<strong><FormattedDate date={updatedDate} /></strong>
+								</div>
+							)
+						}
+					</div>
+				</div>
+				{heroImage && (
+					<div class="hero-image">
+						<img width={1020} height={510} src={heroImage} alt="" />
+					</div>
+				)}
+				{
+					ETHICALADS_PUBLISHER && (
+						<div class="ethical-ad">
+							<div data-ea-publisher={ETHICALADS_PUBLISHER} data-ea-type="image" class="horizontal raised" />
+						</div>
+					)
+				}
+				<div class="prose">
 					<slot />
-					{
-						SUPPORT_URL && (
-							<aside class="support" aria-label="Support my work">
+				</div>
+				{
+					SUPPORT_URL && (
+						<aside class="panel support" aria-label="Support my work">
+							<div class="panel-label"><span class="big">Thanks</span></div>
+							<div class="support-body">
 								<p>
 									<strong>Did this post save you time?</strong> If it helped you, you can support my
 									work. Thank you!
 								</p>
-								<a href={SUPPORT_URL} target="_blank" rel="noopener">
+								<a class="button" href={SUPPORT_URL} target="_blank" rel="noopener">
 									{SUPPORT_LABEL}
 								</a>
-							</aside>
-						)
-					}
-				</div>
+							</div>
+						</aside>
+					)
+				}
 			</article>
 		</main>
 		<Footer />

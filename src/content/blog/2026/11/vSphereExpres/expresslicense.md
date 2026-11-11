@@ -91,7 +91,7 @@ Broadcom licenses a minimum of 16 cores per CPU socket. With 128 cores, you can 
 
 ## Pricing
 
-vSphere Express is a fixed 128-core pack with a 12-month term. It costs **$9,600 USD** or **€9,631.77** excluding VAT.
+vSphere Express is a fixed 128-core pack with a 12-month term. It costs **$9,600 USD** or **€9,631.77** excluding VAT. The SKU is `VCF-VSP-EXP`. This is $75 per core.
 Only one pack is possible per customer and Broadcom must approve an order before it becomes binding. Check the price and your eligibility with your reseller.
 
 ## Who is it for?
@@ -113,7 +113,7 @@ Look at VVF, VCF, or an alternative when you:
 
 vSphere Express brings a low-end vSphere 9 option back, but three big questions remain:
 
-- **Pricing**. You have to buy the full 128-core pack, even if you use fewer cores. 
+- **Pricing**. You have to buy the full 128-core pack, even if you use fewer cores. You pay $75 per core. 
 - **Licensing**. The pack is fixed at 128 cores per customer per 12 months, with no add-ons and no option to split the license. Does this fit how smaller customers actually grow?
 - **Customer trust**. Many vSphere Standard users and former partners were burned by Broadcom's earlier changes. Can VMware win them back?
 

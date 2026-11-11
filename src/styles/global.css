@@ -1,60 +1,59 @@
 /*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+  Site theme: light blue-grey page, deep navy label panels, white cards,
+  an amber marker for "newest", and Barlow / Barlow Condensed type.
  */
 
 :root {
-	--accent: #45ADFE;
-	--accent-dark: #0B6E99;
-	/* The two blues from the logo */
+	/* Palette */
+	--page: #e8edf2;
+	--card: #ffffff;
+	--navy: #1d3a5c;
+	--navy-deep: #152c47;
+	--ink: #14213a;
+	--muted: #5b6b7f;
+	--line: #cfd8e2;
+	--amber: #c9860a;
+	--link: #1f5ea8;
+	--link-hover: #143f73;
+	--pill: #e3e9f0;
+
+	/* Kept for older component styles */
+	--accent: var(--link);
+	--accent-dark: var(--link-hover);
 	--logo-blue: #0070c0;
 	--logo-navy: #002060;
-	--black: 26, 26, 35;
-	--gray: 67, 67, 91;
-	--gray-light: 247, 243, 252;
-	--gray-dark: 26, 26, 35;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-		0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-}
+	--black: 20, 33, 58;
+	--gray: 91, 107, 127;
+	--gray-light: 232, 237, 242;
+	--gray-dark: 20, 33, 58;
+	--box-shadow: 0 1px 2px rgba(20, 33, 58, 0.06), 0 6px 20px rgba(20, 33, 58, 0.08);
 
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff2') format('woff2');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
+	--font-body: 'Barlow', system-ui, sans-serif;
+	--font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+	--radius: 6px;
+	--wrap: 1100px;
 }
 
 body {
-	font-family: 'Atkinson', sans-serif;
+	font-family: var(--font-body);
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background: var(--page);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	color: var(--ink);
+	font-size: 19px;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
 }
 
-/* Pages use 80% of the screen; posts set the same width in BlogPost.astro */
 main {
-	width: 80%;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+	width: 100%;
+	max-width: var(--wrap);
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 3em 1.25em;
 }
 
 h1,
@@ -64,30 +63,28 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
+	font-family: var(--font-display);
+	font-weight: 700;
+	color: var(--ink);
+	line-height: 1.1;
+	letter-spacing: -0.005em;
 }
 
 h1 {
-	font-size: 3.052em;
+	font-size: clamp(2.4rem, 6vw, 3.6rem);
+	line-height: 1;
 }
-
 h2 {
-	font-size: 2.441em;
-	color: var(--accent);
+	font-size: 2.1em;
 }
-
 h3 {
-	font-size: 1.953em;
-	
+	font-size: 1.6em;
 }
-
 h4 {
-	font-size: 1.563em;
+	font-size: 1.3em;
 }
-
 h5 {
-	font-size: 1.25em;
+	font-size: 1.1em;
 }
 
 strong,
@@ -96,28 +93,159 @@ b {
 }
 
 a {
-	color: var(--accent);
+	color: var(--link);
 	text-decoration: none;
-	transition: color 0.2s ease;
+	transition: color 0.15s ease;
 }
-
 a:hover {
-	color: var(--accent-dark);
+	color: var(--link-hover);
 }
 
 p {
 	margin-bottom: 1em;
 }
 
+/* ---------- Shared page pieces ---------- */
+
+/* Big condensed page title with a muted lead, and optional meta on the right */
+.page-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 1rem 2rem;
+	position: relative;
+	margin-bottom: 2.25rem;
+	padding-bottom: 1.6rem;
+	border-bottom: 1px solid var(--line);
+}
+/* Short amber segment on the divider, under the title */
+.page-head::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 72px;
+	height: 3px;
+	background: var(--amber);
+}
+.page-head h1 {
+	margin: 0 0 0.6rem;
+}
+.page-head .lead {
+	max-width: 36em;
+	margin: 0;
+	color: var(--muted);
+	font-size: 1.05em;
+	line-height: 1.55;
+}
+.page-head .meta {
+	text-align: right;
+	color: var(--muted);
+	font-size: 0.8em;
+	line-height: 1.4;
+}
+.page-head .meta strong {
+	display: block;
+	color: var(--ink);
+	font-size: 1.15em;
+}
+
+/* White card with a navy label column on the left */
+.panel {
+	display: grid;
+	grid-template-columns: 148px 1fr;
+	overflow: hidden;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--card);
+}
+.panel + .panel {
+	margin-top: 1.5rem;
+}
+.panel-label {
+	padding: 1.1rem 1.25rem;
+	background: var(--navy);
+	color: #fff;
+	font-family: var(--font-display);
+	font-weight: 700;
+	line-height: 1;
+}
+.panel-label .big {
+	display: block;
+	font-size: 3.4rem;
+	letter-spacing: -0.01em;
+}
+.panel-label small {
+	display: block;
+	margin-top: 0.4rem;
+	font-family: var(--font-body);
+	font-weight: 400;
+	font-size: 0.72rem;
+	line-height: 1.35;
+	opacity: 0.85;
+}
+@media (max-width: 640px) {
+	.panel {
+		grid-template-columns: 1fr;
+	}
+	.panel-label .big {
+		font-size: 2.4rem;
+	}
+}
+
+/* Small grey tag, like "ISO" or "Patch" */
+.pill {
+	display: inline-block;
+	padding: 0.1em 0.55em;
+	border-radius: 4px;
+	background: var(--pill);
+	color: var(--muted);
+	font-size: 0.7em;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+}
+
+/* Solid navy button */
+.button {
+	display: inline-block;
+	padding: 0.6rem 1.2rem;
+	border: none;
+	border-radius: 4px;
+	background: var(--link);
+	color: #fff;
+	font: inherit;
+	font-size: 0.9em;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+.button:hover,
+.button:focus-visible {
+	background: var(--navy);
+	color: #fff;
+}
+
+/* ---------- Article text ---------- */
+
 .prose p {
-	margin-bottom: 2em;
+	margin-bottom: 1.4em;
+}
+.prose h2,
+.prose h3,
+.prose h4 {
+	margin-top: 1.6em;
+}
+.prose h2 {
+	font-size: 1.9em;
 }
 
 /* Keep an introductory sentence close to the list that follows it */
 .prose p:has(+ ul, + ol) {
 	margin-bottom: 0.5em;
 }
-
 .prose p + ul,
 .prose p + ol {
 	margin-top: 0.5em;
@@ -127,13 +255,8 @@ textarea {
 	width: 100%;
 	font-size: 16px;
 }
-
 input {
 	font-size: 16px;
-}
-
-table {
-	width: 100%;
 }
 
 /* Center an image that stands on its own line in a blog post */
@@ -142,106 +265,90 @@ table {
 	margin: 0 auto;
 }
 
-/* Tables in blog posts: clear rows, padding and aligned columns */
+/* Tables: navy header row, thin rules */
+table {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+}
 .prose table {
 	border-collapse: collapse;
 	margin: 1em 0 2em;
-	font-size: 0.95em;
+	font-size: 0.92em;
 	line-height: 1.4;
 }
-
 .prose th,
 .prose td {
-	padding: 0.6em 0.8em;
-	border-bottom: 1px solid rgba(var(--gray), 0.2);
+	padding: 0.65em 0.9em;
+	border-bottom: 1px solid var(--line);
 	vertical-align: top;
 }
-
 .prose thead th {
-	background-color: var(--logo-navy);
+	background-color: var(--navy);
 	color: #fff;
 	border-bottom: none;
+	font-weight: 500;
 }
-
 .prose tbody tr:nth-child(even) {
-	background-color: rgba(var(--gray), 0.06);
+	background-color: #f5f7fa;
 }
-
-/* First column is the label; the other columns are values */
 .prose th:not(:first-child),
 .prose td:not(:first-child) {
 	text-align: center;
 }
-
 .prose th:first-child,
 .prose td:first-child {
 	text-align: left;
 }
 
-/* Wide tables scroll sideways on small screens instead of squeezing */
-@media (max-width: 720px) {
-	.prose table {
-		display: block;
-		overflow-x: auto;
-	}
-}
-
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: 4px;
 }
 
 code {
 	padding: 2px 5px;
-	background-color: rgba(var(--gray), 0.1);
-	border-radius: 4px;
-	font-size: 0.9em;
+	background-color: var(--pill);
+	border-radius: 3px;
+	font-size: 0.88em;
 }
 
 pre {
-	padding: 1.5em;
-	border-radius: 8px;
-	background-color: rgb(var(--black));
-	color: rgb(var(--gray-light));
+	padding: 1.25em 1.5em;
+	border-radius: var(--radius);
+	background-color: var(--navy-deep) !important;
+	color: #e8edf2;
+	font-size: 0.85em;
+	line-height: 1.55;
 }
-
 pre > code {
 	all: unset;
 }
 
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
+	margin: 1.5em 0;
+	padding: 0.75em 1.25em;
+	border-left: 4px solid var(--amber);
+	background: #f5f7fa;
+	color: var(--ink);
+}
+blockquote p:last-child {
+	margin-bottom: 0;
 }
 
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-
-/* On phones and small tablets 80% is too narrow, so use the full width */
-@media (max-width: 900px) {
-	main {
-		width: 100%;
-	}
-}
-
-/* Wide tables scroll on their own instead of making the whole page scroll sideways on phones */
-table {
-	display: block;
-	max-width: 100%;
-	overflow-x: auto;
+	border-top: 1px solid var(--line);
 }
 
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 17px;
 	}
 	main {
-		padding: 1em;
+		padding: 1.75em 1em;
 	}
 }
 
@@ -253,12 +360,128 @@ table {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* ---------- Stacked list: one card, navy label column, rows split by rules ---------- */
+
+.stack {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	list-style: none;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--card);
+}
+.stack-head {
+	display: grid;
+	grid-template-columns: 148px 1fr;
+	background: var(--navy);
+	color: #dbe4ee;
+	font-size: 0.78em;
+	font-weight: 500;
+}
+.stack-head span {
+	padding: 0.7rem 1.75rem;
+}
+.stack-row {
+	display: grid;
+	grid-template-columns: 148px 1fr;
+}
+.stack-row > .panel-label {
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.stack-row:first-child > .panel-label,
+.stack-head + .stack-row > .panel-label {
+	border-top: none;
+}
+.stack-row + .stack-row > .stack-body {
+	border-top: 1px solid var(--line);
+}
+.stack-body {
+	position: relative;
+	min-width: 0;
+	padding: 1.4rem 1.75rem;
+}
+/* Amber tick marks the newest item */
+.stack-body.is-new::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 1.55rem;
+	width: 4px;
+	height: 1.6rem;
+	background: var(--amber);
+}
+.stack-body .top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.stack-title {
+	margin: 0;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: 1.55em;
+	line-height: 1.15;
+}
+.stack-title a {
+	color: var(--ink);
+}
+.stack-title a:hover {
+	color: var(--link);
+}
+.stack-text {
+	margin: 0.45rem 0 0;
+	color: var(--muted);
+	font-size: 0.92em;
+	line-height: 1.55;
+}
+.stack-meta {
+	margin: 0.6rem 0 0;
+	color: var(--muted);
+	font-size: 0.82em;
+}
+.stack-meta strong {
+	color: var(--ink);
+}
+@media (max-width: 640px) {
+	.stack-head {
+		display: none;
+	}
+	.stack-row {
+		grid-template-columns: 1fr;
+	}
+	.stack-row + .stack-row > .panel-label {
+		border-top: none;
+	}
+	.stack-body {
+		padding: 1.1rem 1.1rem;
+	}
+	.stack-body.is-new::before {
+		top: 1.25rem;
+	}
+}
+@media (max-width: 640px) {
+	.panel-label {
+		display: flex;
+		align-items: baseline;
+		gap: 0.6rem;
+		padding: 0.6rem 1.1rem;
+	}
+	.panel-label .big {
+		font-size: 1.8rem;
+	}
+	.panel-label small {
+		margin: 0;
+	}
+}
+
+/* No extra gap above the first heading inside an article card */
+.prose > :first-child {
+	margin-top: 0;
 }

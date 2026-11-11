@@ -190,20 +190,26 @@ import logo from '../assets/logo-trimmed.png';
 		width: 22px;
 		height: 22px;
 	}
-	@media (max-width: 1000px) {
+	/* Keep the menu on one line: drop the social icons first, then put the logo above the menu */
+	@media (min-width: 961px) {
+		.internal-links {
+			flex-wrap: nowrap;
+		}
+	}
+	@media (max-width: 1180px) {
 		.social-links {
 			display: none;
 		}
 	}
-	@media (max-width: 720px) {
+	@media (max-width: 960px) {
 		nav {
 			flex-direction: column;
 			gap: 0;
-		}
-		nav {
 			min-height: 0;
 			padding-top: 0.6em;
 		}
+	}
+	@media (max-width: 720px) {
 		.logo {
 			height: 40px;
 		}

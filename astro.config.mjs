@@ -8,6 +8,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join, sep } from 'node:path';
 import rehypeDemoteHeadings from './src/lib/rehype-demote-headings.mjs';
 import { postId } from './src/lib/post-id.mjs';
+import { postMedia, rehypePostMedia } from './src/lib/post-media.mjs';
 
 const SITE = 'https://www.ivobeerens.nl';
 
@@ -34,6 +35,7 @@ export default defineConfig({
 	site: SITE,
 	integrations: [
 		mdx(),
+		postMedia(),
 		sitemap({
 			serialize(item) {
 				const lastmod = lastModified.get(item.url);
@@ -49,6 +51,8 @@ export default defineConfig({
 		processor: unified({
 			rehypePlugins: [
 				rehypeDemoteHeadings,
+				// Before rehype-external-links, so old wp-content links that now point to local files open in place
+				rehypePostMedia,
 				[
 					rehypeExternalLinks,
 					{

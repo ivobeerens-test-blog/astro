@@ -4,7 +4,7 @@ description: "Proxmox VE 9.3 is out. What stands out in this release, and how I 
 author: Ivo Beerens
 pubDate: 2026-11-25T00:00:00+01:00
 image: 
-draft: true
+draft: false
 categories:
     - proxmox
     - homelab

@@ -53,6 +53,7 @@ Going from 9.2 to 9.3 is a point release within Proxmox VE 9, so there is no maj
 - **Repository.** Check which repository you are on (enterprise or no-subscription) in *Node > Updates > Repositories*.
 - **Free space.** The update needed about 1 GB on the root disk.
 - **Ceph.** If you run Ceph, check that `ceph -s` reports `HEALTH_OK` before each node.
+- **Firewall automation.** 9.3 has stricter validation of firewall rules. The API now rejects some rules it accepted before, for example ICMP rules with a list, a range, a service name or a leading zero as ICMP type, and references to security groups with names longer than 18 characters. If Terraform, Ansible or another tool manages your firewall rules, run it once against the first upgraded node before you continue with the rest. See *Known Issues & Breaking Changes* in the [release notes](https://pve.proxmox.com/wiki/Roadmap#Proxmox_VE_9.3).
 
 ### Step 1: Check the cluster status
 
@@ -85,7 +86,7 @@ Check what is running on the node:
 qm list | grep running; pct list | grep running
 ```
 
-Live-migrate the VMs to another node, or use the new HA maintenance mode to let HA do it for you. Containers can't be live-migrated, so they are restarted on the target node.
+Live-migrate the VMs to another node, or use the new HA maintenance mode to let HA do it for you. Containers can't be live-migrated. They move by restart migration: the container is shut down, moved and started again on the target node. Proxmox waits up to 180 seconds (the default `--timeout`) for the container to stop, so one slow-stopping container can add minutes to the upgrade time of a node. Find out beforehand which containers are slow to shut down, and plan for them.
 
 <!-- TODO: describe what you actually did: migrate manually / maintenance mode / shut down? -->
 
